@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>
+        {% block title %} Document {% endblock title %}   
+    </title>
+    <!-- FONT AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- JS FILE -->
+    <script src="{% static 'js/style.js' %}"></script>
+    <!-- CSS FILE  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+</head>
+
+<body class="publicbody">
+<div class="publicmain">
+  
+   <!-- navbar -->
+   <div class="publicnav">
+
+      <!--logo and search-->
+      <div class="publicnavleft">
+           <!-- navbar logo -->
+           <img src="{% static 'img/logoimage.png' %}" alt="">
+           <!-- navbar search -->
+           <div class="navsearch">
+             <form class="d-flex" role="search">
+               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-success" type="submit">Search</button>
+             </form>
+           </div>
+      </div>
+
+      <!--icons and my profile-->
+      <div class="publicnavright">
+        <a href="#" class="text-decoration-none">
+            <div class="navicon">
+                <h1><i class="fa-solid fa-house"></i></h1>
+            </div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="navicon">
+                <h1><i class="fa-solid fa-hand-holding-dollar"></i></h1>
+            </div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="navicon">
+                <h1><i class="fa-solid fa-briefcase"></i></h1>
+            </div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="navicon">
+                <h1><i class="fa-solid fa-shop"></i></h1>
+            </div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="navicon">
+                <h1><i class="fa-solid fa-camera-retro"></i></h1>
+            </div>
+        </a>
+        <!-- navbar dropdown -->
+        <div class="navdropdown">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{% static 'img/logo.png' %}" alt=""><span>My Profile</span> 
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+        </div>
+      </div>
+   </div>
+
+   <!-- left bar -->
+   <div class="publicleft">
+        <!--left top  -->
+        <div class="navlefttop">
+            <img src="{% static 'img/user.jpeg' %}" alt="">
+            <h1 class="">Raj Chaudhary</h1>
+        </div>
+        <!-- left bottom -->
+        <div class="navleftbottom">
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-house"></i></span>
+                    <span class="leftnavtext">Dashboard</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                    <span class="leftnavtext">Helping Hand</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-briefcase"></i></span>
+                    <span class="leftnavtext">Jobs</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-shop"></i></span>
+                    <span class="leftnavtext">City Shops</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-camera-retro"></i></span>
+                    <span class="leftnavtext">Complain</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-user"></i></span>
+                    <span class="leftnavtext">My Profile</span>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="leftnav pt-3">
+                    <span class="leftnavicon"><i class="fa-solid fa-power-off"></i></span>
+                    <span class="leftnavtext">Logout</span>
+                </div>
+            </a>
+        </div>
+   </div> 
+
+   <!-- right -->
+   <div class="publicright">
+     {% block body %}
+     {% endblock body %}
+   </div>
+   
+</div> 
+</body>
+</html>

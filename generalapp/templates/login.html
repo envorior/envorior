@@ -1,0 +1,52 @@
+{% extends 'generalparent.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+
+{% block body %}
+<!-- container -->
+<div class="generalmain">
+    <!-- left box -->
+    <div class="loginleftbox">
+        <img src="{% static 'img/logo.png' %}" alt="">
+    </div>
+    <!-- right box -->
+    <div class="loginrightbox">
+        <img src="{% static 'img/logoname.png' %}" alt="">
+        
+        {% if msg %}
+            <h1>{{msg}}</h1>
+        {% else %}   
+            <h1>Login as Envorior</h1>   
+        {% endif %}
+        
+        <!-- login form -->
+        <form action="{% url 'generalapp:login' %}" method="POST" class="form w-75 mx-auto mt-4">
+            {% csrf_token %}
+            <div class="row">
+              <input type="text" class="form-control mt-3 w-75 mx-auto" name="username" placeholder="Email Address/User Name "/>
+            </div>
+            <div class="row">
+              <input type="password" class="form-control mt-3 w-75 mx-auto" name="password" placeholder="Password"/>
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="px-3 btn btn-primary mb-4 w-75 mx-auto" style="width:80%;">Login</button>
+            </div>
+        </form>
+
+        <!-- forget password -->
+        <div class="mb-2" style="text-align: center;">
+            <a href="#" style="text-decoration:none; color:black;">Forgetten Your Password ??</a>
+        </div> 
+
+        <!-- Not have a account -->
+        <div class="row mt-1 mb-2 px-3 mx-auto">
+            <a href="{% url 'generalapp:registration' %}" class="text-center mt-2" style="text-decoration:none; color:black;"> Don't have an account? <span style="color:rgb(0, 149, 255);">Sign up</span></a>
+        </div>
+
+    </div>
+</div>
+
+   
+{% endblock body %}

@@ -1,0 +1,72 @@
+body{
+    background-image:url('../img/back2.jpg');
+    background-size:auto;
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+/* container for login */
+.container{
+    background-color: white;
+    width:70%;
+    height:500px;
+    margin-top:70px;
+    border-radius: 30px;
+    box-shadow: 2px ;
+}
+
+.loginimg{
+    height: 100%;
+    width:100%;
+}
+
+@media (max-width:678px) {
+    .loginimg{
+        display: none;
+    }
+}
+
+.logintext{
+    text-align: center;
+    font-family: cursive;
+    font-size:30px;
+    font-weight: bolder;
+
+}
+
+.loginbox{
+    height:500px;
+    background-color: rgb(169, 229, 127);
+    border-radius: 0px 30px 30px 0px;
+}
+
+.registrationbox{
+    height:500px;
+    background-color: rgb(169, 229, 127);
+    border-radius: 30px 0px 0px 30px;
+}
+.registertext{
+    text-align: center;
+    font-family: cursive;
+    font-size:20px;
+    font-weight: bolder;
+
+}
+.registrationbox2{
+    height:500px;
+}
+.loginbox1{
+    height:500px;
+}
+
+@media (max-width:400px) {
+    .registrationbox{
+        height:auto;
+    }
+    .registrationbox2{
+        height:auto;
+    }
+    .loginbox1{
+        display: none;
+    }
+}
