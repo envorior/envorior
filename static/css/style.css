@@ -1,6 +1,30 @@
+:root{
+--white:#ffffff;
+--darkgray:#3A3A3A;
+--gray: #D2CECE;
+--lightgray:#f0f0f0;
+--green:#0B7B38;
+--feed-background:#FAF8F8;
+
+--border-radius:0.25rem;
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+
 body{
+   
     width:100%;
-    background-image: url('../img/back4.jpg');
+    background-color:var(--lightgray);}
+
+a{
+    text-decoration: none;
+}
+
+p{
+
 }
  /* ############################# General Zone CSS   ###################33 */
 
@@ -74,7 +98,7 @@ body{
     font-size:30px;
 }
 
-/* make login page responsive for phone and tablet */
+/* make login page responsive for phone and tablet
 @media (max-width:400px) {
     .loginleftbox{
         display: none;
@@ -89,7 +113,7 @@ body{
 }
 
 /* make registration page responsive for phone*/
-@media (max-width:400px) {
+/* @media (max-width:400px) {
     .regrightbox{
         display: none;
         height: auto;
@@ -103,10 +127,10 @@ body{
     .generalmain{
         height: auto;
     }
-}
+} */
 
 /* make registration page responsive for tablet*/
-@media (min-width:401px) and (max-width:1169px) {
+/* @media (min-width:401px) and (max-width:1169px) {
     .regrightbox{
         display: none;
         height: auto;
@@ -120,124 +144,159 @@ body{
     .generalmain{
         height: auto;
     }
-}
+} */ 
 
 
 /* ######################     PUBLIC ZONE CSS      ######################## */
 
-.publicbody{
-    background-color:lightgray;
-    width:100%;
+.txt-1{
+    color: var(--darkgray);
+    font-size: 1.5rem;
+    font-weight: 500;
 }
-.publicmain{
+
+.txt-2{
+    color: var(--darkgray);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.txt-3{
+    color: var(--darkgray);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.btn{
+    float: right;
+    border-radius: var(--border-radius);
+    background-color: var(--green);
+    color: var(--gray);
+  
+}
+
+.btn button{
+    background: none;
+    outline: none;
+    background: transparent;
+}
+header{
+    display: flex;
+    align-items: center;
+    height:4rem;
+    width:100%;
+    position:fixed;
+    background-color:#ffffff;
+}
+header .left,header .right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+header .middle{
     width: 100%;
 }
-
-.publicnav{
-    height:60px;
-    width:100%;
-    box-shadow:2px 5px 5px;
-    position:fixed;
-    background-color: rgb(250, 250, 250);
+.logo,.user-profile{
+    display: flex;
+      
 }
-.publicnavleft{
-    height:60px;
-    width:30%;
-    float:left;
+.logo-img{
+    height:3.5rem;
+    object-fit: cover;
 }
-.publicnavleft img{
-    height:50px;
-    width:25%;
-    padding-top:5px;
-    padding-left: 15px;
-    float:left;
-}
-.navsearch{
-    padding-left: 5%;
-    padding-top:10px;
-    width:70%;
-    float:left;
+.logo-txt{
+    margin: 0.25rem 0rem 0rem 1rem;
 }
 
-.publicnavright{
-    min-height:60px;
-    width:65%;
-    float:right;
+.profile-txt{
+    margin: 0.25rem 0rem 0rem 1rem;
 }
 
-.navicon{
-    float:left;
-    text-align: center;
-    margin-left:10px;
+.profile-img{
+  
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 100rem;
+}
+
+.other-settings{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: var(--darkgray);
+}
+.nav-search{
+ margin-left: 5rem; 
+
+}
+.search{
+   
+    height: 2.5rem;
+    display: flex;
     
+    align-items: center;
+    border: none;
+    border-radius:var(--border-radius);
+    background-color: var(--gray);
 }
-.navicon:hover{
-   background-color: lightgray;
-   border-radius:50%;
-   border-bottom:5px solid green;
+
+.search input[type=text]{
+
+    /* width: 35vw; */
+    border: none;
+    outline: none;
+    background: transparent;
+ 
 }
-.navicon h1 i{
-    color:black;
-    padding-top:8px;
-    padding-left:20px;
-    padding-right:20px;
-    font-size:70%;
-}
-.navdropdown{
-    float:right;
-    margin-top: 10px;
-}
-.navdropdown img{
-    height:30px;
-    width:30px;
-    border-radius:50%;
+
+
+main{
+    padding: 4rem;
+    display: flex;
 }
 
 .publicleft{
-    height: auto;
-    width:18%;
-    margin-left:15px;
-    margin-top:80px;
-    float:left;
-    position:fixed;
+    padding: 1rem 0rem 0rem 2rem;
+    width:20vw;
+    position: fixed;
+    height: 100vh;
+    left:0;
 }
 
 .navlefttop{
-    height:80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:4rem;
     width:100%;
-    border-radius:20px;
-    box-shadow: 2px 5px 5px;
-    background-color:white;
-    overflow: hidden;
-}
-.navlefttop img{
-   height:60px;
-   width:60px;
-   padding-left:10%;
-   padding-top:20px;
-   float:left;
-   border-radius:50%;
-}
-.navlefttop h1{
-    padding-top:10%;
-    float:left;
-    font-size:20px;
-    padding-left:10px;
+    border-radius:var(--border-radius);
+    /* box-shadow: 2px 5px 5px; */
+    background-color:var(--white);
+    /* overflow: hidden; */
 }
 
 .navleftbottom{
-    height:auto;
+    display: flexbox;
+    justify-content: center;
+    /* padding: 2rem 0rem 0rem 2rem; */
+    height:50vh;
     width:100%;
-    margin-top: 10px;
-    border-radius:20px;
-    box-shadow: 2px 5px 5px;
-    background-color:white;
+    border-radius:var(--border-radius);
+    /* box-shadow: 2px 5px 5px; */
+    background-color:var(--white);
+}
+
+.navleftbottom div{
+    margin: 2rem 0rem 0rem 2rem;
+    
 }
 .leftnav{
     margin-top:18px;
     padding-top: 7px;
     padding-bottom:7px;
-}
+} 
 .leftnavicon{
     margin-left:25px;
     font-size:20px;
@@ -257,16 +316,86 @@ body{
     border-left:5px solid red;
 }
 
- /* body for all public zonepages */
-.publicright{
-    min-height:1500px;
-    margin-left:20px;
-    margin-top:80px;
-    width: auto;
-    float:left;
+
+.publicmiddle{
+    background-color: var(--feed-background);
+ margin:0% 0% 0% 26.4%;
 }
+
+.feed {
+    display: flex;
+    height: 200rem;
+    width: 44rem;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.feed-search{
+    margin: 1rem 0rem 1rem 0rem;
+    width: 80%;
+    height: 4rem;
+}
+.feed-post{
+
+    width: 80%;
+    
+}
+
+.feed-header{
+    background-color: var(--gray);
+    border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
+    height: 3.5rem;
+}
+
+.feed-content{
+    background-color: var(--gray);
+   
+    margin: var(--border-radius) 0rem var(--border-radius) 0rem;
+    
+}
+
+.feed-footer{
+    display: flex;
+    background-color: var(--gray);
+    height: 2.5rem;
+    border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
+}
+
+.feed-footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.publicright{
+    height: 100vh;
+    width:30vh ;
+    right: 0;
+    padding: 3%;
+   
+}
+
+.publicright .box{
+    overflow-y: hidden;
+    border-radius: var(--border-radius) var(--border-radius) var(--border-radius) var(--border-radius);
+      margin: 0rem 2rem 2rem 0rem;
+      background-color: var(--white);
+      height: 40vh;
+      width: 18rem;
+
+}
+
+
+
+
+
+
 /* navbar responsive  */
-@media(max-width:865px){
+/* @media(max-width:865px){
 
     .publicnavleft{
         width:100%;
@@ -276,7 +405,7 @@ body{
     .publicleft{
         margin-top:120px;
     }
-    .publicright{
+    .publicmiddle{
         margin-top:120px;
     }
     .navsearch form{
@@ -294,8 +423,8 @@ body{
         box-shadow: 2px 5px 5px;
         background-color: white;
     }
-}
-@media(max-width:628px){
+} */
+/* @media(max-width:628px){
     
     .navdropdown button span{
         display: none;
@@ -307,8 +436,8 @@ body{
     .publicnavright{
         padding-left:0%;
     }
-}
-@media(max-width:450px){
+} */
+/* @media(max-width:450px){
     .navicon{
         margin-left:1px;
         padding-left:0px;
@@ -320,10 +449,10 @@ body{
         padding-right:10px;
         margin-left:5px;
     }
-}
+} */
 
 /* left nav responsive */
-@media (max-width:925px){
+/* @media (max-width:925px){
    .navleftbottom{
     height:auto;
    }
@@ -341,9 +470,9 @@ body{
    .navleft{
     text-align: center;
    }
-}
+} */
 
-@media(max-width:725px){
+/* @media(max-width:725px){
     .leftnavtext{
         display: none;
     }
@@ -351,18 +480,55 @@ body{
         font-size:25px;
     }
     
-}
-@media (max-width:500px){
+} */
+/* @media (max-width:500px){
     .publicleft{
         display:none;
     }
-    .publicright{
+    .publicmiddle{
         width:100%;
         margin-left:0%;
     }
+} */
+
+/* footer style */
+
+footer{
+  display: flex;
+  height:20vh;
+  background-color:var(--lightgray);
+  width:100%;
+ 
+  bottom:0;
+  position: fixed;
+}
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 50%;
+}
+.footer-links{
+    width: 100%;
+    display: flex;
 }
 
+footer div{
+  margin: 2%;
+  width: 100%;
 
+ 
+}
+.social-links{
+    width: 50%;
+}
+
+/* aboutpage  style*/
+
+.about{
+    padding: 2%;
+}
 
 /* ####################### Public Dashboard CSS ###################### */
 
