@@ -1,0 +1,44 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<div id="donation">
+    <p class="txt-1">Donation</p> 
+    <div style="object-fit: cover;">
+        <img src="{% static 'img/donation.png' %}" height="100%" width="100%">
+       </div>
+</div>
+
+<div class="feed">
+   <div class="search feed-search">     
+      <form >
+          <input type="text" placeholder="write here to search something">
+      </form>
+   </div>
+   <div class="search feed-search">     
+      <form >
+          <input type="text" placeholder="write here to search something">
+      </form>
+   </div>
+   <div class="search feed-search">     
+      <form >
+          <input type="text" placeholder="write here to search something">
+      </form>
+   </div>
+   <div class="search feed-search">     
+      <form >
+          <input type="text" placeholder="write here to search something">
+      </form>
+   </div>
+   <div class="search feed-search">     
+      <form >
+          <input type="text" placeholder="write here to search something">
+      </form>
+   </div>
+  
+</div>
+
+{% endblock %}
+
