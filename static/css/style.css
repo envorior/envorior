@@ -1,537 +1,539 @@
 :root{
---white:#ffffff;
---darkgray:#3A3A3A;
---gray: #D2CECE;
---lightgray:#f0f0f0;
---green:#0B7B38;
---feed-background:#FAF8F8;
-
---border-radius:0.25rem;
-}
-
-*{
-    margin: 0;
-    padding:0;
-}
-
-body{
-   
-    width:100%;
-    background-color:var(--lightgray);}
-
-a{
-    text-decoration: none;
-}
-
-p{
-
-}
- /* ############################# General Zone CSS   ###################33 */
-
- /* container for login */
-.generalmain{
-    background-color:lightgray;
-    width:80%;
-    height:500px;
-    margin-top:70px;
-    border-radius:30px;
-    box-shadow: 2px ;
-    margin-left:10%;
-}
- /* login page css */
-.loginleftbox{
-    height:100%;
-    width:50%;
-    border-radius:30px 0px 0px 30px;
-    float:left;
-}
-.loginleftbox img{
-    width:80%;
-    margin-left:10%;
-    height:80%;
-    margin-top:5%;
-}
-.loginrightbox{
-    height:100%;
-    width:50%;
-    float:right;
-    border-radius:0px 30px 30px 0px;
-    background-color: white;
-}
-.loginrightbox img{
-    width:50%;
-    height:10%;
-    margin-top:7%;
-    margin-left:25%;
-}
-.loginrightbox h1{
-    margin-top:25px;
-    font-family: cursive;
-    text-align: center;
-    font-size: 25px;
-}
-/* regostration page css */
-.regleftbox{
-    height:100%;
-    width:50%;
-    background-color: rgb(89, 240, 124);
-    border-radius:30px 0px 0px 30px;
-    float:left;
-}
-.regrightbox{
-    height:100%;
-    width:50%;
-    float:right;
-    border-radius:0px 30px 30px 0px;
-}
-.regrightbox img{
-    width:80%;
-    margin-left:10%;
-    height:80%;
-    margin-top:5%;
-}
-.regleftbox h1{
-    margin-top:30px;
-    margin-bottom:25px;
-    font-family: cursive;
-    text-align: center;
-    font-size:30px;
-}
-
-/* make login page responsive for phone and tablet
-@media (max-width:400px) {
+    --white:#ffffff;
+    --darkgray:#3A3A3A;
+    --gray: #D2CECE;
+    --lightgray:#f0f0f0;
+    --green:#0B7B38;
+    --feed-background:#FAF8F8;
+    
+    --border-radius:0.25rem;
+    }
+    
+    *{
+        margin: 0;
+        padding:0;
+    }
+    
+    body{
+       
+        width:100%;
+        background-color:var(--lightgray);}
+    
+    a{
+        text-decoration: none;
+    }
+    
+    p{
+    
+    }
+     /* ############################# General Zone CSS   ###################33 */
+    
+     /* container for login */
+    .generalmain{
+        background-color:lightgray;
+        width:80%;
+        height:500px;
+        margin-top:70px;
+        border-radius:30px;
+        box-shadow: 2px ;
+        margin-left:10%;
+    }
+     /* login page css */
     .loginleftbox{
-        display: none;
+        height:100%;
+        width:50%;
+        border-radius:30px 0px 0px 30px;
+        float:left;
+    }
+    .loginleftbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
     }
     .loginrightbox{
-        width:100%;
-        border-radius:30px;
-    }
-    .generalmain{
-        height: auto;
-    }
-}
-
-/* make registration page responsive for phone*/
-/* @media (max-width:400px) {
-    .regrightbox{
-        display: none;
-        height: auto;
-        
-    }
-    .regleftbox{
-        width:100%;
-        border-radius:30px;
-        height: auto;
-    }
-    .generalmain{
-        height: auto;
-    }
-} */
-
-/* make registration page responsive for tablet*/
-/* @media (min-width:401px) and (max-width:1169px) {
-    .regrightbox{
-        display: none;
-        height: auto;
-        
-    }
-    .regleftbox{
-        width:100%;
-        border-radius:30px;
-        height: auto;
-    }
-    .generalmain{
-        height: auto;
-    }
-} */ 
-
-
-/* ######################     PUBLIC ZONE CSS      ######################## */
-
-.txt-1{
-    color: var(--darkgray);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.txt-2{
-    color: var(--darkgray);
-    font-size: 1.2rem;
-    font-weight: 400;
-}
-
-.txt-3{
-    color: var(--darkgray);
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-.btn{
-    float: right;
-    border-radius: var(--border-radius);
-    background-color: var(--green);
-    color: var(--gray);
-  
-}
-
-.btn button{
-    background: none;
-    outline: none;
-    background: transparent;
-}
-header{
-    display: flex;
-    align-items: center;
-    height:4rem;
-    width:100%;
-    position:fixed;
-    background-color:#ffffff;
-}
-header .left,header .right{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-
-header .middle{
-    width: 100%;
-}
-.logo,.user-profile{
-    display: flex;
-      
-}
-.logo-img{
-    height:3.5rem;
-    object-fit: cover;
-}
-.logo-txt{
-    margin: 0.25rem 0rem 0rem 1rem;
-}
-
-.profile-txt{
-    margin: 0.25rem 0rem 0rem 1rem;
-}
-
-.profile-img{
-  
-    width: 3rem;
-    height: 3rem;
-    object-fit: cover;
-    border-radius: 100rem;
-}
-
-.other-settings{
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-    background-color: var(--darkgray);
-}
-.nav-search{
- margin-left: 5rem; 
-
-}
-.search{
-   
-    height: 2.5rem;
-    display: flex;
-    
-    align-items: center;
-    border: none;
-    border-radius:var(--border-radius);
-    background-color: var(--gray);
-}
-
-.search input[type=text]{
-
-    /* width: 35vw; */
-    border: none;
-    outline: none;
-    background: transparent;
- 
-}
-
-
-main{
-    padding: 4rem;
-    display: flex;
-}
-
-.publicleft{
-    padding: 1rem 0rem 0rem 2rem;
-    width:20vw;
-    position: fixed;
-    height: 100vh;
-    left:0;
-}
-
-.navlefttop{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height:4rem;
-    width:100%;
-    border-radius:var(--border-radius);
-    /* box-shadow: 2px 5px 5px; */
-    background-color:var(--white);
-    /* overflow: hidden; */
-}
-
-.navleftbottom{
-    display: flexbox;
-    justify-content: center;
-    /* padding: 2rem 0rem 0rem 2rem; */
-    height:50vh;
-    width:100%;
-    border-radius:var(--border-radius);
-    /* box-shadow: 2px 5px 5px; */
-    background-color:var(--white);
-}
-
-.navleftbottom div{
-    margin: 2rem 0rem 0rem 2rem;
-    
-}
-.leftnav{
-    margin-top:18px;
-    padding-top: 7px;
-    padding-bottom:7px;
-} 
-.leftnavicon{
-    margin-left:25px;
-    font-size:20px;
-    color: black;
-    font-weight: bold;
-}
-.leftnavtext{
-    margin-left:10px;
-    font-size:20px;
-    color: black;
-    font-weight: bold;
-}
-.leftnav:hover{
-    background-color:lightgray;
-    color:white;
-    border-radius:0px 10px 10px 0px;
-    border-left:5px solid red;
-}
-
-
-.publicmiddle{
-    background-color: var(--feed-background);
- margin:0% 0% 0% 26.4%;
-}
-
-.feed {
-    display: flex;
-    height: 200rem;
-    width: 44rem;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
-
-.feed-search{
-    margin: 1rem 0rem 1rem 0rem;
-    width: 80%;
-    height: 4rem;
-}
-.feed-post{
-
-    width: 80%;
-    
-}
-
-.feed-header{
-    background-color: var(--gray);
-    border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
-    height: 3.5rem;
-}
-
-.feed-content{
-    background-color: var(--gray);
-   
-    margin: var(--border-radius) 0rem var(--border-radius) 0rem;
-    
-}
-
-.feed-footer{
-    display: flex;
-    background-color: var(--gray);
-    height: 2.5rem;
-    border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
-}
-
-.feed-footer div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-
-.publicright{
-    height: 100vh;
-    width:30vh ;
-    right: 0;
-    padding: 3%;
-   
-}
-
-.publicright .box{
-    overflow-y: hidden;
-    border-radius: var(--border-radius) var(--border-radius) var(--border-radius) var(--border-radius);
-      margin: 0rem 2rem 2rem 0rem;
-      background-color: var(--white);
-      height: 40vh;
-      width: 18rem;
-
-}
-
-
-
-
-
-
-/* navbar responsive  */
-/* @media(max-width:865px){
-
-    .publicnavleft{
-        width:100%;
-        height:40px;
-        background-color: lightgray;
-    }
-    .publicleft{
-        margin-top:120px;
-    }
-    .publicmiddle{
-        margin-top:120px;
-    }
-    .navsearch form{
-        height:25px;
-    }
-    .publicnavleft img{
-        width:10%;
-        height:30px;
-    }
-    .publicnavright{
-        width:100%;
-        height:30px;
-        padding-left:15%;
-        padding-top:5px;
-        box-shadow: 2px 5px 5px;
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
         background-color: white;
     }
-} */
-/* @media(max-width:628px){
-    
-    .navdropdown button span{
-        display: none;
-        padding-top: 0px;
+    .loginrightbox img{
+        width:50%;
+        height:10%;
+        margin-top:7%;
+        margin-left:25%;
     }
-    .navdropdown{
-        margin-top:2px;
+    .loginrightbox h1{
+        margin-top:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size: 25px;
     }
-    .publicnavright{
-        padding-left:0%;
+    /* regostration page css */
+    .regleftbox{
+        height:100%;
+        width:50%;
+        background-color: rgb(89, 240, 124);
+        border-radius:30px 0px 0px 30px;
+        float:left;
     }
-} */
-/* @media(max-width:450px){
-    .navicon{
-        margin-left:1px;
-        padding-left:0px;
-        padding-right:0px;
+    .regrightbox{
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
     }
-    .navicon h1 i{
-        font-size:25px;
-        padding-left:10px;
-        padding-right:10px;
-        margin-left:5px;
+    .regrightbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
     }
-} */
-
-/* left nav responsive */
-/* @media (max-width:925px){
-   .navleftbottom{
-    height:auto;
-   }
-   .leftnavicon{
-    display:block;
-    text-align: center;
-    margin-left: 0px;
-    padding-left: 0px;
-   }
-   .leftnavtext{
-    display:block;
-    text-align: center;
-    
-   }
-   .navleft{
-    text-align: center;
-   }
-} */
-
-/* @media(max-width:725px){
-    .leftnavtext{
-        display: none;
-    }
-    .leftnavicon{
-        font-size:25px;
+    .regleftbox h1{
+        margin-top:30px;
+        margin-bottom:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size:30px;
     }
     
-} */
-/* @media (max-width:500px){
-    .publicleft{
-        display:none;
+    /* make login page responsive for phone and tablet
+    @media (max-width:400px) {
+        .loginleftbox{
+            display: none;
+        }
+        .loginrightbox{
+            width:100%;
+            border-radius:30px;
+        }
+        .generalmain{
+            height: auto;
+        }
     }
-    .publicmiddle{
+    
+    /* make registration page responsive for phone*/
+    /* @media (max-width:400px) {
+        .regrightbox{
+            display: none;
+            height: auto;
+            
+        }
+        .regleftbox{
+            width:100%;
+            border-radius:30px;
+            height: auto;
+        }
+        .generalmain{
+            height: auto;
+        }
+    } */
+    
+    /* make registration page responsive for tablet*/
+    /* @media (min-width:401px) and (max-width:1169px) {
+        .regrightbox{
+            display: none;
+            height: auto;
+            
+        }
+        .regleftbox{
+            width:100%;
+            border-radius:30px;
+            height: auto;
+        }
+        .generalmain{
+            height: auto;
+        }
+    } */ 
+    
+    
+    /* ######################     PUBLIC ZONE CSS      ######################## */
+    
+    .txt-1{
+        color: var(--darkgray);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    
+    .txt-2{
+        color: var(--darkgray);
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    
+    .txt-3{
+        color: var(--darkgray);
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    
+    .btn{
+        float: right;
+        border-radius: var(--border-radius);
+        background-color: var(--green);
+        color: var(--gray);
+      
+    }
+    
+    .btn button{
+        background: none;
+        outline: none;
+        background: transparent;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        height:4rem;
         width:100%;
-        margin-left:0%;
+        position:fixed;
+        background-color:#ffffff;
     }
-} */
-
-/* footer style */
-
-footer{
-  display: flex;
-  height:20vh;
-  background-color:var(--lightgray);
-  width:100%;
- 
-  bottom:0;
-  position: fixed;
-}
-.footer-logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    header .left,header .right{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
     
-    width: 50%;
-}
-.footer-links{
-    width: 100%;
-    display: flex;
-}
-
-footer div{
-  margin: 2%;
-  width: 100%;
-
- 
-}
-.social-links{
-    width: 50%;
-}
-
-/* aboutpage  style*/
-
-.about{
-    padding: 2%;
-}
-
-/* ####################### Public Dashboard CSS ###################### */
-
-
-
-
+    header .middle{
+        width: 100%;
+    }
+    .logo,.user-profile{
+        display: flex;
+          
+    }
+    .logo-img{
+        height:3.5rem;
+        object-fit: cover;
+    }
+    .logo-txt{
+        margin: 0.25rem 0rem 0rem 1rem;
+    }
+    
+    .profile-txt{
+        margin: 0.25rem 0rem 0rem 1rem;
+    }
+    
+    .profile-img{
+      
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 100rem;
+    }
+    
+    .other-settings{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        background-color: var(--darkgray);
+    }
+    .search{
+       
+        height: 2.5rem;
+        display: flex;
+        
+        align-items: center;
+        border: none;
+        border-radius:var(--border-radius);
+        background-color: var(--gray);
+    }
+    
+    .search input[type=text]{
+    
+        /* width: 35vw; */
+        border: none;
+        outline: none;
+        background: transparent;
+     
+    }
+    
+    
+    main{
+        display: flex;
+    }
+    
+    .publicleft {
+        width: 50%;
+        height: 100vh;
+       
+    }
+    
+    .navlefttop {
+        width: 15vw;
+        top: 5rem;
+        left: 3rem;
+        position: fixed;
+        height: 4rem;
+        border-radius: var(--border-radius);
+        background-color: var(--white);
+       
+    }
+    
+    .navleftbottom {
+        width: 15vw;
+        top: 10rem;
+        left: 3rem;
+        position: fixed;
+        height: 50vh;
+        border-radius: var(--border-radius);
+        background-color: var(--white);
+    }
+    
+    .navleftbottom div{
+        margin: 2rem 0rem 0rem 2rem;
+        
+    }
+    .leftnav{
+        margin-top:18px;
+        padding-top: 7px;
+        padding-bottom:7px;
+    } 
+    .leftnavicon{
+        margin-left:25px;
+        font-size:20px;
+        color: black;
+        font-weight: bold;
+    }
+    .leftnavtext{
+        margin-left:10px;
+        font-size:20px;
+        color: black;
+        font-weight: bold;
+    }
+    .leftnav:hover{
+        background-color:lightgray;
+        color:white;
+        border-radius:0px 10px 10px 0px;
+        border-left:5px solid red;
+    }
+    
+    
+    .publicmiddle{
+        margin-top: 4rem;
+        background-color: var(--feed-background);
+    }
+    
+    .feed {
+        display: flex;
+        height: fit-content;
+       
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .feed-search{
+        margin: 1rem 0rem 1rem 0rem;
+        width: 80%;
+        height: 4rem;
+    }
+    .feed-post{
+    
+        width: 80%;
+        
+    }
+    
+    .feed-header{
+        background-color: var(--gray);
+        border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
+        height: 3.5rem;
+    }
+    
+    .feed-content{
+        background-color: var(--gray);
+       
+        margin: var(--border-radius) 0rem var(--border-radius) 0rem;
+        
+    }
+    
+    .feed-footer{
+        display: flex;
+        background-color: var(--gray);
+        height: 2.5rem;
+        border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
+    }
+    
+    .feed-footer div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .publicright {
+        height: 100vh;
+        width:50%;
+    
+    }
+    
+    .box-up,.box-down {
+        width: 17vw;
+        overflow-y: hidden;
+        border-radius: var(--border-radius) var(--border-radius) var(--border-radius) var(--border-radius);
+        margin: 0rem 2rem 2rem 0rem;
+        background-color: var(--white);
+        position:fixed;
+        right:0rem;
+    }
+    
+    .box-up{
+    top:5rem
+    }
+    
+    .box-down{
+    top: 18rem;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* navbar responsive  */
+    /* @media(max-width:865px){
+    
+        .publicnavleft{
+            width:100%;
+            height:40px;
+            background-color: lightgray;
+        }
+        .publicleft{
+            margin-top:120px;
+        }
+        .publicmiddle{
+            margin-top:120px;
+        }
+        .navsearch form{
+            height:25px;
+        }
+        .publicnavleft img{
+            width:10%;
+            height:30px;
+        }
+        .publicnavright{
+            width:100%;
+            height:30px;
+            padding-left:15%;
+            padding-top:5px;
+            box-shadow: 2px 5px 5px;
+            background-color: white;
+        }
+    } */
+    /* @media(max-width:628px){
+        
+        .navdropdown button span{
+            display: none;
+            padding-top: 0px;
+        }
+        .navdropdown{
+            margin-top:2px;
+        }
+        .publicnavright{
+            padding-left:0%;
+        }
+    } */
+    /* @media(max-width:450px){
+        .navicon{
+            margin-left:1px;
+            padding-left:0px;
+            padding-right:0px;
+        }
+        .navicon h1 i{
+            font-size:25px;
+            padding-left:10px;
+            padding-right:10px;
+            margin-left:5px;
+        }
+    } */
+    
+    /* left nav responsive */
+    /* @media (max-width:925px){
+       .navleftbottom{
+        height:auto;
+       }
+       .leftnavicon{
+        display:block;
+        text-align: center;
+        margin-left: 0px;
+        padding-left: 0px;
+       }
+       .leftnavtext{
+        display:block;
+        text-align: center;
+        
+       }
+       .navleft{
+        text-align: center;
+       }
+    } */
+    
+    /* @media(max-width:725px){
+        .leftnavtext{
+            display: none;
+        }
+        .leftnavicon{
+            font-size:25px;
+        }
+        
+    } */
+    /* @media (max-width:500px){
+        .publicleft{
+            display:none;
+        }
+        .publicmiddle{
+            width:100%;
+            margin-left:0%;
+        }
+    } */
+    
+    /* footer style */
+    
+    footer{
+      display: flex;
+      height:20vh;
+      background-color:var(--lightgray);
+      width:100%;
+     
+      bottom:0;
+      position: fixed;
+    }
+    .footer-logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        width: 50%;
+    }
+    .footer-links{
+        width: 100%;
+        display: flex;
+    }
+    
+    footer div{
+      margin: 2%;
+      width: 100%;
+    
+     
+    }
+    .social-links{
+        width: 50%;
+    }
+    
+    /* aboutpage  style*/
+    
+    .about{
+        padding: 2%;
+    }
+    
+    /* ####################### Public Dashboard CSS ###################### */
+    
+    
+    
+    
+    
