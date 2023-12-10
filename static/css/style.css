@@ -199,14 +199,15 @@
     }
     .logo,.user-profile{
         display: flex;
-          
+        justify-content: center;
+        align-items: center;
     }
     .logo-img{
-        height:3.5rem;
+        height:3rem;
         object-fit: cover;
     }
-    .logo-txt{
-        margin: 0.25rem 0rem 0rem 1rem;
+    .logo-txt {
+        margin: 0rem 0rem 0rem 1rem;
     }
     
     .profile-txt{
