@@ -294,6 +294,10 @@
         background-color: var(--white);
     }
     
+    .navleftbottom div{
+        margin: 1rem 0rem 0rem 2rem;
+        
+    }
     
     .publicmiddle{
         margin-top: 4rem;
