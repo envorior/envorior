@@ -516,7 +516,7 @@
         display: flex;
     }
     
-    footer div{
+    .footer-left div{
       margin: 2%;
       width: 100%;
     
