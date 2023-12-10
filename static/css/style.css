@@ -1,539 +1,279 @@
-:root{
-    --white:#ffffff;
-    --darkgray:#3A3A3A;
-    --gray: #D2CECE;
-    --lightgray:#f0f0f0;
-    --green:#0B7B38;
-    --feed-background:#FAF8F8;
-    
-    --border-radius:0.25rem;
-    }
-    
-    *{
-        margin: 0;
-        padding:0;
-    }
-    
-    body{
-       
-        width:100%;
-        background-color:var(--lightgray);}
-    
-    a{
-        text-decoration: none;
-    }
-     /* ############################# General Zone CSS   ###################33 */
-    
-     /* container for login */
-    .generalmain{
-        background-color:lightgray;
-        width:80%;
-        height:500px;
-        margin-top:70px;
-        border-radius:30px;
-        box-shadow: 2px ;
-        margin-left:10%;
-    }
-     /* login page css */
-    .loginleftbox{
-        height:100%;
-        width:50%;
-        border-radius:30px 0px 0px 30px;
-        float:left;
-    }
-    .loginleftbox img{
-        width:80%;
-        margin-left:10%;
-        height:80%;
-        margin-top:5%;
-    }
-    .loginrightbox{
-        height:100%;
-        width:50%;
-        float:right;
-        border-radius:0px 30px 30px 0px;
-        background-color: white;
-    }
-    .loginrightbox img{
-        width:50%;
-        height:10%;
-        margin-top:7%;
-        margin-left:25%;
-    }
-    .loginrightbox h1{
-        margin-top:25px;
-        font-family: cursive;
-        text-align: center;
-        font-size: 25px;
-    }
-    /* regostration page css */
-    .regleftbox{
-        height:100%;
-        width:50%;
-        background-color: rgb(89, 240, 124);
-        border-radius:30px 0px 0px 30px;
-        float:left;
-    }
-    .regrightbox{
-        height:100%;
-        width:50%;
-        float:right;
-        border-radius:0px 30px 30px 0px;
-    }
-    .regrightbox img{
-        width:80%;
-        margin-left:10%;
-        height:80%;
-        margin-top:5%;
-    }
-    .regleftbox h1{
-        margin-top:30px;
-        margin-bottom:25px;
-        font-family: cursive;
-        text-align: center;
-        font-size:30px;
-    }
-    
-    /* make login page responsive for phone and tablet
-    @media (max-width:400px) {
-        .loginleftbox{
-            display: none;
-        }
-        .loginrightbox{
-            width:100%;
-            border-radius:30px;
-        }
-        .generalmain{
-            height: auto;
-        }
-    }
-    
-    /* make registration page responsive for phone*/
-    /* @media (max-width:400px) {
-        .regrightbox{
-            display: none;
-            height: auto;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>
+        {% block title %} Document {% endblock title %}   
+    </title>
+    <!-- FONT AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOOTSTRAP CDN -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <!-- JS FILE -->
+    <script src="{% static 'js/style.js' %}"></script>
+    <!-- CSS FILE  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+</head>
+
+<body>
+     <!-- header -->
+   <header>
+      <!--logo and search-->
+    <div class="left">
+        <div class="logo">
+            <!-- navbar logo -->
+            <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="">
+            <div class="logo-txt">
+            <a href="#"><p style="font-family: cursive; color: green; font-size:1.6rem;">ENVORIOR</p></a>
+            <p>Environment Worior</p>
+             </div>
+             </div>
+
+             <!-- this is for responsive -->
+             <div class="right-responsive">
+                <div class="user-profile">
+                    <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+                       
+                        </div>
             
-        }
-        .regleftbox{
-            width:100%;
-            border-radius:30px;
-            height: auto;
-        }
-        .generalmain{
-            height: auto;
-        }
-    } */
-    
-    /* make registration page responsive for tablet*/
-    /* @media (min-width:401px) and (max-width:1169px) {
-        .regrightbox{
-            display: none;
-            height: auto;
-            
-        }
-        .regleftbox{
-            width:100%;
-            border-radius:30px;
-            height: auto;
-        }
-        .generalmain{
-            height: auto;
-        }
-    } */ 
-    
-    
-    /* ######################     PUBLIC ZONE CSS      ######################## */
-    
-    .txt-1{
-        color: var(--darkgray);
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-    
-    .txt-2{
-        color: var(--darkgray);
-        font-size: 1rem;
-        font-weight: 400;
-    }
-    
-    .txt-3{
-        color: var(--darkgray);
-        font-size: 0.8rem;
-        font-weight: 300;
-    }
-    
-    .btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 5rem;
-        border-radius: var(--border-radius);
-        background-color: var(--green);
-        
-      
-    }
-    
-    .btn button{
-        color: var(--white);
-        border: none;
-        background: none;
-        outline: none;
-        background: transparent;
-    }
-    header{
-        display: flex;
-        align-items: center;
-        height:4rem;
-        width:100%;
-        position:fixed;
-        background-color:#ffffff;
-    }
-    header .left,header .right{
-        width: 50%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    header .middle{
-        width: 100%;
-    }
-    .logo,.user-profile{
-        display: flex;
-       
-        align-items: center;
-    }
-    .logo-img{
-        height:3rem;
-        object-fit: cover;
-    }
-    .logo-txt {
-        margin: 0rem 0rem 0rem 1rem;
-    }
-    
-    .profile-txt{
-        margin: 0rem 0rem 0rem 0.5rem;
-    }
-    
-    .profile-img{
-        margin-left:0.5rem;
-        width: 3rem;
-        height: 3rem;
-        object-fit: cover;
-        border-radius: 100rem;
-    }
-    
-    .other-settings{
-        height: 3rem;
-        width: 3rem;
-        border-radius: 100%;
-        background-color: var(--darkgray);
-    }
-    .search{
-        height: 2.5rem;
-        display: flex;
-        align-items: center;
-        border: none;
-        border-radius:var(--border-radius);
-        background-color: var(--gray);
-    }
-    
-    .search input[type=text]{
-    
-        /* width: 35vw; */
-        border: none;
-        outline: none;
-        background: transparent;
+                        <div class="other-settings"></div>
+            </div>
+    </div>
      
-    }
+            
+<!-- navbar search -->
+<div class="middle">
+    <div class="search nav-search">
+            
+        <form >
+            <i class="fa fa-search"style="font-size: 18px; margin-left: 1rem;">
+            </i>
+            <input type="text" placeholder=" Search ">
+            
+        </form>
+    </div>
+</div>
+          
+     
+<div class="right">
+    <div class="user-profile">
+        <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+        <div class="profile-txt">
+         <a href="" class="txt-2"><p>User Profile</p></a>
+         <a href="" class="txt-3"><p>@user</p></a>
+         
+      </div>     
+            </div>
+
+            <div class="other-settings"></div>
+</div>
+      <!-- my profile-->
+  <div class="nav-responsive">
+    <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+        <span class="txt-1"><i class="fa-solid fa-house"></i></span>
+        
+    </a></div>
+
+    <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+        <span class="txt-1"><i class="fa-solid fa-house"></i></span>
+        
+    </a></div>
+
+    <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+        <span class="txt-1"><i class="fa-solid fa-house"></i></span>
+        
+    </a></div>
+
+    <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+        <span class="txt-1"><i class="fa-solid fa-house"></i></span>
+        
+    </a></div>
+
+  </div>
     
-    main{
-        display: flex;
-    }
-    .publicleft {
-        width: 50%;
-        height: 100vh;
+   
+   
+   </header>
+   
+<main>  
+     <!-- left bar -->
+
+     
+    <div class="publicleft">
+        <!--left top  -->
+        <div class="navlefttop logo">
+            <img class="logo-img" src="{% static 'img/trophy.png' %}" >
+            
+            <div class="logo-txt">
+                <p class="txt-1" style="color:#000000;">Reward</p>
+                <p class="txt-3">1000+</p>
+             </div> 
+        </div>
+        <!-- left bottom -->
+        <div class="navleftmiddle">
+            <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+                <span class="txt-2">Home</span>
+            </a></div>
+
+            <div>  <a href="{%url 'publicapp:donation'%}" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                <span class="txt-2">Donation</span>
+            </a></div>
+
+            <div>  <a href="{%url 'publicapp:jobs'%}" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+                <span class="txt-2">Jobs</span>
+            </a></div>
+
+            <div>  <a href="#" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+                <span class="txt-2">Help</span>
+            </a></div>
+
+            <div>  <a href="{%url 'publicapp:about'%}" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+                <span class="txt-2">About</span>
+            </a></div>
+
+
+        </div>
+
+        <div class="navleftbottom">
+            <div>  <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+                <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+                <span class="txt-2">Settings</span>
+            </a></div>
+        </div>
+   </div> 
+
+   <!-- right -->
+   <div class="publicmiddle">
+   
+     {% block content %}
+     {% endblock%}
+   
+   </div>
+
+   <!-- message and Top Envorior section -->
+
+<div class="publicright">
+
+    <div class="box-up">
+        <p class="txt-1">Message</p> 
+        <div class="user-profile">
+            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+            <div class="profile-txt">
+             <a href="" class="txt-2"><p>User Profile</p></a>
+             <a href="" class="txt-3"><p>@user</p></a>
+             
+          </div>     
+                </div>
+            
+        <div class="user-profile">
+            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+            <div class="profile-txt">
+                <a href="" class="txt-2"><p>User Profile</p></a>
+                <a href="" class="txt-3"><p>@user</p></a>
+                
+            </div>     
+                </div>
+                    
+            <div class="user-profile">
+            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+            <div class="profile-txt">
+            <a href="" class="txt-2"><p>User Profile</p></a>
+            <a href="" class="txt-3"><p>@user</p></a>
+
+            </div>     
+            </div></div>
+    <div class="box-down">
+        <p class="txt-1"> top envorior</p>
+
+        <div class="user-profile">
+            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+            <div class="profile-txt">
+             <a href="" class="txt-2"><p>User Profile</p></a>
+             <a href="" class="txt-3"><p>@user</p></a>
+             
+          </div>     
+                </div>
+          <div class="user-profile">
+                    <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+                    <div class="profile-txt">
+                     <a href="" class="txt-2"><p>User Profile</p></a>
+                     <a href="" class="txt-3"><p>@user</p></a>
+                     
+     </div>     
+        </div>
+
+          <div class="user-profile">
+                            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+                            <div class="profile-txt">
+                             <a href="" class="txt-2"><p>User Profile</p></a>
+                             <a href="" class="txt-3"><p>@user</p></a>
+                             
+                          </div>     
+                                </div>
+    </div>
+</div>
+
+</main>
+  
+  
+
+ <footer>
+   <div class="footer-left">
+    <div class="footer-logo">   
+        <div class="logo ">
+          <!-- footer logo -->
+          <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="">
+          
+           </div>
+           <div class="logo-txt">
+              <p style="font-family: cursive; color: green; font-size:1.6rem;">ENVORIOR</p>
+              <p>Environment Worior</p>
+           </div>
+          </div> 
+          <div class="txt-3">
+            <p>
+<pre>Engaging in activism, advocating for 
+environmental policies, and taking 
+direct action to protect the 
+environment
+</pre>
+                  </p>
+        </div>
+   </div>
+      
+
+   <div class="footer-middle">
+   
+        <div>
+        <p class="txt-1">Useful links</p>
+        <a href="{%url 'publicapp:about'%}" ><p class="txt-2">About us</p></a>
+        <a href="{%url 'publicapp:contact'%}" ><p class="txt-2">Contact us</p></a>
+        <a href="{%url 'publicapp:terms'%}" ><p class="txt-2">Terms & Conditions</p></a>
+        <a href="{%url 'publicapp:policy'%}" ><p class="txt-2">Privacy Policy</p></a>
+        </div>
+
+        <div>
+            <p class="txt-1">Other links</p>
+            <a href="{%url 'publicapp:scam'%}" ><p class="txt-2">Reporting Scams</p></a>
+            <a href="{%url 'publicapp:donation'%}" ><p class="txt-2">Donations</p></a>
+            <a href="{%url 'publicapp:jobs'%}" ><p class="txt-2">Jobs</p></a>
+            
+        </div>
+
+   </div>
+
        
-    }
-    .navlefttop {
-        width: 15vw;
-        top: 5rem;
-        left: 3rem;
-        position: fixed;
-        height: 4rem;
-        border-radius: var(--border-radius);
-        background-color: var(--white);
-    }
+   <div class="footer-right">
+    <div class="social-links"></div>  
+   </div>
     
-    .navleftmiddle {
-        width: 15vw;
-        top: 10rem;
-        left: 3rem;
-        position: fixed;
-        height: 45vh;
-        border-radius: var(--border-radius);
-        background-color: var(--white);
-    }
-    
-    .navleftmiddle div{
-        margin: 1rem 0rem 0rem 2rem;
-        
-    }
-
-    .navleftbottom{
-        width: 15vw;
-        bottom: 11rem;
-        left: 3rem;
-        position: fixed;
-        height: 4rem;
-        border-radius: var(--border-radius);
-        background-color: var(--white);
-    }
-    
-    .navleftbottom div{
-        margin: 1rem 0rem 0rem 2rem;
-        
-    }
-    
-    .publicmiddle{
-        margin-top: 4rem;
-        background-color: var(--feed-background);
-    }
-    
-    .feed {
-        display: flex;
-        height: fit-content;
-       
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-    }
-    
-    .feed-search{
-        margin: 1rem 0rem 1rem 0rem;
-        width: 80%;
-        height: 4rem;
-    }
-
-    .feed-search form{
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .feed-post{
-    
-        width: 80%;
-        
-    }
-    
-    .feed-header{
-        background-color: var(--gray);
-        border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
-        height: 3.5rem;
-    }
-    
-    .feed-content{
-        background-color: var(--gray);
-       
-        margin: var(--border-radius) 0rem var(--border-radius) 0rem;
-        
-    }
-    
-    .feed-footer{
-        display: flex;
-        background-color: var(--gray);
-        height: 2.5rem;
-        border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
-    }
-    
-    .feed-footer div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    
-    .publicright {
-        height: 100vh;
-        width:50%;
-    
-    }
-    
-    .box-up,.box-down {
-        width: 17vw;
-        overflow-y: hidden;
-        border-radius: var(--border-radius) var(--border-radius) var(--border-radius) var(--border-radius);
-        margin: 0rem 2rem 2rem 0rem;
-        background-color: var(--white);
-        position:fixed;
-        right:0rem;
-    }
-    
-    .box-up{
-    top:5rem
-    }
-    
-    .box-down{
-    top: 18rem;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /* navbar responsive  */
-    /* @media(max-width:865px){
-    
-        .publicnavleft{
-            width:100%;
-            height:40px;
-            background-color: lightgray;
-        }
-        .publicleft{
-            margin-top:120px;
-        }
-        .publicmiddle{
-            margin-top:120px;
-        }
-        .navsearch form{
-            height:25px;
-        }
-        .publicnavleft img{
-            width:10%;
-            height:30px;
-        }
-        .publicnavright{
-            width:100%;
-            height:30px;
-            padding-left:15%;
-            padding-top:5px;
-            box-shadow: 2px 5px 5px;
-            background-color: white;
-        }
-    } */
-    /* @media(max-width:628px){
-        
-        .navdropdown button span{
-            display: none;
-            padding-top: 0px;
-        }
-        .navdropdown{
-            margin-top:2px;
-        }
-        .publicnavright{
-            padding-left:0%;
-        }
-    } */
-    /* @media(max-width:450px){
-        .navicon{
-            margin-left:1px;
-            padding-left:0px;
-            padding-right:0px;
-        }
-        .navicon h1 i{
-            font-size:25px;
-            padding-left:10px;
-            padding-right:10px;
-            margin-left:5px;
-        }
-    } */
-    
-    /* left nav responsive */
-    /* @media (max-width:925px){
-       .navleftbottom{
-        height:auto;
-       }
-       .leftnavicon{
-        display:block;
-        text-align: center;
-        margin-left: 0px;
-        padding-left: 0px;
-       }
-       .leftnavtext{
-        display:block;
-        text-align: center;
-        
-       }
-       .navleft{
-        text-align: center;
-       }
-    } */
-    
-    /* @media(max-width:725px){
-        .leftnavtext{
-            display: none;
-        }
-        .leftnavicon{
-            font-size:25px;
-        }
-        
-    } */
-    /* @media (max-width:500px){
-        .publicleft{
-            display:none;
-        }
-        .publicmiddle{
-            width:100%;
-            margin-left:0%;
-        }
-    } */
-    
-    /* footer style */
-    
-    footer{
-      display: flex;
-      height:20vh;
-      background-color:var(--lightgray);
-      width:100%;
-      bottom:0;
-      position: fixed;
-    }
-    .footer-left{
-        width: 50%;
-        height: fit-content;
-    }
-
-    .footer-logo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-middle{
-        width: 100%;
-        display: flex;
-    }
-
-    .footer-middle div{
-        width: 100%;
-    }
-    
-    .footer-right{
-        width: 50%;
-    }
- 
-    .social-links{
-        
-    }
-    
-    /* aboutpage  style*/
-    
-    .about{
-        padding: 2%;
-    }
-    
-    /* ####################### Public Dashboard CSS ###################### */
-    
-    
-    
-    
-    
+</footer>
+</body>
+</html>
