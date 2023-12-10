@@ -157,13 +157,13 @@
     
     .txt-2{
         color: var(--darkgray);
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 400;
     }
     
     .txt-3{
         color: var(--darkgray);
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 300;
     }
     
@@ -191,7 +191,7 @@
     header .left,header .right{
         width: 50%;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
     
     header .middle{
@@ -199,7 +199,7 @@
     }
     .logo,.user-profile{
         display: flex;
-        justify-content: center;
+       
         align-items: center;
     }
     .logo-img{
@@ -211,7 +211,7 @@
     }
     
     .profile-txt{
-        margin: 0.25rem 0rem 0rem 1rem;
+        margin: 0rem 0rem 0rem 0.5rem;
     }
     
     .profile-img{
@@ -223,9 +223,9 @@
     }
     
     .other-settings{
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 100%;
         background-color: var(--darkgray);
     }
     .search{
@@ -281,7 +281,7 @@
     }
     
     .navleftbottom div{
-        margin: 2rem 0rem 0rem 2rem;
+        margin: 1rem 0rem 0rem 2rem;
         
     }
     .leftnav{
@@ -504,14 +504,14 @@
       bottom:0;
       position: fixed;
     }
-    .footer-logo{
+    .footer-left{
         display: flex;
         flex-direction: column;
         align-items: center;
         
         width: 50%;
     }
-    .footer-links{
+    .footer-middle{
         width: 100%;
         display: flex;
     }
