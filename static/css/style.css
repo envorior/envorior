@@ -518,10 +518,17 @@
         width: 100%;
         display: flex;
     }
+
+    .footer-middle div{
+        width: 100%;
+    }
     
+    .footer-right{
+        width: 50%;
+    }
  
     .social-links{
-        width: 50%;
+        
     }
     
     /* aboutpage  style*/
