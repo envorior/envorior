@@ -274,7 +274,7 @@
         top: 10rem;
         left: 3rem;
         position: fixed;
-        height: 50vh;
+        height: 45vh;
         border-radius: var(--border-radius);
         background-color: var(--white);
     }
@@ -286,7 +286,7 @@
 
     .navleftbottom{
         width: 15vw;
-        bottom: 5rem;
+        bottom: 11rem;
         left: 3rem;
         position: fixed;
         height: 4rem;
