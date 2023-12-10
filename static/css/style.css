@@ -201,7 +201,7 @@
     }
     
     header .middle{
-        width: 100%;
+        width: 80%;
     }
     .logo,.user-profile{
         display: flex;
