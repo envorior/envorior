@@ -500,28 +500,26 @@
       height:20vh;
       background-color:var(--lightgray);
       width:100%;
-     
       bottom:0;
       position: fixed;
     }
     .footer-left{
+        width: 50%;
+        height: fit-content;
+    }
+
+    .footer-logo{
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        width: 50%;
     }
+
     .footer-middle{
         width: 100%;
         display: flex;
     }
     
-    .footer-left div{
-      margin: 2%;
-      width: 100%;
-    
-     
-    }
+ 
     .social-links{
         width: 50%;
     }
