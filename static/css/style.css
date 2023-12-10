@@ -22,10 +22,6 @@
     a{
         text-decoration: none;
     }
-    
-    p{
-    
-    }
      /* ############################# General Zone CSS   ###################33 */
     
      /* container for login */
@@ -180,6 +176,7 @@
     }
     
     .btn button{
+        color: var(--white);
         border: none;
         background: none;
         outline: none;
@@ -317,6 +314,10 @@
         margin: 1rem 0rem 1rem 0rem;
         width: 80%;
         height: 4rem;
+    }
+
+    .feed-search form{
+        display: flex;
     }
     .feed-post{
     
