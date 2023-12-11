@@ -306,6 +306,7 @@
     .publicmiddle{
         margin-top: 4rem;
         background-color: var(--feed-background);
+        width: 100%;
     }
     
     .feed {
@@ -336,6 +337,8 @@
     }
     
     .feed-header{
+        display: flex;
+        align-items: center;
         background-color: var(--gray);
         border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
         height: 3.5rem;
@@ -343,9 +346,12 @@
     
     .feed-content{
         background-color: var(--gray);
-       
         margin: var(--border-radius) 0rem var(--border-radius) 0rem;
         
+    }
+
+    .feed-content p{
+        padding:.25rem 0.5rem 0.25rem 0.5rem;
     }
     
     .feed-footer{
