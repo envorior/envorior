@@ -6,12 +6,16 @@
 {%block content%}
 
 <div class="feed">
-   <div class="search feed-search">
+   <div class=" feed-search">
    <div class="user-profile">
-      <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
+      <a>
+         <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
           </div>       
       <form >
-          <input type="text" placeholder="write here to search something">
+         <div class="search">
+            <input type="text" placeholder="write here to search something">
+         </div>
+          
           <div class="btn">
             <button type="submit">POST</button>
           </div>
