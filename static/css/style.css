@@ -535,12 +535,11 @@
     /* footer style */
     
     footer{
-      display: flex;
+      display:flex;
       height:20vh;
       background-color:var(--lightgray);
       width:100%;
-      bottom:0;
-      position: fixed;
+     
     }
     .footer-left{
         width: 50%;
