@@ -565,7 +565,18 @@
     .social-links{
         
     }
-    
+     /* donation page style */
+     #donation form{
+        padding: 1rem;
+     }
+     
+     #donation form div{
+        margin: 1rem 0rem;
+     }
+     #donation form .btn{
+        height: 2.5rem;
+        width:-webkit-fill-available;
+     }
     /* aboutpage  style*/
     
     .about{
