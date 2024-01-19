@@ -223,17 +223,20 @@
     
     .profile-img{
         margin-left:0.5rem;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         object-fit: cover;
         border-radius: 100rem;
     }
     
     .other-settings{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 3rem;
         width: 3rem;
         border-radius: 100%;
-        background-color: var(--darkgray);
+        background-color: var(--gray);
     }
     .search{
         width: 100%;
@@ -406,6 +409,8 @@
         }
         
         .left{
+            display: flex;
+            justify-content: space-between;
             width: 100%;
         }
 
