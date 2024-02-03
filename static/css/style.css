@@ -300,7 +300,7 @@
     }
     
     .navleftmiddle div{
-        /* margin: 1rem 0rem 0rem 2rem; */
+    margin-left: 2rem;
     }
 
     .navleftbottom{
@@ -340,7 +340,7 @@
         background-color: var(--gray);
         display: flex;
         align-items: center;
-        margin: 1rem 0rem 1rem 0rem;
+        margin: 1rem 0rem 0rem 0rem;
         width: 80%;
         height: 4rem;
     }
@@ -353,10 +353,9 @@
         padding: 0rem 1rem 0rem 1rem;
     }
     
-    .feed-post{
-    
+    .feed-post {
         width: 80%;
-        
+        margin: 1rem 0rem 0rem;
     }
     
     .feed-header{
@@ -431,10 +430,11 @@
             display: flex;}
 
         .nav-responsive{
+            padding: 0.5rem;
             display: flex;
             width: 100%;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-around;
         }
 
         .publicleft,.publicright,header .right{
