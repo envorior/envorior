@@ -188,6 +188,7 @@
     }
     
     .publicmiddle{
+        margin-top: 4rem;
         height:80vh;
         background-color: var(--feed-background);
         width: 100%;
@@ -335,9 +336,7 @@
          .publicleft,.publicright,header .right{
             display: none;
         }
-        .publicmiddle{
-            margin-top: 8rem;
-        }
+       
 
         /* footer responsive */
 
