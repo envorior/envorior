@@ -24,126 +24,8 @@
         a{
         text-decoration: none;
     }
-     /* ############################# General Zone CSS   ###################33 */
-    
-     /* container for login */
-    .generalmain{
-        background-color:lightgray;
-        width:80%;
-        height:500px;
-        margin-top:70px;
-        border-radius:30px;
-        box-shadow: 2px ;
-        margin-left:10%;
-    }
-     /* login page css */
-    .loginleftbox{
-        height:100%;
-        width:50%;
-        border-radius:30px 0px 0px 30px;
-        float:left;
-    }
-    .loginleftbox img{
-        width:80%;
-        margin-left:10%;
-        height:80%;
-        margin-top:5%;
-    }
-    .loginrightbox{
-        height:100%;
-        width:50%;
-        float:right;
-        border-radius:0px 30px 30px 0px;
-        background-color: white;
-    }
-    .loginrightbox img{
-        width:50%;
-        height:10%;
-        margin-top:7%;
-        margin-left:25%;
-    }
-    .loginrightbox h1{
-        margin-top:25px;
-        font-family: cursive;
-        text-align: center;
-        font-size: 25px;
-    }
-    /* regostration page css */
-    .regleftbox{
-        height:100%;
-        width:50%;
-        background-color: rgb(89, 240, 124);
-        border-radius:30px 0px 0px 30px;
-        float:left;
-    }
-    .regrightbox{
-        height:100%;
-        width:50%;
-        float:right;
-        border-radius:0px 30px 30px 0px;
-    }
-    .regrightbox img{
-        width:80%;
-        margin-left:10%;
-        height:80%;
-        margin-top:5%;
-    }
-    .regleftbox h1{
-        margin-top:30px;
-        margin-bottom:25px;
-        font-family: cursive;
-        text-align: center;
-        font-size:30px;
-    }
-    
-    /* make login page responsive for phone and tablet
-    @media (max-width:400px) {
-        .loginleftbox{
-            display: none;
-        }
-        .loginrightbox{
-            width:100%;
-            border-radius:30px;
-        }
-        .generalmain{
-            height: auto;
-        }
-    }
-    
-    /* make registration page responsive for phone*/
-    /* @media (max-width:400px) {
-        .regrightbox{
-            display: none;
-            height: auto;
-            
-        }
-        .regleftbox{
-            width:100%;
-            border-radius:30px;
-            height: auto;
-        }
-        .generalmain{
-            height: auto;
-        }
-    } */
-    
-    /* make registration page responsive for tablet*/
-    /* @media (min-width:401px) and (max-width:1169px) {
-        .regrightbox{
-            display: none;
-            height: auto;
-            
-        }
-        .regleftbox{
-            width:100%;
-            border-radius:30px;
-            height: auto;
-        }
-        .generalmain{
-            height: auto;
-        }
-    } */ 
-    
+
+
     
     /* ######################     PUBLIC ZONE CSS      ######################## */
     
@@ -452,99 +334,7 @@
             position: absolute;
         }
 
-        /* .publicnavleft{
-            width:100%;
-            height:40px;
-            background-color: lightgray;
-        }
-        .publicleft{
-            margin-top:120px;
-        }
-        .publicmiddle{
-            margin-top:120px;
-        }
-        .navsearch form{
-            height:25px;
-        }
-        .publicnavleft img{
-            width:10%;
-            height:30px;
-        }
-        .publicnavright{
-            width:100%;
-            height:30px;
-            padding-left:15%;
-            padding-top:5px;
-            box-shadow: 2px 5px 5px;
-            background-color: white;
-        } */
-    }
-    /* @media(max-width:628px){
-        
-        .navdropdown button span{
-            display: none;
-            padding-top: 0px;
-        }
-        .navdropdown{
-            margin-top:2px;
-        }
-        .publicnavright{
-            padding-left:0%;
-        }
-    } */
-    /* @media(max-width:450px){
-        .navicon{
-            margin-left:1px;
-            padding-left:0px;
-            padding-right:0px;
-        }
-        .navicon h1 i{
-            font-size:25px;
-            padding-left:10px;
-            padding-right:10px;
-            margin-left:5px;
-        }
-    } */
-    
-    /* left nav responsive */
-    /* @media (max-width:925px){
-       .navleftbottom{
-        height:auto;
-       }
-       .leftnavicon{
-        display:block;
-        text-align: center;
-        margin-left: 0px;
-        padding-left: 0px;
-       }
-       .leftnavtext{
-        display:block;
-        text-align: center;
-        
-       }
-       .navleft{
-        text-align: center;
-       }
-    } */
-    
-    /* @media(max-width:725px){
-        .leftnavtext{
-            display: none;
-        }
-        .leftnavicon{
-            font-size:25px;
-        }
-        
-    } */
-    /* @media (max-width:500px){
-        .publicleft{
-            display:none;
-        }
-        .publicmiddle{
-            width:100%;
-            margin-left:0%;
-        }
-    } */
+
     
     /* footer style */
     
@@ -596,13 +386,8 @@
      }
     /* aboutpage  style*/
     
-    .about{
+    #about{
         padding: 2%;
     }
     
     /* ####################### Public Dashboard CSS ###################### */
-    
-    
-    
-    
-    
