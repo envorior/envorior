@@ -157,7 +157,7 @@
         flex-direction: column;
         flex: 1;
         /* align-items: center; */
-        justify-content: space-around;
+        /* justify-content: space-around; */
         width: 15vw;
         top: 10rem;
         left: 3rem;
@@ -168,8 +168,11 @@
     }
     
     .navleftmiddle div{
-    margin-left: 2rem;
+    padding-top: 2rem;
+    height: 1.5rem;
     }
+
+.navleftmiddle div a {margin-left: 2rem;margin-top: 2rem;}
 
     .navleftbottom{
         margin: 0.5rem;
@@ -324,7 +327,7 @@
         
         
         .nav-responsive{
-            padding: 0.5rem;
+            padding: 0.5rem 0rem;
             display: flex;
             width: 100%;
             align-items: center;

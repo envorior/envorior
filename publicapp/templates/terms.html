@@ -5,55 +5,33 @@
 
 {%block content%}
 
-<div class="feed">
-   <div class="search feed-search">
-   <div class="user-profile">
-      <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
-          </div>       
-      <form >
-          <input type="text" placeholder="write here to search something">
-          <div class="btn">
-            <button type="submit">POST</button>
+<div class="about">
+   <div class="txt-1 about-header" style="display: flex;">About
+      <div class="logo ">
+         <!-- navbar logo -->
+         <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="">
+         
           </div>
-      </form>
-   </div>
-   <div class="feed-post">
-   <div class="feed-header">
-      <div class="user-profile">
-         <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-         <div class="profile-txt">
-          <a href="" class="txt-2"><p>User Profile</p></a>
-          <a href="" class="txt-3"><p>@user</p></a>
-          
-       </div>     
-             </div>
-   </div>
-   <div class="feed-content">
-      <p class="txt-2">my name is raj</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis suscipit dolorum quo nam? Omnis, repellendus
-           provident voluptates tempore quaerat quam obcaecati repellat ipsa ipsum.</p>
-           <div style="object-fit: cover;">
-            <img src="{% static 'img/post.jpg' %}" height="100%" width="100%">
-           </div>
-           
-   </div>
-   <div class="feed-footer">
-      <div>  <a href="#" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-         <span class="txt-3">reward</span>
-     </a></div>
-      <div><a href="#" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-         <span class="txt-3">comment</span>
-     </a></div>
-      <div><a href="#" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-         <span class="txt-3">share</span>
-     </a></div>
-   </div>
-</div>
-</div>
+          <div class="logo-txt">
+             <p style="font-family: cursive; color: green; font-size:1.6rem;">ENVORIOR</p>
+             <p>Environment Worior</p>
+              </div></div>
+              
+              <p class="txt-3">
+               Envorior is the ultimate social media platform for environmental advocates and NGOs 
+               committed to preserving our planet. Here, NGOs can easily list their organizations, 
+               share their crucial initiatives, post job opportunities, and initiate fundraising campaigns.
+                Our platform thrives on collaboration and provides a space where individuals passionate about 
+                environmental causes can connect, share ideas, and join forces to address pressing environmental issues. 
+                Join us in our mission to protect and nurture nature for a sustainable and thriving world
+              </p>
+            <div class="about-footer"><span class="txt-2"><i class="fa-solid fa-house"></i></span>
+               <span class="txt-2">info@envorior.com</span>
+    
+              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2">00999001111</span></div>
+  </div>
+ 
 
 {% endblock %}
 
