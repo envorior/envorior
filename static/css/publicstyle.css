@@ -25,6 +25,8 @@
         text-decoration: none;
     }
 
+    
+
 
     
     /* ######################     PUBLIC ZONE CSS      ######################## */
@@ -67,26 +69,12 @@
         background: transparent;
     }
     header{
-        display: flex;
-        align-items: center;
-        height:4rem;
+       
         width:100%;
         position:absolute;
         background-color:#ffffff;
     }
-    header .left,header .right{
-        width: 50%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .right-responsive{
-        display: none;
-    }
-    
-    header .middle{
-        width: 100%;
-    }
+   
     .logo,.user-profile{
         display: flex;
        
@@ -139,9 +127,7 @@
      
     }
     
-    .nav-responsive{
-        display: none;
-    }
+
     main{
         top: 4rem;
         position: absolute;
@@ -293,36 +279,62 @@
     }
     
     
-    /*daboard  responsive  */
+    /*dashboard  responsive  */
+   @media(min-width:786px){
+             /* header responsive */
+             header{
+                display: flex;
+        align-items: center;
+        height:4rem;
+            }
+             header .left,header .right{
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    } 
+
+    .right-responsive{
+        display: none;
+    }
+    
+     header .middle{
+        width: 100%;
+    } 
+           
+   }
+
+   header .left{
+    justify-content: space-around;
+    display: flex;
+    
+} 
+
+   .right-responsive{
+    display: none;}
+   
+
+.nav-responsive{
+ display: none;
+} 
+
     @media(max-width:768px){
-         /* header responsive */
-        header{
-            flex-direction: column;
-            
-        }
-        
-        .left{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
+     
         .right-responsive{
-            width: 100%;
             display: flex;}
-
+        
+        
         .nav-responsive{
             padding: 0.5rem;
             display: flex;
             width: 100%;
             align-items: center;
             justify-content: space-around;
-        }
-
-        .publicleft,.publicright,header .right{
+        } 
+  
+         /* middle feed section responsive */
+         .publicleft,.publicright,header .right{
             display: none;
         }
-         /* middle feed section responsive */
         .publicmiddle{
             margin-top: 8rem;
         }
@@ -333,6 +345,7 @@
             flex-direction: column;
             position: absolute;
         }
+    }
 
 
     
@@ -373,6 +386,13 @@
         
     }
      /* donation page style */
+     #donation {
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
      #donation form{
         padding: 1rem;
      }
@@ -386,8 +406,13 @@
      }
     /* aboutpage  style*/
     
-    #about{
+    .about{
         padding: 2%;
     }
     
     /* ####################### Public Dashboard CSS ###################### */
+    
+    
+    
+    
+    
