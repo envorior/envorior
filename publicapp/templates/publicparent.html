@@ -100,6 +100,8 @@
         <span class="txt-2"><i class="fa-solid fa-circle-info"></i></span>
     </a></div>
 
+    
+
   </div>
    </header>
    
@@ -144,6 +146,19 @@
                 <span class="txt-2">About</span>
             </a></div>
 
+            <div>  <a href="#" class="text-decoration-none">
+                <span class="txt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 10 10 " fill="none" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="0" y="0" width="0.25" height="0.25"></rect>
+                        <rect x="1" y="0" width="0.25" height="0.25"></rect>
+                        <rect x="0" y="1" width="0.25" height="0.25"></rect>
+                        <rect x="1" y="1" width="0.25" height="0.25"></rect>
+                      </svg>
+                      
+                </span>
+                
+            </a></div>
+
 
         </div>
         <!-- left bottom -->
@@ -168,7 +183,7 @@
 <div class="publicright">
 
     <div class="box-up">
-        <p class="txt-1">Message</p> 
+        <p class="txt-1">Top envorior</p> 
         <div class="user-profile">
             <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
             <div class="profile-txt">
@@ -196,33 +211,13 @@
             </div>     
             </div></div>
     <div class="box-down">
-        <p class="txt-1"> top envorior</p>
-
-        <div class="user-profile">
-            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-            <div class="profile-txt">
-             <a href="" class="txt-2"><p>User Profile</p></a>
-             <a href="" class="txt-3"><p>@user</p></a>
-             
-          </div>     
-                </div>
-          <div class="user-profile">
-                    <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-                    <div class="profile-txt">
-                     <a href="" class="txt-2"><p>User Profile</p></a>
-                     <a href="" class="txt-3"><p>@user</p></a>
-                     
-     </div>     
-        </div>
-
-          <div class="user-profile">
-                            <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-                            <div class="profile-txt">
-                             <a href="" class="txt-2"><p>User Profile</p></a>
-                             <a href="" class="txt-3"><p>@user</p></a>
-                             
-                          </div>     
-                                </div>
+        <a href="{%url 'publicapp:about'%}" ><p class="txt-2">About us</p></a>
+        <a href="{%url 'publicapp:contact'%}" ><p class="txt-2">Contact us</p></a>
+        <a href="{%url 'publicapp:terms'%}" ><p class="txt-2">Terms & Conditions</p></a>
+        <a href="{%url 'publicapp:policy'%}" ><p class="txt-2">Privacy Policy</p></a>
+        <a href="{%url 'publicapp:scam'%}" ><p class="txt-2">Reporting Scams</p></a>
+        <a href="{%url 'publicapp:donation'%}" ><p class="txt-2">Donations</p></a>
+        <a href="{%url 'publicapp:jobs'%}" ><p class="txt-2">Jobs</p></a>
     </div>
 </div>
 

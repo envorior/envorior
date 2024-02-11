@@ -1,4 +1,11 @@
 :root{
+    /* --white:#ffffff;
+    --darkgray:#3A3A3A;
+    --gray: #D2CECE;
+    --lightgray:#f0f0f0;
+    --green:#0B7B38;
+    --feed-background:#FAF8F8; */
+
     --white:#ffffff;
     --darkgray:#3A3A3A;
     --gray: #D2CECE;
@@ -391,13 +398,6 @@
         
     }
      /* donation page style */
-     #donation {
-        display: flex;
-        height: fit-content;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-    }
      #donation form{
         padding: 1rem;
      }
