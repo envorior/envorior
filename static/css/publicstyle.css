@@ -397,7 +397,12 @@
     .social-links{
         
     }
+
+    
      /* donation page style */
+     #donation{
+        width: 100%;
+     }
      #donation form{
         padding: 1rem;
      }
