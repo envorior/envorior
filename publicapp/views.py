@@ -17,3 +17,5 @@ def scam(request):
     return render(request,'scam.html')
 def terms(request):
     return render(request,'terms.html')
+def profile(request):
+    return render(request,'profile.html')

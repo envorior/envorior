@@ -412,14 +412,32 @@ footer {
 #donation form div {
   margin: 1rem 0rem;
 }
-#donation form .btn {
+/* #donation form .btn {
   height: 2.5rem;
   width: -webkit-fill-available;
-}
+} */
+
 /* aboutpage  style*/
 
 .about {
   padding: 2%;
 }
+
+   /* profile page style */
+   .profile .txt-1{
+    text-align: center;
+   }
+   .profile .user-profile{
+    display: flex;
+    justify-content: center;
+   }
+   .profile .user-profile .profile-img{
+    margin: 2rem;
+  height: 4rem;
+  width: 4rem;
+   }
+
+
+   
 
 /* ####################### Public Dashboard CSS ###################### */

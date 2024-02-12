@@ -43,12 +43,11 @@
         <!-- this is for responsive -->
         <div class="right-responsive">
           <div class="user-profile">
-            <a
-              ><img
+            <a href="{%url 'publicapp:profile'%}"><img
                 class="profile-img"
                 src="{% static 'img/user.jpeg' %}"
-                alt=""
-            /></a>
+                alt=""/>
+              </a>
           </div>
 
           <div class="other-settings">
@@ -70,12 +69,12 @@
 
       <div class="right">
         <div class="user-profile">
-          <a
-            ><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""
-          /></a>
+          <a href="{%url 'publicapp:profile'%}">
+            <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
+          </a>
           <div class="profile-txt">
-            <a href="" class="txt-2"><p>User Profile</p></a>
-            <a href="" class="txt-3"><p>@user</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
           </div>
         </div>
 
@@ -142,6 +141,16 @@
             >
               <span class="txt-2"><i class="fa-solid fa-house"></i></span>
               <span class="txt-2">Home</span>
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="{%url 'publicapp:profile'%}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2">Profile</span>
             </a>
           </div>
 
@@ -231,21 +240,20 @@
                 alt=""
             /></a>
             <div class="profile-txt">
-              <a href="" class="txt-2"><p>User Profile</p></a>
-              <a href="" class="txt-3"><p>@user</p></a>
+              <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
+              <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
             </div>
           </div>
 
           <div class="user-profile">
-            <a
-              ><img
+            <a href="{%url 'publicapp:profile'%}"><img
                 class="profile-img"
                 src="{% static 'img/user.jpeg' %}"
-                alt=""
-            /></a>
+                alt=""/>
+              </a>
             <div class="profile-txt">
-              <a href="" class="txt-2"><p>User Profile</p></a>
-              <a href="" class="txt-3"><p>@user</p></a>
+              <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
+              <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
             </div>
           </div>
         </div>

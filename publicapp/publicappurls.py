@@ -10,5 +10,6 @@ urlpatterns = [
     path('policy/',views.policy,name='policy'),
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
+    path('profile/',views.profile,name='profile'),
     
 ]
