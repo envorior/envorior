@@ -17,12 +17,12 @@
     <!-- BOOTSTRAP CDN -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
     <!-- JS FILE -->
-    <script src="{% static 'js/style.js' %}"></script>
+    <script src="{% static 'js/publicscript.js' %}"></script>
     <!-- CSS FILE  -->
     <link rel="stylesheet" href="{% static 'css/publicstyle.css' %}" />
   </head>
 
-  <body>
+  <body class="body">
     <!-- header -->
     <header>
       <!--logo and search-->
@@ -50,7 +50,7 @@
               </a>
           </div>
 
-          <div class="other-settings">
+          <div class="other-settings" onclick="other_settings()">
             <img class="" src="{% static 'img/grid.png' %}" alt="" />
           </div>
         </div>
@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        <div class="other-settings">
+        <div class="other-settings" onclick="other_settings()">
           <img class="" src="{% static 'img/grid.png' %}" alt="" />
         </div>
       </div>
