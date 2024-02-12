@@ -1,3 +1,4 @@
+<<<<<<< HEAD:envorior/publicapp/templates/donation.html
 {% extends 'publicparent.html' %} {% load static %} {% block title %} Dashboard
 {% endblock title %} {%block content%}
 <div id="donation">
@@ -19,3 +20,26 @@
 </div>
 
 {% endblock %}
+=======
+{% extends 'publicparent.html' %} {% load static %} {% block title %} Dashboard
+{% endblock title %} {%block content%}
+<div id="donation">
+  <p class="txt-1">Donation</p>
+  <div style="object-fit: cover">
+    <img src="{% static 'img/donation.png' %}" height="100%" width="100%" />
+  </div>
+ 
+
+  <form>
+    <div class="search"><input type="text" placeholder=" Search " /></div>
+    <div class="search"><input type="text" placeholder=" Search " /></div>
+    <div class="search"><input type="text" placeholder=" Search " /></div>
+    <div class="search"><input type="text" placeholder=" Search " /></div>
+    <div class="search"><input type="text" placeholder=" Search " /></div>
+
+    <div class="btn"><button type="submit">Donate</button></div>
+  </form>
+</div>
+
+{% endblock %}
+>>>>>>> dfec71a3c126fad87b8a1f3853527e4c5d2c0fcc:publicapp/templates/donation.html
