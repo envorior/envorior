@@ -160,14 +160,3 @@ main {
   position: absolute;
   display: flex;
 }
-.left{
-  width: 25vw;
-  height: 4rem;
-  border:1px solid black;
-}
-
-.right{
-  width: 25vw;
-  height: 4rem;
-  border:1px solid red;
-}

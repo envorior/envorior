@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
-    <title>{% block title %} Document {% endblock title %}</title>
+    <title>{% block title %} Document {% endblock %}</title>
     <!-- FONT AWESOME CDN -->
 
     <link
@@ -50,22 +50,10 @@
                     </a>
                 </div>
       
-                <div class="other-settings">
-                  <img class="" src="{% static 'img/grid.png' %}" alt="" />
-                </div>
               </div>
             </div>
       
-            <!-- navbar search -->
-            <div class="middle">
-              <form>
-                <div class="search nav-search">
-                  <i class="fa fa-search" style="font-size: 18px; margin-left: 1rem">
-                  </i>
-                  <input type="text" placeholder=" Search " />
-                </div>
-              </form>
-            </div>
+        
       
             <div class="right">
               <div class="user-profile">
@@ -119,10 +107,92 @@
             </div>
         </header>
 
-        <main>
-            <div class="left"></div>
-            <div class="right"></div>
-        </main>
-        
+      
+    <main style="width: 100%;">
+      <!-- left bar -->
+
+      <div class="publicleft">
+        <!--left top  -->
+        <div class="navlefttop logo">
+          <img class="logo-img" src="{% static 'img/trophy.png' %}" />
+
+          <div class="logo-txt">
+            <p class="txt-1" style="color: #000000">Reward</p>
+            <p class="txt-3">1000+</p>
+          </div>
+        </div>
+        <!-- left middle -->
+        <div class="navleftmiddle">
+          <div>
+            <a
+              href="{%url 'publicapp:publichome'%}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2">Home</span>
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="{%url 'publicapp:profile'%}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2">Profile</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{%url 'publicapp:donation'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-hand-holding-dollar"></i
+              ></span>
+              <span class="txt-2">Donation</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{%url 'publicapp:jobs'%}" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-briefcase"></i></span>
+              <span class="txt-2">Jobs</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="#" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-headset"></i></span>
+              <span class="txt-2">Help</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{%url 'publicapp:about'%}" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-circle-info"></i></span>
+              <span class="txt-2">About</span>
+            </a>
+          </div>
+        </div>
+        <!-- left bottom -->
+        <div class="navleftbottom">
+          <div>
+            <a
+              href="{%url 'publicapp:publichome'%}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-gear"></i></span>
+              <span class="txt-2">Settings</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="publicmiddle" style="width:100%;">{% block content %} {% endblock%}</div>
+
+      <!-- message and Top Envorior section -->
+
+   
+    </main>
 </body>
 </html>
