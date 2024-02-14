@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(('generalapp.generalappurls','generalapp'),namespace='generalapp')),
     path('',include(('publicapp.publicappurls','publicapp'),namespace='publicapp')),
-     path('',include(('serventapp.serventappurls','serventapp'),namespace='serventapp')),
+    path('',include(('serventapp.serventappurls','serventapp'),namespace='serventapp')),
 
 ]

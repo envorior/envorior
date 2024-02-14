@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 def dashboardparent(request):
     return render(request,'dashboardparent.html')
-<<<<<<< HEAD
 
 def servent(request):
     return render(request,'servent.html')
@@ -21,5 +20,4 @@ def notification(request):
 
 def rank(request):
     return render(request,'rank.html')
-=======
->>>>>>> 991c6d5e3b6da6d3b0ccf69dd09e2d45d3bd55ad
+
