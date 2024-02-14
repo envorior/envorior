@@ -1,0 +1,36 @@
+{% extends 'dashboardparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<div class="card" style="width:100%;">
+    <div class="card-body">
+        <div>
+            <input  type="search" placeholder="Search Here"/>
+            <button class="btn btn-primary" style="float:right;">Add Event/News</button>
+        </div>
+        <hr>
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Event Title</td>
+                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</td>
+                <td>12/03/2001</td>
+                <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+{% endblock %}
