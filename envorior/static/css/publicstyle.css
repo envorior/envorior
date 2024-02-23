@@ -407,6 +407,13 @@ footer {
 #donation {
   width: 100%;
 }
+
+#donation .img{
+  margin: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  height: 15rem;
+}
 #donation form {
   padding: 1rem;
 }
@@ -414,10 +421,10 @@ footer {
 #donation form div {
   margin: 1rem 0rem;
 }
-/* #donation form .btn {
+#donation form .btn {
   height: 2.5rem;
-  width: -webkit-fill-available;
-} */
+  margin: auto;
+}
 
 /* aboutpage  style*/
 
