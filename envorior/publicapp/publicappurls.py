@@ -11,5 +11,9 @@ urlpatterns = [
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
     path('profile/',views.profile,name='profile'),   
+    path('complain/',views.complain,name='complain'),   
+    path('followers/',views.followers,name='followers'),   
+    path('followings/',views.followings,name='followings'),   
+    path('notifications/',views.notifications,name='notifications'),   
 ]
 

@@ -1,0 +1,18 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Followers {% endblock title %}
+
+{% block content %}
+{% for i in "12345" %}
+<div class="user-profile">
+    <a href="{% url 'publicapp:profile' %}">
+      <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
+    </a>
+    <div class="profile-txt">
+      <a href="{% url 'publicapp:profile' %}" class="txt-2"><p>User Profile</p></a>
+      <a href="{% url 'publicapp:profile' %}" class="txt-3"><p>@user</p></a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

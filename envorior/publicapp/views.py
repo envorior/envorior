@@ -20,3 +20,11 @@ def terms(request):
     return render(request,'terms.html')
 def profile(request):
     return render(request,'profile.html')
+def complain(request):
+    return render(request,'complain.html')
+def followers(request):
+    return render(request,'followers.html')
+def followings(request):
+    return render(request,'followings.html')
+def notifications(request):
+    return render(request,'notifications.html')
