@@ -404,32 +404,32 @@ footer {
 .social-links {
 }
 
-/* donation page style */
-#donation {
+/* form-layout page style */
+#form-layout {
   width: 100%;
 }
 
-#donation .img{
+#form-layout .img{
   margin: auto;
   object-fit: cover;
   aspect-ratio: 1/1;
   height: 15rem;
 }
-#donation form {
+#form-layout form {
   padding: 1rem;
 }
 
-#donation form div {
+#form-layout form div {
   margin: 1rem 0rem;
 }
-#donation form .btn {
+#form-layout form .btn {
   height: 2.5rem;
   margin: auto;
 }
 
-/* aboutpage  style*/
+/* info-layoutpage  style*/
 
-.about {
+.info-layout {
   padding: 2%;
 }
 

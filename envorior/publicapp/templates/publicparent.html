@@ -186,15 +186,13 @@
           </div>
         </div>
         <!-- left bottom -->
-        <div class="navleftbottom">
+        <div class="navleftbottom" onclick="settings()">
           <div>
-            <a
-              href="{%url 'publicapp:publichome'%}"
-              class="text-decoration-none"
-            >
+           
+              
               <span class="txt-2"><i class="fa-solid fa-gear"></i></span>
               <span class="txt-2">Settings</span>
-            </a>
+         
           </div>
         </div>
       </div>
@@ -207,45 +205,8 @@
       <div class="publicright">
         <div class="box">
           <p class="txt-1">Top envorior</p>
-          <div class="user-profile">
-            <a
-              ><img
-                class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
-                alt=""
-            /></a>
-            <div class="profile-txt">
-              <a href="" class="txt-2"><p>User Profile</p></a>
-              <a href="" class="txt-3"><p>@user</p></a>
-            </div>
-          </div>
-
-          <div class="user-profile">
-            <a
-              ><img
-                class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
-                alt=""
-            /></a>
-            <div class="profile-txt">
-              <a href="" class="txt-2"><p>User Profile</p></a>
-              <a href="" class="txt-3"><p>@user</p></a>
-            </div>
-          </div>
-
-          <div class="user-profile">
-            <a
-              ><img
-                class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
-                alt=""
-            /></a>
-            <div class="profile-txt">
-              <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
-              <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
-            </div>
-          </div>
-
+      
+            {%for i in "12345"%}
           <div class="user-profile">
             <a href="{%url 'publicapp:profile'%}"><img
                 class="profile-img"
@@ -257,6 +218,7 @@
               <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
             </div>
           </div>
+          {%endfor%}
         </div>
         <div class="box">
           <a href="{%url 'publicapp:about'%}"><p class="txt-2">About us</p></a>
