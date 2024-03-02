@@ -25,7 +25,11 @@
         <form action="{% url 'generalapp:login' %}" method="POST" class="form w-75 mx-auto mt-4">
             {% csrf_token %}
             <div class="row">
+<<<<<<< HEAD
               <input type="text" class="form-control mt-3 w-75 mx-auto" name="email" placeholder="Email Address "/>
+=======
+              <input type="text" class="form-control mt-3 w-75 mx-auto" name="username" placeholder="Email Address/User Name "/>
+>>>>>>> 1c239607f22fe8c0decd8b5d29d10a429c48233f
             </div>
             <div class="row">
               <input type="password" class="form-control mt-3 w-75 mx-auto" name="password" placeholder="Password"/>

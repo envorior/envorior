@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from generalapp.models import Profile,User
 
@@ -8,6 +9,14 @@ def publichome(request):
     profile = Profile.objects.filter(user__email=email)
     return render(request,'publichome.html',locals())
 
+=======
+
+from django.shortcuts import render
+
+# Create your views here.
+def publichome(request):
+    return render(request,'publichome.html')
+>>>>>>> 1c239607f22fe8c0decd8b5d29d10a429c48233f
 def about(request):
     return render(request,'about.html')
 def contact(request):
