@@ -1,0 +1,92 @@
+{% extends 'generalparent.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block body %}
+<!-- container -->
+<div class="generalmain">
+    <!-- left box -->
+    <div class="regleftbox">
+        {% if msg %}
+          <h1 >{{msg}}</h1>
+        {% else %}
+          <h1 >Register as Environment warrior</h1>
+        {% endif %}
+
+        <!-- registration form -->
+        <form action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
+            {% csrf_token %}
+
+            <div class="row mt-3 ">
+                <div class="col-sm-6">
+                    <input type="text" name="email" placeholder="Email address" class="form-control" />
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="contact_no" placeholder="Contact no." class="form-control" />
+                </div>
+              </div>
+
+          <div class="row mt-2 ">
+            <div class="col-sm-12">
+                <input type="text" name="full_name" class="form-control" placeholder="Enter Full Name name">
+            </div>
+          </div>
+          <div class="row mt-2 fs-6">
+            <div class="col-sm-12">
+                <input type="date" name="dob" class="form-control" >
+            </div>
+          </div>
+
+          <div class="row mt-2 fs-6">
+            <div class="col-sm-12">
+                <select name="state" class="form-control" id="">
+                    <option selected >---Your State ---</option>
+                    <option value="UP">UP</option>
+                    <option value="MP">MP</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+            </div>
+          </div>
+          <div class="row mt-2 fs-6">
+            <div class="col-sm-6">
+                <select name="city" class="form-control" id="">
+                    <option selected >---Your City ---</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Gorakhpur">Gorakhpur</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" name="pin_code" placeholder="Pin Code" class="form-control" />
+            </div>
+          </div>
+
+          <div class="row mt-2 fs-6">
+            <div class="col-sm-6">
+                <input type="password" name="password" placeholder="Password" class="form-control" />
+            </div>
+            <div class="col-sm-6">
+                <input type="password" name="confirmpassword" placeholder="Confirm password" class="form-control" />
+            </div>
+          </div>
+
+          <div class="row my-4">
+            <div class="col-sm-12" style="text-align: center;">
+                <Button class="btn btn-warning w-80">Create an account</Button>
+            </div>
+          </div> 
+        </form>
+
+        <!-- already have an account -->
+        <div class="row text-center fs-5 mb-4">
+            <a href="{% url 'generalapp:login' %}" style="text-decoration:none;">Already a Environment Warrior/Login.</a>
+        </div>
+
+    </div>
+    <!-- right box -->
+    <div class="regrightbox">
+        <img src="{% static 'img/logo.png' %}" alt="">
+    </div>
+</div>
+{% endblock body %}

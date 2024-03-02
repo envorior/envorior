@@ -1,0 +1,89 @@
+         /* ############################# General Zone CSS   ###################33 */
+    
+     /* container for login */
+     .generalmain{
+        background-color:lightgray;
+        width:80%;
+        height:500px;
+        margin-top:70px;
+        border-radius:30px;
+        box-shadow: 2px ;
+        margin-left:10%;
+    }
+     /* login page css */
+    .loginleftbox{
+        height:100%;
+        width:50%;
+        border-radius:30px 0px 0px 30px;
+        float:left;
+    }
+    .loginleftbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
+    }
+    .loginrightbox{
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
+        background-color: white;
+    }
+    .loginrightbox img{
+        width:50%;
+        height:10%;
+        margin-top:7%;
+        margin-left:25%;
+    }
+    .loginrightbox h1{
+        margin-top:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size: 25px;
+    }
+    /* regostration page css */
+    .regleftbox{
+        height:100%;
+        width:50%;
+        background-color: rgb(89, 240, 124);
+        border-radius:30px 0px 0px 30px;
+        float:left;
+    }
+    .regrightbox{
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
+    }
+    .regrightbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
+    }
+    .regleftbox h1{
+        margin-top:30px;
+        margin-bottom:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size:30px;
+    }
+    
+    /* make registration page responsive for tablet*/
+    @media (min-width:401px) and (max-width:1169px) {
+        .regrightbox{
+            display: none;
+            height: auto;
+            
+        }
+        .regleftbox{
+            width:100%;
+            border-radius:30px;
+            height: auto;
+        }
+        .generalmain{
+            height: auto;
+        }
+    } 
+    
