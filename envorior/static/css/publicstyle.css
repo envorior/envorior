@@ -446,3 +446,20 @@ footer {
   height: 4rem;
   width: 4rem;
    }
+
+  .popupBackground{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9;
+    background-color: #0b7b38db;
+   }
+
+  .popup{
+   
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    position: fixed;
+    z-index: 10;
+    padding: 1rem;
+  }
