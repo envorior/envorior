@@ -115,10 +115,10 @@ function logout() {
   popup(top, left, height, width, html);
 }
 function post() {
-  let top = "20%";
-  let left = "20%";
-  let height = "70vh";
-  let width = "70vw";
+  let top = "25%";
+  let left = "25%";
+  let height = "50vh";
+  let width = "50vw";
   
   let html = `
   <div class="feed-post">
