@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
-    <title>{% block title %} Document {% endblock %}</title>
+    <title>{% block title %} My Title {% endblock %}</title>
     <!-- FONT AWESOME CDN -->
 
     <link
@@ -74,8 +74,7 @@
             <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
           </a>
           <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{profile.full_name}}</p></a>
           </div>
         </div>
 
@@ -130,7 +129,7 @@
 
           <div class="logo-txt">
             <p class="txt-1" style="color: #000000">Reward</p>
-            <p class="txt-3">1000+</p>
+            <p class="txt-3">{{profile.reward}}</p>
           </div>
         </div>
         <!-- left middle -->
