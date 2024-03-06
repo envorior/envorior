@@ -114,6 +114,7 @@ function logout() {
 </div>`;
   popup(top, left, height, width, html);
 }
+
 function post() {
   let top = "25%";
   let left = "25%";
@@ -121,31 +122,16 @@ function post() {
   let width = "50vw";
   
   let html = `
-  <div class="feed-post">
-  <div class="feed-header">
-     <div class="user-profile">
-        <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-        <div class="profile-txt">
-         <a href="" class="txt-2"><p>{{post.postedby.full_name}}</p></a>
-         <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
-         
-      </div>     
-            </div>
-  </div>
+  
 
   <form >
-  <div class="txt-box"><textarea type="text" rows="20" placeholder=" Message "></textarea></div>
+  <div class="txt-box"><textarea type="text" rows="10" placeholder=" Message "></textarea></div>
 
    <div class="search"><input type="file" placeholder=" Upload Media (Image) "><div class="btn"><button type="submit">Post</button></div></div>
    
    
 </form>
-
-
-   
   
-  </div>
-</div> 
   `;
   popup(top, left, height, width, html);
 }
