@@ -1,0 +1,23 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} post {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   <p class="txt-1">post</p> 
+   <!-- <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div> -->
+
+<form >
+    <div class="txt-box"><textarea type="text" rows="8" placeholder=" Message "></textarea></div>
+   <div class="search"><input type="file" placeholder=" Upload Media (Image) "></div>
+
+   <div class="btn"><button type="submit">Post Now</button></div>
+</form>
+ 
+</div>
+
+{% endblock %}
+

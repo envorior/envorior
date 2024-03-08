@@ -15,25 +15,27 @@ def publichome(request):
 
 def about(request):
     return render(request,'about.html')
+def complain(request):
+    return render(request,'complain.html')
 def contact(request):
     return render(request,'contact.html')
 def donation(request):
     return render(request,'donation.html')
-def jobs(request):
-    return render(request,'jobs.html')
-def policy(request):
-    return render(request,'policy.html')
-def scam(request):
-    return render(request,'scam.html')
-def terms(request):
-    return render(request,'terms.html')
-def profile(request):
-    return render(request,'profile.html')
-def complain(request):
-    return render(request,'complain.html')
 def followers(request):
     return render(request,'followers.html')
 def followings(request):
     return render(request,'followings.html')
+def jobs(request):
+    return render(request,'jobs.html')
 def notifications(request):
     return render(request,'notifications.html')
+def policy(request):
+    return render(request,'policy.html')
+def post(request):
+    return render(request,'post.html')
+def profile(request):
+    return render(request,'profile.html')
+def scam(request):
+    return render(request,'scam.html')
+def terms(request):
+    return render(request,'terms.html')

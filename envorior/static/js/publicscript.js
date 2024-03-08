@@ -115,26 +115,26 @@ function logout() {
   popup(top, left, height, width, html);
 }
 
-function post() {
-  let top = "25%";
-  let left = "25%";
-  let height = "50vh";
-  let width = "50vw";
+// function post() {
+//   let top = "25%";
+//   let left = "25%";
+//   let height = "50vh";
+//   let width = "50vw";
   
-  let html = `
+//   let html = `
   
 
-  <form >
-  <div class="txt-box"><textarea type="text" rows="10" placeholder=" Message "></textarea></div>
+//   <form >
+//   <div class="txt-box"><textarea type="text" rows="10" placeholder=" Message "></textarea></div>
 
-   <div class="search"><input type="file" placeholder=" Upload Media (Image) "><div class="btn"><button type="submit">Post</button></div></div>
+//    <div class="search"><input type="file" placeholder=" Upload Media (Image) "><div class="btn"><button type="submit">Post</button></div></div>
    
    
-</form>
+// </form>
   
-  `;
-  popup(top, left, height, width, html);
-}
+//   `;
+//   popup(top, left, height, width, html);
+// }
 
 
 
