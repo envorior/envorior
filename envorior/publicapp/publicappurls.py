@@ -16,5 +16,8 @@ urlpatterns = [
     path('publichome/',views.publichome,name='publichome'),
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
+
+    path('like/<int:id>/',views.like_post,name='like'), 
+    path('uploadpost/',views.uploadpost,name='uploadpost'),
 ]
 

@@ -10,9 +10,10 @@
        <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
       </div> -->
 
-<form >
-    <div class="txt-box"><textarea type="text" rows="8" placeholder=" Message "></textarea></div>
-   <div class="search"><input type="file" placeholder=" Upload Media (Image) "></div>
+<form action="{% url 'publicapp:uploadpost' %}" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="txt-box"><textarea type="text" name="caption" rows="8" placeholder=" Message "></textarea></div>
+   <div class="search"><input type="file" name="pimg" placeholder=" Upload Media (Image) "></div>
 
    <div class="btn"><button type="submit">Post Now</button></div>
 </form>
