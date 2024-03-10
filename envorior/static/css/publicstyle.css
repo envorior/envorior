@@ -131,7 +131,7 @@ header {
   background-color: var(--gray);
 }
 
-.search input[type="text"] {
+.search input[type="text"],input[type="number"]{
   flex: 1;
   border: none;
   outline: none;
@@ -425,6 +425,12 @@ footer {
 #form-layout form .btn {
   height: 2.5rem;
   margin: auto;
+}
+#form-layout form select  {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
 /* info-layoutpage  style*/

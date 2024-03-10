@@ -1,0 +1,33 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Job {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   <p class="txt-1" style="text-align: center;">Job</p> 
+   <!-- <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div> -->
+
+<form action="{% url 'publicapp:uploadpost' %}" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="search">
+    <select name="" id="">
+        <option selected >---Job Type ---</option>
+        <option value="UP">UP</option>
+        <option value="MP">MP</option>
+        <option value="Delhi">Delhi</option>
+    </select></div>
+    <div class="search"><input type="text" name="" placeholder=" required skill "></div>
+    <div class="search"><input type="number" name="" placeholder="salary"></div>
+    <div class="txt-box"><textarea type="text" name="" rows="8" placeholder=" Job descripton "></textarea></div>
+    <div class="search"><input type="text" name="" placeholder="Job location"></div>
+
+   <div class="btn"><button type="submit">Post Now</button></div>
+</form>
+ 
+</div>
+
+{% endblock %}
+
