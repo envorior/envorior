@@ -13,6 +13,7 @@ urlpatterns = [
     path('policy/',views.policy,name='policy'),
     path('post/',views.post,name='post'),
     path('postjob/',views.postjob,name='postjob'),
+    path('postdonation/',views.postdonation,name='postdonation'),
     path('profile/',views.profile,name='profile'),   
     path('publichome/',views.publichome,name='publichome'),
     path('scam/',views.scam,name='scam'),

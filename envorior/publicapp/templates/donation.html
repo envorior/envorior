@@ -7,15 +7,22 @@
   </div>
  
 
-  <form>
-    <div class="search"><input type="text" placeholder=" Search " /></div>
-    <div class="search"><input type="text" placeholder=" Search " /></div>
-    <div class="search"><input type="text" placeholder=" Search " /></div>
-    <div class="search"><input type="text" placeholder=" Search " /></div>
-    <div class="search"><input type="text" placeholder=" Search " /></div>
+ 
+<form action="#" method='POST'  enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="search">
+  <select name="" id="" >
+      <option selected >---Donation Type ---</option>
+      <option value="">Water</option>
+      <option value="">Cleaning</option>
+      <option value="">Garbage</option>
+  </select></div>
+  <div class="search"><input type="file" name="" placeholder=" Upload Media (Image) "></div>
+  <div class="txt-box"><textarea type="text" name="" rows="8" placeholder=" Donation descripton "></textarea></div>
+  <div class="search"><input type="text" name="" placeholder="Donar location"></div>
 
-    <div class="btn"><button type="submit">Donate</button></div>
-  </form>
+ <div class="btn"><button type="submit">Post Now</button></div>
+</form>
 </div>
 
 {% endblock %}

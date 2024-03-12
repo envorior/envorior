@@ -1,23 +1,28 @@
-{% extends 'publicparent.html' %}
-{% load static %}
-
-{% block title %} Complain {% endblock title %}
-
-{%block content%}
+{% extends 'publicparent.html' %} {% load static %} {% block title %} Dashboard
+{% endblock title %} {%block content%}
 <div id="form-layout">
-   <p class="txt-1">Complain</p> 
-   <div class ="img">
-       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
-      </div>
-
-<form >
-   <div class="search"><input type="text" placeholder=" Upload Media (Image/Video) "></div>
-   <div class="txt-box"><textarea type="text" rows="8" placeholder=" Message "></textarea></div>
-
-   <div class="btn"><button type="submit">Reporting Now</button></div>
-</form>
+  <p class="txt-1">complain</p>
+  <div class ="img">
+    <img src="{% static 'img/complain.png' %}" height="100%" width="100%" />
+  </div>
  
-</div>
 
+ 
+<form action="#" method='POST' enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="search">
+  <select name="" id=""  >
+      <option selected >---Complain Type ---</option>
+      <option value="">Water</option>
+      <option value="">Cleaning</option>
+      <option value="">Garbage</option>
+  </select></div>
+  <div class="search"><input type="file" name="" placeholder=" Upload Media (Image) "></div>
+  <div class="txt-box"><textarea type="text" name="" rows="8" placeholder="  descripton "></textarea></div>
+  <div class="search"><input type="text" name="" placeholder="location"></div>
+
+ <div class="btn"><button type="submit">Post Now</button></div>
+</form>
+</div>
 {% endblock %}
 

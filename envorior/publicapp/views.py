@@ -87,6 +87,8 @@ def post(request):
     return render(request,'post.html')
 def postjob(request):
     return render(request,'postjob.html')
+def postdonation(request):
+    return render(request,'postdonation.html')
 def profile(request):
     return render(request,'profile.html')
 def scam(request):
