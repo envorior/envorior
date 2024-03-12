@@ -21,3 +21,20 @@ class Post(models.Model):
     postby=models.CharField(max_length=200)
     posteddate=models.CharField(max_length=30)
     reward = models.IntegerField()
+    
+
+class Job(models.Model):
+    j_id = models.BigAutoField(primary_key=True)
+    skill_required = models.TextField()
+    job_description=models.TextField()
+    job_type = models.CharField(max_length=200)
+    salary = models.IntegerField()
+    job_location = models.CharField(max_length=500)
+    job_by = models.CharField(max_length=500)
+    job_post_date = models.DateField()
+
+class Notification(models.Model):
+    n_msg = models.TextField()
+    notification_by = models.CharField(max_length=200) 
+    notification_to = models.CharField(max_length=200) 
+    notification_date = models.DateField()

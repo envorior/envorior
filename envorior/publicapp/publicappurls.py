@@ -20,5 +20,6 @@ urlpatterns = [
 
     path('like/<int:id>/',views.like_post,name='like'), 
     path('uploadpost/',views.uploadpost,name='uploadpost'),
+    path('uploadjob/',views.uploadjob,name='uploadjob'),
 ]
 

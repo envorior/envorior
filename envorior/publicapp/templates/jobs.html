@@ -16,44 +16,38 @@
       </form>
       <div class="btn" >
          <a href="{% url 'publicapp:postjob'%}">
-            <button type="submit">POST</button>
+            <button type="submit">POST Job</button>
          </a>
        </div>
    </div>
 
 
-{% for i in "12345" %}
+{% for job in jobs %}
 <div class="feed-post">
    <div class="feed-header" style="padding-right: 1rem;">
       <div class="user-profile">
          <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
          <div class="profile-txt">
-          <a href="" class="txt-2"><p>User Profile</p></a>
-          <a href="" class="txt-3"><p>@user</p></a>
+          <a href="" class="txt-2"><p>{{job.job_by}}</p></a>
+          <a href="" class="txt-3"><p>{{job.job_post_date}}</p></a>
        </div>    
-       </div> 
-       
+       </div>  
    </div>
    <div class="feed-content">
       <p class="txt-2">Job Type</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis susc.</p>
+      <p class="txt-3">{{job.job_type}}</p>
           
       <p class="txt-2">Required Skills</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis susc.kjhkjkjhkhkh</p>
+      <p class="txt-3">{{job.skill_required}}</p>
           
       <p class="txt-2">Salary</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis susc.</p>
+      <p class="txt-3">{{job.salary}}</p>
           
       <p class="txt-2">Job Description</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis susc.</p>
+      <p class="txt-3">{{job.job_description}}</p>
           
       <p class="txt-2">Job Location</p>
-      <p class="txt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti modi
-          blanditiis atque harum deleniti perferendis susc.</p>
+      <p class="txt-3">{{job.job_location}}</p>
           
            
    </div>

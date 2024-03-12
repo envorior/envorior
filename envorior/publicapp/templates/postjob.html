@@ -10,19 +10,19 @@
        <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
       </div> -->
 
-<form action="{% url 'publicapp:uploadpost' %}" method='POST' enctype="multipart/form-data">
+<form action="{% url 'publicapp:uploadjob' %}" method='POST' >
     {% csrf_token %}
     <div class="search">
-    <select name="" id="">
+    <select name="job_type" id="">
         <option selected >---Job Type ---</option>
-        <option value="">Security Guard</option>
-        <option value="">Sweeper</option>
-        <option value="">Cook</option>
+        <option value="Security Guard">Security Guard</option>
+        <option value="Sweeper">Sweeper</option>
+        <option value="Cook">Cook</option>
     </select></div>
-    <div class="search"><input type="text" name="" placeholder=" required skill "></div>
-    <div class="search"><input type="number" name="" placeholder="salary"></div>
-    <div class="txt-box"><textarea type="text" name="" rows="8" placeholder=" Job descripton "></textarea></div>
-    <div class="search"><input type="text" name="" placeholder="Job location"></div>
+    <div class="search"><input type="text" name="skill" placeholder=" required skill "></div>
+    <div class="search"><input type="number" name="salary" placeholder="salary"></div>
+    <div class="txt-box"><textarea type="text" name="description" rows="8" placeholder=" Job descripton "></textarea></div>
+    <div class="search"><input type="text" name="location" placeholder="Job location"></div>
 
    <div class="btn"><button type="submit">Post Now</button></div>
 </form>
