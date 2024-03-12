@@ -146,11 +146,19 @@
 
           <div>
             <a
-              href="{%url 'publicapp:profile'%}"
+              href="#"
               class="text-decoration-none"
             >
-              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-              <span class="txt-2">Profile</span>
+              <span class="txt-2"><i class="fa-solid fa-bell"></i></span>
+              <span class="txt-2">Notifications</span>
+            </a>
+          </div>
+
+          
+          <div>
+            <a href="{%url 'publicapp:jobs'%}" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-briefcase"></i></span>
+              <span class="txt-2">Jobs</span>
             </a>
           </div>
 
@@ -164,25 +172,42 @@
           </div>
 
           <div>
-            <a href="{%url 'publicapp:jobs'%}" class="text-decoration-none">
-              <span class="txt-2"><i class="fa-solid fa-briefcase"></i></span>
-              <span class="txt-2">Jobs</span>
+            <a href="#" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <span class="txt-2">Complain</span>
             </a>
           </div>
-
           <div>
             <a href="#" class="text-decoration-none">
-              <span class="txt-2"><i class="fa-solid fa-headset"></i></span>
-              <span class="txt-2">Help</span>
+              <span class="txt-2"
+                ><i class="fa-solid fa-credit-card"></i
+              ></span>
+              <span class="txt-2">Payment</span>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-user-secret"></i
+              ></span>
+              <span class="txt-2">Scam</span>
             </a>
           </div>
 
           <div>
-            <a href="{%url 'publicapp:about'%}" class="text-decoration-none">
-              <span class="txt-2"><i class="fa-solid fa-circle-info"></i></span>
-              <span class="txt-2">About</span>
+            <a
+              href="{%url 'publicapp:profile'%}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2">Profile</span>
             </a>
           </div>
+
+        
+
         </div>
         <!-- left bottom -->
         <div class="navleftbottom" onclick="settings()">
@@ -237,6 +262,20 @@
             ><p class="txt-2">Donations</p></a
           >
           <a href="{%url 'publicapp:jobs'%}"><p class="txt-2">Jobs</p></a>
+
+          <div>
+            <a href="#" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-headset"></i></span>
+              <span class="txt-2">Help</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{%url 'publicapp:about'%}" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-circle-info"></i></span>
+              <span class="txt-2">About</span>
+            </a>
+          </div>
         </div>
       </div>
 
