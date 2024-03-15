@@ -11,17 +11,17 @@
 <form action="#" method='POST'  enctype="multipart/form-data">
   {% csrf_token %}
   <div class="search">
-  <select name="" id="" >
+  <select name="donation_type" id="" >
       <option selected >---Donation Type ---</option>
-      <option value="">Water</option>
-      <option value="">Cleaning</option>
-      <option value="">Garbage</option>
+      <option value="books">Books</option>
+      <option value="cloths">Cloths</option>
+      <option value="food">Food</option>
   </select></div>
-  <div class="search"><input type="file" name="" placeholder=" Upload Media (Image) "></div>
-  <div class="txt-box"><textarea type="text" name="" rows="8" placeholder=" Donation descripton "></textarea></div>
-  <div class="search"><input type="text" name="" placeholder="Donar location"></div>
+  <div class="search"><input type="file" name="p_image" placeholder=" Upload Media (Image) "></div>
+  <div class="txt-box"><textarea type="text" name="description" rows="8" placeholder=" Donation descripton "></textarea></div>
+  <div class="search"><input type="text" name="location" placeholder="Donar location"></div>
 
- <div class="btn"><button type="submit">Post Now</button></div>
+ <div class="btn"><button type="submit">Donate Now</button></div>
 </form>
 </div>
 

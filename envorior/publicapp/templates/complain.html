@@ -11,15 +11,15 @@
 <form action="#" method='POST' enctype="multipart/form-data">
   {% csrf_token %}
   <div class="search">
-  <select name="" id=""  >
+  <select name="complain_type" id=""  >
       <option selected >---Complain Type ---</option>
-      <option value="">Water</option>
-      <option value="">Cleaning</option>
-      <option value="">Garbage</option>
+      <option value="Water Problem">Water</option>
+      <option value="Cleaning">Cleaning</option>
+      <option value="Garbage">Garbage</option>
   </select></div>
-  <div class="search"><input type="file" name="" placeholder=" Upload Media (Image) "></div>
-  <div class="txt-box"><textarea type="text" name="" rows="8" placeholder="  descripton "></textarea></div>
-  <div class="search"><input type="text" name="" placeholder="location"></div>
+  <div class="search"><input type="file" name="complain_image" placeholder=" Upload Media (Image) "></div>
+  <div class="txt-box"><textarea type="text" name="description" rows="8" placeholder="  descripton "></textarea></div>
+  <div class="search"><input type="text" name="location" placeholder="location"></div>
 
  <div class="btn"><button type="submit">Post Now</button></div>
 </form>

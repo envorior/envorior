@@ -30,7 +30,7 @@ class Job(models.Model):
     job_type = models.CharField(max_length=200)
     salary = models.IntegerField()
     job_location = models.CharField(max_length=500)
-    job_by = models.CharField(max_length=500)
+    job_by = models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
     job_post_date = models.DateField()
 
 class Notification(models.Model):
@@ -38,3 +38,26 @@ class Notification(models.Model):
     notification_by = models.CharField(max_length=200) 
     notification_to = models.CharField(max_length=200) 
     notification_date = models.DateField()
+
+class Donation(models.Model):
+    d_id=models.AutoField(primary_key=True)
+    donation_type=models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    donated_by=models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
+    product_image = models.ImageField(upload_to='donate_products',blank=True)
+    donar_location = models.CharField(max_length=300)
+
+class Complain(models.Model):
+    c_id=models.AutoField(primary_key=True)
+    complain_type=models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    complain_by=models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
+    complain_image = models.ImageField(upload_to='complain_images',blank=True)
+    complain_location = models.CharField(max_length=300)    
+
+class Notificaiton(models.Model):
+    n_id=models.AutoField(primary_key=True)
+    notification_by = models.ForeignKey(Profile,on_delete=models.CASCADE,blank=True,null=True)
+    notification_to = models.CharField(max_length=300)
+    notification_msg = models.TextField()
+    notification_date = models.DateField() 
