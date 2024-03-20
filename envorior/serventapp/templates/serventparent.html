@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>{% block title %} My Title {% endblock %}</title>
+    <!-- FONT AWESOME CDN -->
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+    <!-- BOOTSTRAP CDN -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <!-- JS FILE -->
+    <!-- <script src="{% static 'js/publicscript.js' %}"></script> -->
+    <!-- CSS FILE  -->
+    <!-- <link rel="stylesheet" href="{% static 'css/publicstyle.css' %}" /> -->
+    <style>
+      
+      body{
+        margin:0 ;
+        padding: 0;
+      }
+     .container {
+    position: relative;
+    margin: auto;
+    max-width: 1280px;
+    height: 100vh;
+}
+header {
+    top: 0.5rem;
+    max-width: 1280px;
+    position: absolute;
+    width: 100%;
+    height: 3.8rem;
+    border: 1px solid black;
+}
+main {
+    top: 4.45rem;
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    border: 1px solid black;
+}
+main .left {
+    
+    height: 80vh;
+    width: 20%;
+    position: absolute;
+    border: 1px solid black;
+}
+main .right {
+    
+    height: 80vh;
+    width: 80%;
+    position: absolute;
+    border: 1px solid black;
+}
+      footer{
+        bottom: 1rem;
+        height: 3.8rem;
+        width: 100%;
+        position: absolute;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+<body>
+  <div class="container">
+    <header>
+
+    </header>
+    <main>
+    <div class="left"></div>
+    <div class="right"></div>
+    </main>
+    <footer>
+    
+    </footer>
+  </div>
+
+</body>
+ 
+</html>
+

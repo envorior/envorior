@@ -1,12 +1,12 @@
 from django.urls import path
 from .import views
 urlpatterns = [
-    path('dashboardparent/',views.dashboardparent,name='dashboardparent'),
+    path('servent-dashboard/',views.serventparent,name='serventparent'),
     path('servent/',views.servent,name='servent'),
-    path('post/',views.post,name='post'),
-    path('event/',views.event,name='event'),
-    path('serventprofile/',views.serventprofile,name='serventprofile'),
-    path('notification/',views.notification,name='notification'),
-    path('rank/',views.rank,name='rank'),
+    path('servent-post/',views.post,name='post'),
+    path('servent-event/',views.event,name='event'),
+    path('servent-serventprofile/',views.serventprofile,name='serventprofile'),
+    path('servent-notification/',views.notification,name='notification'),
+    path('servent-rank/',views.rank,name='rank'),
 ]
 

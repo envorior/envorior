@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-def dashboardparent(request):
-    return render(request,'dashboardparent.html')
+def serventparent(request):
+    return render(request,'serventparent.html')
 
 def servent(request):
     return render(request,'servent.html')
