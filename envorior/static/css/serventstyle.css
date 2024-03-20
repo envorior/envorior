@@ -216,7 +216,7 @@ main {
 
 .publicmiddle {
   height: 90vh;
-  width: 50vw;
+  width: 75vw;
   overflow: auto;
   scrollbar-width: none;
   background-color: var(--lightgray);
@@ -490,3 +490,32 @@ footer {
     z-index: 10;
     padding: 1rem;
   }
+
+
+
+
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
