@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-/* ######################     PUBLIC ZONE CSS      ######################## */
+/* ######################     SERVENT ZONE CSS      ######################## */
 
 
 
@@ -59,7 +59,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 2.5rem;
   width: 5rem;
   border-radius: var(--border-radius);
   background-color: var(--green);
@@ -166,11 +166,10 @@ main {
   display: flex;
 }
 .publicleft {
-  width: 25vw;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 .navlefttop {
   margin: 0.5rem;
@@ -215,8 +214,9 @@ main {
 }
 
 .publicmiddle {
+  padding: 1rem;
   height: 90vh;
-  width: 75vw;
+  width: 78vw;
   overflow: auto;
   scrollbar-width: none;
   background-color: var(--lightgray);
@@ -235,7 +235,7 @@ main {
   background-color: var(--white);
   display: flex;
   align-items: center;
-  margin: 1rem 0rem 0rem 0rem;
+  /* margin: 1rem 0rem 0rem 0rem; */
   width: 99%;
   height: 4rem;
 }

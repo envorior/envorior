@@ -7,8 +7,95 @@
 
 <div class="feed">
  
+   <table>
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in "1223"%}
+        <tr>
+          <td>1</td>
+          <td>News</td>
+          <td>Lorem Ipsum</td>
+          <td>xyz@gmail.com</td>
+          <td>12/03/2001</td>
+          <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+
+    {% for i in "1234567" %}
+<div class="feed-post">
+   <div class="feed-header">
+      <div class="user-profile">
+         <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+         <div class="profile-txt">
+          <a href="" class="txt-2"><p>random text</p></a>
+          <a href="" class="txt-3"><p>random text</p></a>
+          
+       </div>     
+             </div>
+   </div>
+   <div class="feed-content">
+      <p class="txt-3">random text</p>
+           <div style="object-fit: cover;">
+            <img src="{{post.postimage.url}}" height="100%" width="100%">
+           </div>
+           
+   </div>
+   <div class="feed-footer">
+     
+      <a href="#" class="text-decoration-none">
+      
+         <span class="txt-1">Solved/Unsolved</span>
+     </a>
+   </div>
+</div>
+{% endfor %}
+
+
+
+
+<table>
+   <thead>
+     <tr>
+       <th>Serial No.</th>
+       <th>Type</th>
+       <th>Name</th>
+       <th>Email</th>
+       <th>Date</th>
+       <th>Action</th>
+     </tr>
+   </thead>
+   <tbody>
+     {% for i in "12234566778"%}
+     <tr>
+       <td>1</td>
+       <td>News</td>
+       <td>Lorem Ipsum</td>
+       <td>xyz@gmail.com</td>
+       <td>12/03/2001</td>
+       <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-trash-can"></i></td>
+     </tr>
+     {% endfor %}
+     
+   </tbody>
+ </table>
+
+
  
-{% for post in post %}
+ 
+{% for i in "12" %}
+
 <div class="feed-post">
    <div class="feed-header">
       <div class="user-profile">
