@@ -76,13 +76,17 @@ a {
 header {
   width: 100%;
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
-.logo,
+.logo
+{
+  display: flex;
+  align-items: center;
+}
+
 .user-profile {
   display: flex;
-
   align-items: center;
 }
 .logo-img {
@@ -126,12 +130,14 @@ header {
   height: 2.5rem;
   display: flex;
   align-items: center;
-  border: none;
+  border: 1px solid var(--gray);
   border-radius: var(--border-radius);
-  background-color: var(--gray);
+  background: transparent;
 }
 
 .search input[type="text"],input[type="number"]{
+  padding: 0rem 1rem 0rem 1rem;
+  height: 2.5rem;
   flex: 1;
   border: none;
   outline: none;
@@ -140,7 +146,6 @@ header {
 
 .txt-box{
     width: 100%;
-    
     display: flex;
     align-items: center;
     border: none;
@@ -166,14 +171,20 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
+
 }
 .navlefttop {
   margin: 0.5rem;
-  width: 15vw;
-  height: 4rem;
+  width: 12vw;
+  height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
+}
+.navlefttop .logo-img{
+  margin-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+  aspect-ratio: 1/1;
 }
 
 .navleftmiddle {
@@ -181,7 +192,7 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  width: 15vw;
+  width: 12vw;
   border-radius: var(--border-radius);
   background-color: var(--white);
 }
@@ -195,8 +206,8 @@ main {
 
 .navleftbottom {
   margin: 0.5rem;
-  width: 15vw;
-  height: 4rem;
+  width: 12vw;
+  height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
 }
@@ -216,7 +227,6 @@ main {
 .feed {
   display: flex;
   height: fit-content;
-
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -281,17 +291,32 @@ main {
 
 
 .box {
+  position: relative;
   margin-top: 0.5rem;
   flex: 1;
-  width: 20vw;
+  width: 18vw;
   border-radius: var(--border-radius);
   background-color: var(--white);
+
+}
+.box .box-header{
+  position: absolute;
+  top:1rem;
+  left: 2rem;
+}
+
+.box .box-main{
+  height: -webkit-fill-available;
+  position: absolute;
+  width: 100%;
+  top:3rem;
+  left: 1rem;
   overflow: auto;
   scrollbar-width: none;
 }
-
-.box .user-profile,.box .txt-1{
+.box .user-profile{
   margin: 1rem;
+  border-bottom: 1px solid var(--lightgray);
 }
 
 
