@@ -1,25 +1,38 @@
-{% extends 'publicparent.html' %} {% load static %} {% block title %} Dashboard
-{% endblock title %} {%block content%}
-<div id="form-layout" class="profile">
-  <p class="txt-1">Profile</p>
-  <div class="user-profile">
-    <a href="{%url 'publicapp:profile'%}">
-      <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
-      </a>
+{% extends 'publicparent.html' %} {% load static %} 
+{% block title %} Profile{% endblock title %} 
+{%block content%}
+<div class="profile">
+  
+  <div class="upper">
+    <div class="items">
+      <div class="user-profile">
+        <a href="{%url 'publicapp:profile'%}">
+          <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
+          </a>
+      </div>
+      <p class="txt-2">User Name</p>
+    </div>
+    <div class="items">
+      <p class="txt-2">15</p>
+      <p class="txt-2">Follower</p>
+    </div>
+    <div class="items">
+      <p class="txt-2">16</p>
+      <p class="txt-2">Following</p>
+    </div>
+  </div>
+  <div class="lower">
+    <div class="items">
+      <div class="btn-2"><button type="submit">Post</button></div>
+    </div>
+    <div class="items">
+      <div class="btn-2"><button type="submit">Complain</button></div>
+    </div>
+    <div class="items">
+      <div class="btn-2"><button type="submit">Jobs</button></div>
+    </div>
   </div>
 
-
-  <form>
-    <div class="search"><input type="text" placeholder=" Profile Picture " />  <div class="btn"><button type="submit">Change</button></div></div>
-    <div class="search"><input type="text" placeholder=" Raj " />  </div>
-    <div class="search"><input type="text" placeholder=" raj@gmail.com " />  </div>
-    <div class="search"><input type="text" placeholder=" 11/04/2003 " />  </div>
-    <div class="search"><input type="text" placeholder=" Male " />  </div>
-    <div class="search"><input type="text" placeholder="+91 9555321540 " />  </div>
-    <div class="search"><input type="text" placeholder=" Password " />  <div class="btn"><button type="submit">Change</button></div></div>
- 
-   
-  </form>
 </div>
 
 {% endblock %}

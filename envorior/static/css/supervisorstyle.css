@@ -72,6 +72,26 @@
     outline: none;
     background: transparent;
   }
+  .btn-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 5rem;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    box-shadow: 1px 2px 10px rgba(red, green, blue, alpha);
+    /* background-color: var(--green); */
+  }
+  
+  .btn-2 button {
+    color: var(--white);
+    border: none;
+    background: none;
+    outline: none;
+    background: transparent;
+  }
+
   header {
     width: 100%;
     position: absolute;
