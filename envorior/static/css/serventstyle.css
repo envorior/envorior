@@ -214,20 +214,23 @@ main {
 }
 
 .publicmiddle {
-  padding: 1rem;
+  /* padding: 1rem; */
   height: 90vh;
-  width: 78vw;
+  width: 80vw;
   overflow: auto;
   scrollbar-width: none;
   background-color: var(--lightgray);
 }
 
 .feed {
+  margin: auto;
+  width: 99%;
   display: flex;
   height: fit-content;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* align-content: center; */
+  /* align-items: center; */
 }
 
 .feed-search {
@@ -248,8 +251,12 @@ main {
 }
 
 .feed-post {
-  width: 99%;
-  margin: 1rem 0rem 0rem;
+  padding: ;
+  margin: 1rem;
+  /* width: 400px; */
+  max-width: 30%;
+  min-width: 400px;
+  margin: 1rem;
 }
 
 .feed-header {
@@ -502,7 +509,8 @@ footer {
 }
 
 table {
-    width: 100%;
+    margin: auto;
+    width: 99%;
     border-collapse: collapse;
 }
 
