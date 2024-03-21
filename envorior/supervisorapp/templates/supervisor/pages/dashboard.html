@@ -1,0 +1,38 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+
+<div class="feed">
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:dashboard'%}">Home</a>
+</div>
+    
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:notification'%}">Notification</a>
+</div>
+    
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:complain'%}">Complain</a>
+</div>
+    
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:addservent'%}">Add Event</a>
+</div>
+    
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:rank'%}">Top Social person</a>
+</div>
+    
+<div class="dashboard-links">
+<a class="txt-1" href="{%url 'supervisorapp:event'%}">Top News/Event</a>
+</div>
+
+</div>
+
+
+
+{% endblock %}
+

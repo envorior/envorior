@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'publicapp',
     'generalapp',
     'serventapp',
+    'supervisorapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

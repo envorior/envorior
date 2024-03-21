@@ -24,5 +24,6 @@ urlpatterns = [
     path('',include(('generalapp.generalappurls','generalapp'),namespace='generalapp')),
     path('',include(('publicapp.publicappurls','publicapp'),namespace='publicapp')),
     path('',include(('serventapp.serventappurls','serventapp'),namespace='serventapp')),
+    path('',include(('supervisorapp.supervisorappurls','supervisorapp'),namespace='supervisorapp')),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

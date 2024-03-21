@@ -1,0 +1,54 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Add event {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   <p class="txt-1">Add Event</p> 
+   <!-- <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div> -->
+
+<form action="#" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="search"><input type="text" name="email" placeholder=" Email "></div>
+    <div class="search"><input type="password" name="password" placeholder=" Enter password"></div>
+    <div class="search"><input type="number" name="number" placeholder=" Enter number"></div>
+
+    <div class="search">
+        <select name="department_type" id="">
+            <option selected >---Department Type ---</option>
+            <option value="Water">Water</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Education">Education</option>
+            <option value="Leagal">Leagal</option>
+        </select></div>
+
+    <div class="search">
+        <select name="city" id="">
+            <option selected >---Select City ---</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Noida">Noida</option>
+            <option value="Pune">Pune</option>
+        </select></div>
+
+    <div class="search">
+        <select name="state" id="">
+            <option selected >---Select state---</option>
+            <option value="UP">U.P.</option>
+            <option value="MP">M.P.</option>
+            <option value="Goa">Goa</option>
+            <option value="Punjab">Punjab</option>
+        </select></div>
+        <div class="search"><input type="number" name="number" placeholder=" Enter pincode"></div>
+   <div class="search"><input type="file" name="pimg" placeholder=" Upload Media (Image) "></div>
+
+   <div class="btn"><button type="submit">Add Now</button></div>
+</form>
+ 
+</div>
+
+{% endblock %}
+

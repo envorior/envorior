@@ -1,0 +1,60 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Complains {% endblock title %}
+
+{%block content%}
+
+<div class="feed">
+   <div class=" feed-search">
+   <div class="user-profile">
+      <a>
+         <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
+          </div>       
+      <form >
+         <div class="search">
+            <input type="text" placeholder="write here to search something">
+         </div>
+          
+      </form>
+      <!-- <div class="btn">
+         <a href="{% url 'supervisorapp:complain'%}">
+         <button type="submit">POST</button>
+      </a>
+       </div> -->
+   </div>
+ 
+ 
+{% for i in "1234567" %}
+<div class="feed-post">
+   <div class="feed-header">
+      <div class="user-profile">
+         <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+         <div class="profile-txt">
+          <a href="" class="txt-2"><p>random text</p></a>
+          <a href="" class="txt-3"><p>random text</p></a>
+          
+       </div>     
+             </div>
+   </div>
+   <div class="feed-content">
+      <p class="txt-3">random text</p>
+           <div style="object-fit: cover;">
+            <img src="{{post.postimage.url}}" height="100%" width="100%">
+           </div>
+           
+   </div>
+   <div class="feed-footer">
+     
+      <a href="#" class="text-decoration-none">
+      
+         <span class="txt-1">Solved/Unsolved</span>
+     </a>
+   </div>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
