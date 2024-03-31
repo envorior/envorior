@@ -9,8 +9,13 @@
    <div class=" feed-search">
    <div class="user-profile">
       <a>
-         <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
-          </div>       
+         {% if current_user_details.profile_picture %} 
+              <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
+            {% else %}
+              <a href=""><img class="profile-img" src="" alt=""/> </a>
+         {% endif %}
+      </a>   
+    </div>       
       <form >
          <div class="search">
             <input type="text" placeholder="write here to search something">
@@ -25,34 +30,47 @@
    </div>
  
  
-{% for i in "1234567" %}
-<div class="feed-post">
-   <div class="feed-header">
-      <div class="user-profile">
-         <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
-         <div class="profile-txt">
-          <a href="" class="txt-2"><p>random text</p></a>
-          <a href="" class="txt-3"><p>random text</p></a>
-          
-       </div>     
-             </div>
+   {% for c in complain %}
+   <div class="feed-post">
+      <div class="feed-header">
+         <div class="user-profile">
+            {% if c.complain_by.profile_picture %} 
+                 <a href=""><img class="profile-img" src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+                 <a href=""><img class="profile-img" src="" alt=""/> </a>
+            {% endif %} 
+        </div>
+            <div class="profile-txt">
+             <a href="" class="txt-2"><p>complaints type : {{c.complain_type}}</p></a>
+             <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a>
+             
+            </div>     
+                </div>
+      </div>
+      <div class="feed-content">
+         <p class="txt-3">description: {{c.description}}</p>
+         <p class="txt-3">location: {{c.complain_location}}</p>
+              <div style="object-fit: cover;">
+                  {% if c.complain_image %} 
+                     <a href=""><img src="{{ c.complain_image.url }}" alt=""/> </a>
+                  {% else %}
+                     <a href=""><img  src="" alt=""/> </a>
+                  {% endif %}
+              </div>
+              
+      </div>
+      <div class="feed-footer">
+        
+         <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none">
+          {% if c.complain_status == 'solved' %}
+            <span class="txt-1" style="background-color: rgb(58, 214, 19);" >Solved</span>
+          {% else %} 
+            <span class="txt-1" style="background-color: red;" >Unsolved</span> 
+          {% endif %}
+        </a>
+      </div>
    </div>
-   <div class="feed-content">
-      <p class="txt-3">random text</p>
-           <div style="object-fit: cover;">
-            <img src="{{post.postimage.url}}" height="100%" width="100%">
-           </div>
-           
-   </div>
-   <div class="feed-footer">
-     
-      <a href="#" class="text-decoration-none">
-      
-         <span class="txt-1">Solved/Unsolved</span>
-     </a>
-   </div>
-</div>
-{% endfor %}
+   {% endfor %}
 </div>
 
 

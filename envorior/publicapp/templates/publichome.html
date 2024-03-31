@@ -8,20 +8,26 @@
 <div class="feed">
    <div class=" feed-search">
    <div class="user-profile">
-      <a>
-         <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
-          </div>       
+      <!-- get profile picture of user -->
+         {% if current_user_details.profile_picture %}
+         <a href="{%url 'publicapp:profile'%}">
+         <img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/>
+         </a>
+         {% else %}
+         <a href="{%url 'publicapp:profile'%}">
+         <img class="profile-img" src="" alt=""/>
+         </a>
+         {% endif %} 
+   </div>       
       <form >
          <div class="search">
-            <input type="text" placeholder="write here to search something">
+            <input type="text" placeholder="write here something to Post">
          </div>
           
       </form>
-      <div class="btn">
-         <a href="{% url 'publicapp:post'%}">
-         <button type="submit">POST</button>
-      </a>
-       </div>
+      <a href="{% url 'publicapp:post'%}"><button class="btn btn-primary">Post</button></a>
+     
+    
    </div>
  
  
@@ -29,9 +35,18 @@
 <div class="feed-post">
    <div class="feed-header">
       <div class="user-profile">
-         <a><img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>
+         <!-- get profile picture of postby -->
+               {% if post.postby.profile_picture %}
+               <a href="{%url 'publicapp:profile'%}">
+               <img class="profile-img" src="{{ post.postby.profile_picture.url }}" alt=""/>
+               </a>
+               {% else %}
+               <a href="{%url 'publicapp:profile'%}">
+               <img class="profile-img" src="" alt=""/>
+               </a>
+               {% endif %}
          <div class="profile-txt">
-          <a href="" class="txt-2"><p>{{post.postby}}</p></a>
+          <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a>
           <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
           
        </div>     
@@ -46,17 +61,21 @@
    </div>
    <div class="feed-footer">
        <a href="/like/{{post.pid}}" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-         <span class="txt-3">reward ({{post.reward}})</span>
+         <img class="logo-img" src="{% static 'img/trophy.png' %}" />
+        
      </a>
-      <a href="#" class="text-decoration-none">
+       <a href="/like/{{post.pid}}" class="text-decoration-none">
+        
+         <span class="txt-1">Reward {{post.likes.count}}</span>
+     </a>
+      <!-- <a href="#" class="text-decoration-none">
          <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
          <span class="txt-3">comment</span>
      </a>
       <a href="#" class="text-decoration-none">
          <span class="txt-2"><i class="fa-solid fa-share"></i></span>
          <span class="txt-3">share</span>
-     </a>
+     </a> -->
    </div>
 </div>
 {% endfor %}

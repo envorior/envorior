@@ -25,30 +25,39 @@
   </div>
   <hr>
   <table>
-      <thead>
-        <tr>
-          <th>Serial No.</th>
-          <th>Type</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for i in "12234566778"%}
-        <tr>
-          <td>1</td>
-          <td>News</td>
-          <td>Lorem Ipsum</td>
-          <td>xyz@gmail.com</td>
-          <td>12/03/2001</td>
-          <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-trash-can"></i></td>
-        </tr>
-        {% endfor %}
+    <thead>
+      <tr>
+        <th>Serial No.</th>
+        <th>Profile Image</th>
+        <th>Name</th>
+        <th>Contact number</th>
+        <th>City</th>
+        <th>Reward</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in top_envorior %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>
+          <div class="user-profile">
+            {% if t.profile.profile_picture %} 
+                 <a href=""><img class="profile-img" src="{{ t.profile.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+                 <a href=""><img class="profile-img" src="" alt=""/> </a>
+            {% endif %} 
+          </div>
+        </td>
+        <td>{{t.profile.full_name}}</td>
+        <td>{{t.profile.contact_no}}</td>
+        <td>{{t.profile.city}}</td>
+        <td>{{t.reward}}</td>
         
-      </tbody>
-    </table>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
 </div>
 {% endblock %}
 

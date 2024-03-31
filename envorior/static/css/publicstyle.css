@@ -13,6 +13,7 @@
   --green: #0b7b38;
 
   --border-radius: 0.25rem;
+  --border-radius2: 5rem;
 }
 
 * {
@@ -56,48 +57,41 @@ a {
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  width: 5rem;
-  border-radius: var(--border-radius);
-  background-color: var(--green);
-}
-
-.btn button {
-  color: var(--white);
-  border: none;
-  background: none;
-  outline: none;
-  background: transparent;
-}
-
-.btn-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2.5rem;
-  width: 7rem;
-  border: 1px solid var(--green);
+  border: 0.01rem solid var(--green);
+  background-color: white;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
   border-radius: 5rem;
-  box-shadow: 1px 2px 10px rgba(red, green, blue, alpha);
-  /* background-color: var(--green); */
-}
-.btn-2:hover{
-  background-color: var(--green);
+  box-shadow: 0 2px 4px 0 var(--gray);
 }
 
-.btn-2 button {
+.btn-primary {
+  background-color: var(--green);
+  color: white;
+ 
+}
+
+.btn-primary:hover {
+  background-color: white;
+  border-color: var(--green);
   color: var(--green);
-  border: none;
-  background: none;
-  outline: none;
-  background: transparent;
+ 
 }
-.btn-2 button:hover{
-  color: var(--white);
+.btn-secondary {
+  border-color: var(--green);
+  color: var(--green);
+  
 }
+
+.btn-secondary:hover {
+  background-color: var(--green);
+  color: white;
+  
+}
+
+
 header {
   width: 100%;
   position: absolute;
@@ -123,7 +117,8 @@ header {
 }
 
 .profile-txt {
-  margin: 0rem 0rem 0rem 0.5rem;
+  min-height: 2.5rem;
+  margin: 0rem 0rem 0rem 1rem;
 }
 
 .profile-img {
@@ -152,11 +147,11 @@ header {
 }
 .search {
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   border: 1px solid var(--gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius2);
   background: transparent;
 }
 
@@ -187,7 +182,7 @@ header {
   }
 
 main {
-  top: 3rem;
+  top: 4rem;
   position: absolute;
   display: flex;
 }
@@ -223,11 +218,16 @@ main {
 }
 
 .navleftmiddle div {
-  margin: 0rem 0.5rem 0rem 0.5rem;
+  /* margin: 0rem 0.5rem 0rem 0.5rem; */
   padding: 0.5rem 0rem 0.5rem 1.5rem;
   height: 1.5rem;
   border-bottom: 0.5px solid var(--gray);
 }
+
+.navleftmiddle div .txt-2 {
+    margin-left: 1rem;
+}
+
 .navleftbottom {
   margin: 0.5rem;
   width: 12vw;
@@ -238,6 +238,10 @@ main {
 
 .navleftbottom div {
   margin: 1rem 0rem 0rem 2rem;
+}
+
+.navleftbottom div .txt-2 {
+  margin-left: 1rem;
 }
 
 .publicmiddle {
@@ -257,13 +261,17 @@ main {
 }
 
 .feed-search {
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius2);
   background-color: var(--white);
   display: flex;
   align-items: center;
   margin: 1rem 0rem 0rem 0rem;
   width: 99%;
-  height: 3rem;
+  height: 4rem;
+}
+
+.feed-search .btn,.user-profile {
+    margin: 0rem 1rem;
 }
 
 .feed-search form {
@@ -297,13 +305,20 @@ main {
 }
 
 .feed-footer {
-  padding: 0rem 1rem;
+  /* padding: 0rem 1rem; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--white);
-  height: 2.5rem;
+  height: 3rem;
   border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
+}
+
+.feed-footer .logo-img {
+    margin-right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
 }
 
 .publicright {
@@ -325,8 +340,11 @@ main {
 }
 .box .box-header{
   position: absolute;
-  top:1rem;
-  left: 2rem;
+  top: 1rem;
+  translate: 50%;
+}
+
+.box-header .txt-1 {
 }
 
 .box .box-main{
@@ -334,12 +352,12 @@ main {
   position: absolute;
   width: 100%;
   top:3rem;
-  left: 1rem;
+  /* left: 1rem; */
   overflow: auto;
   scrollbar-width: none;
 }
 .box .user-profile {
-  margin: 1rem;
+  min-height: 4rem;
   border-bottom: 0.5px solid var(--gray);
 }
 
@@ -350,7 +368,7 @@ main {
   header {
     display: flex;
     align-items: center;
-    height: 3rem;
+    height: 4rem;
   }
   header .left,
   header .right {

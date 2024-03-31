@@ -5,11 +5,13 @@
 
 {%block content%}
 <div id="form-layout">
-   <p class="txt-1">Add Event</p> 
+   <p class="txt-1">Add Servent</p> 
    <!-- <div class ="img">
        <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
       </div> -->
-
+{% if msg %}
+   <h1 style="color: green;">{{msg}}</h1>
+{% endif %}   
 <form action="#" method='POST' enctype="multipart/form-data">
     {% csrf_token %}
     <div class="search"><input type="text" name="email" placeholder=" Email "></div>
@@ -42,7 +44,7 @@
             <option value="Goa">Goa</option>
             <option value="Punjab">Punjab</option>
         </select></div>
-        <div class="search"><input type="number" name="number" placeholder=" Enter pincode"></div>
+        <div class="search"><input type="text" name="pin_code" placeholder=" Enter pincode"></div>
    <div class="search"><input type="file" name="pimg" placeholder=" Upload Media (Image) "></div>
 
    <div class="btn"><button type="submit">Add Now</button></div>

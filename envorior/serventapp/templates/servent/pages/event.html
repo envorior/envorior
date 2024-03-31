@@ -24,31 +24,22 @@
      
   </div>
   <hr>
-  <table>
-      <thead>
-        <tr>
-          <th>Serial No.</th>
-          <th>Type</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for i in "12234566778"%}
-        <tr>
-          <td>1</td>
-          <td>News</td>
-          <td>Lorem Ipsum</td>
-          <td>xyz@gmail.com</td>
-          <td>12/03/2001</td>
-          <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-trash-can"></i></td>
-        </tr>
+     <div>
+        {% for e in event %}
+           <div>
+              <div>
+                  <p>News/Event by: {{e.department.full_name}}</p>
+                  <p>Date: {{e.date}}</p>
+                  <p>description : {{e.description}}</p>
+                  <div>
+                    {% if e.image %}
+                       <img src="{{e.image.url}}" alt="">
+                    {% endif %}   
+                  </div>
+              </div>
+           </div>
         {% endfor %}
-        
-      </tbody>
-    </table>
+     </div>
 </div>
 {% endblock %}
 

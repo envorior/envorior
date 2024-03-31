@@ -45,11 +45,11 @@
         <!-- this is for responsive -->
         <div class="right-responsive">
           <div class="user-profile">
-            <a href="{%url 'publicapp:profile'%}"><img
-                class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
-                alt=""/>
-              </a>
+            {% if current_user_details.profile_picture %} 
+            <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
+           {% else %}
+            <a href=""><img class="profile-img" src="" alt=""/> </a>
+           {% endif %}
           </div>
 
           <div class="other-settings" onclick="other_settings()">
@@ -71,11 +71,15 @@
 
       <div class="right">
         <div class="user-profile">
-          <a href="{%url 'publicapp:profile'%}">
-            <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
+          <a href="">
+            {% if current_user_details.profile_picture %} 
+              <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
+            {% else %}
+              <a href=""><img class="profile-img" src="" alt=""/> </a>
+            {% endif %}
           </a>
           <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{profile.full_name}}</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{current_user_details.full_name}}</p></a>
           </div>
         </div>
 
@@ -118,7 +122,7 @@
         <div class="navleftmiddle">
           <div>
             <a
-              href="{%url 'supervisorapp:dashboard'%}"
+              href="{%url 'supervisorapp:supervisordashboard' %}"
               class="text-decoration-none"
             >
               <span class="txt-2"><i class="fa-solid fa-house"></i></span>
@@ -151,7 +155,7 @@
               <span class="txt-2"
                 ><i class="fa-solid fa-comments"></i
               ></span>
-              <span class="txt-2">Add Event/News</span>
+              <span class="txt-2">Add Servent</span>
             </a>
           </div>
           <div>
@@ -163,11 +167,19 @@
             </a>
           </div>
           <div>
-            <a href="{%url 'supervisorapp:event'%}" class="text-decoration-none">
+            <a href="{%url 'supervisorapp:viewservent'%}" class="text-decoration-none">
               <span class="txt-2"
                 ><i class="fa-solid fa-comments"></i
               ></span>
-              <span class="txt-2">View Event/News</span>
+              <span class="txt-2">View Servent</span>
+            </a>
+          </div>
+          <div>
+            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <span class="txt-2">Logout</span>
             </a>
           </div>
 

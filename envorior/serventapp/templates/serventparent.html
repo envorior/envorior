@@ -45,11 +45,11 @@
         <!-- this is for responsive -->
         <div class="right-responsive">
           <div class="user-profile">
-            <a href="{%url 'publicapp:profile'%}"><img
-                class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
-                alt=""/>
-              </a>
+           {% if current_user_details.profile.profile_picture %} 
+            <a href=""><img class="profile-img" src="{{current_user_details.profile.profile_picture.url}}" alt=""/> </a>
+           {% else %}
+            <a href=""><img class="profile-img" src="" alt=""/> </a>
+           {% endif %} 
           </div>
 
           <div class="other-settings" onclick="other_settings()">
@@ -71,11 +71,13 @@
 
       <div class="right">
         <div class="user-profile">
-          <a href="{%url 'publicapp:profile'%}">
-            <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
-          </a>
+            {% if current_user_details.profile_picture %} 
+              <a href=""><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+              <a href=""><img class="profile-img" src="" alt=""/> </a>
+            {% endif %} 
           <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{profile.full_name}}</p></a>
+            <a href="" class="txt-3"><p>{{current_user_details.full_name}}</p></a>
           </div>
         </div>
 
@@ -168,6 +170,14 @@
                 ><i class="fa-solid fa-comments"></i
               ></span>
               <span class="txt-2">View Event/News</span>
+            </a>
+          </div>
+          <div>
+            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <span class="txt-2">Logout</span>
             </a>
           </div>
 

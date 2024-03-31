@@ -51,9 +51,7 @@
               </a>
           </div>
 
-          <div class="other-settings" onclick="other_settings()">
-            <img class="" src="{% static 'img/grid.png' %}" alt="" />
-          </div>
+        
         </div>
       </div>
 
@@ -70,17 +68,21 @@
 
       <div class="right">
         <div class="user-profile">
-          <a href="{%url 'publicapp:profile'%}">
-            <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
-          </a>
+          <!-- get profile picture of user -->
+              {% if current_user_details.profile_picture %}
+              <a href="{%url 'publicapp:profile'%}">
+                <img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/>
+              </a>
+              {% else %}
+              <a href="{%url 'publicapp:profile'%}">
+                <img class="profile-img" src="" alt=""/>
+              </a>
+              {% endif %}
           <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{profile.full_name}}</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{current_user_details.full_name}}</p></a>
           </div>
         </div>
 
-        <div class="other-settings" onclick="other_settings()">
-          <img class="" src="{% static 'img/grid.png' %}" alt="" />
-        </div>
       </div>
       <!-- my profile-->
 
@@ -129,7 +131,7 @@
 
           <div class="logo-txt">
             <p class="txt-1" style="color: #000000">Reward</p>
-            <p class="txt-3">{{total_reward}}</p>
+            <p class="txt-3" style="color: green">{{total_reward}}</p>
           </div>
         </div>
         <!-- left middle -->
@@ -163,7 +165,7 @@
           </div>
 
           <div>
-            <a href="{%url 'publicapp:postdonation'%}" class="text-decoration-none">
+            <a href="{%url 'publicapp:donation'%}" class="text-decoration-none">
               <span class="txt-2"
                 ><i class="fa-solid fa-hand-holding-dollar"></i
               ></span>
@@ -179,14 +181,7 @@
               <span class="txt-2">Complain</span>
             </a>
           </div>
-          <div>
-            <a href="{%url 'publicapp:scam'%}" class="text-decoration-none">
-              <span class="txt-2"
-                ><i class="fa-solid fa-user-secret"></i
-              ></span>
-              <span class="txt-2">Payement Scam</span>
-            </a>
-          </div>
+          
 
           <div>
             <a
@@ -198,17 +193,20 @@
             </a>
           </div>
 
+
         
 
         </div>
         <!-- left bottom -->
-        <div class="navleftbottom" onclick="settings()">
-          <div>
-           
-              
-              <span class="txt-2"><i class="fa-solid fa-gear"></i></span>
-              <span class="txt-2">Settings</span>
+        <div class="navleftbottom">
          
+          <div>
+            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-user-secret"></i
+              ></span>
+              <span class="txt-2">Logout</span>
+            </a>
           </div>
         </div>
       </div>
@@ -225,18 +223,20 @@
           </div>
           
       <div class="box-main">
-        {%for i in "12345899897799"%}
-        <div class="user-profile">
-          <a href="{%url 'publicapp:profile'%}"><img
-              class="profile-img"
-              src="{% static 'img/user.jpeg' %}"
-              alt=""/>
-            </a>
-          <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
-          </div>
-        </div>
+        {%for top in top_four_envorior%}
+            <div class="user-profile">
+              <a href="">
+               {% if top.profile.profile_picture %} 
+                <img class="profile-img" src="{{top.profile.profile_picture.url}}" alt=""/>
+               {% else %} 
+                <img class="profile-img" src="" alt=""/>
+               {% endif %}
+              </a>
+              <div class="profile-txt">
+                <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>{{top.profile.full_name}}</p></a>
+                <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{top.reward}}</p></a>
+              </div>
+            </div>
         {%endfor%}
       </div>
           

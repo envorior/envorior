@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,reverse
 from .models import User
-from publicapp.models import Profile
+from publicapp.models import Profile,TopEnvorior
 
 # Create your views here.
 def registration(request):
@@ -24,6 +24,7 @@ def registration(request):
                 user.save()
                 profile=Profile(user=user,contact_no=contact_no,full_name=full_name,dob=dob,city=city,state=state,pin_code=pin_code)
                 profile.save()
+                top = TopEnvorior(profile = profile,reward=0).save()
                 return render(request,'login.html')
     return render(request, 'registration.html')
 
@@ -31,15 +32,21 @@ def login(request):
     if request.method=='POST':
         email=request.POST['email']
         password=request.POST['password']
+        
         try:
              user=User.objects.get(email=email)
+             print(email,password,user.user_type)
              if user.email==email and user.password==password and user.user_type=='general':
                 request.session['email'] = email
                 return redirect(reverse('publicapp:publichome'))
+             
              elif user.email==email and user.password==password and user.user_type=='servent':
-                return redirect('serventapp:dashboardparent')
+                request.session['email'] = email
+                return redirect(reverse('serventapp:dashboard'))
+             
              elif user.email==email and user.password==password and user.user_type=='supervisor':
-                return redirect('serventapp:dashboardparent')
+                request.session['email'] = email
+                return redirect(reverse('supervisorapp:supervisordashboard'))
         except:
             msg ='Incorrect Email ID or Password'
             return render(request,'login.html',locals())        

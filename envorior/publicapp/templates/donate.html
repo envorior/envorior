@@ -1,0 +1,85 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Donations {% endblock title %}
+
+{%block content%}
+
+<div class="feed">
+   <div class="search feed-search">
+   <div class="user-profile">
+      {% if current_user_details.profile_picture %}
+          <a><img class="profile-img" src="{{current_user_details.profile_picture.url }}" alt=""></a>   
+      {% else %}    
+          <a><img class="profile-img" src="" alt=""></a>   
+      {% endif %}
+   </div>       
+      <form >
+          <input type="text" placeholder="write here to search something">
+       
+      </form>
+      <div class="btn" >
+         <a href="{% url 'publicapp:postdonation'%}">
+            <button type="submit">POST Donations</button>
+         </a>
+       </div>
+   </div>
+
+{% for d in donation %}
+      <div class="feed-post">
+         <div class="feed-header" style="padding-right: 1rem;">
+            <div class="user-profile">
+               {% if d.donated_by.profile_picture %}
+                  <a><img class="profile-img" src="{{d.donated_by.profile_picture.url}}" alt=""></a>
+               {% else %}
+                  <a><img class="profile-img" src="" alt=""></a>
+               {% endif %}   
+               <div class="profile-txt">
+               <a href="" class="txt-2"><p>{{d.donated_by.full_name}}</p></a>
+               <a href="" class="txt-3"><p></p></a>
+            </div>    
+            </div>  
+         </div>
+         <div class="feed-content">
+            <p class="txt-2">Donation Type</p>
+            <p class="txt-3">{{d.donation_type}}</p>
+            
+               
+            <p class="txt-2">Description</p>
+            <p class="txt-3">{{d.description}}</p>
+               
+            <p class="txt-2">Donar locations</p>
+            <p class="txt-3">{{d.donar_location}}</p>
+
+            <div style="object-fit: cover;">
+               {% if d.product_image %}
+                 <img src="{{d.product_image.url}}" height="100%" width="100%">
+               {% endif %}  
+            </div>
+               
+               
+         </div>
+
+         
+         <div class="feed-footer">
+         <a href="/like/{{post.pid}}" class="text-decoration-none">
+            <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+            <span class="txt-3">reward ({{post.reward}})</span>
+      </a>
+         <a href="#" class="text-decoration-none">
+            <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
+            <span class="txt-3">comment</span>
+      </a>
+         <a href="#" class="text-decoration-none">
+            <span class="txt-2"><i class="fa-solid fa-share"></i></span>
+            <span class="txt-3">share</span>
+      </a>
+      </div>
+      </div>
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
+
