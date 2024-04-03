@@ -18,11 +18,9 @@
           <input type="text" placeholder="write here to search something">
        
       </form>
-      <div class="btn" >
          <a href="{% url 'publicapp:postdonation'%}">
-            <button type="submit">POST Donations</button>
+            <button type="submit" class="btn btn-primary">Post Donation</button>
          </a>
-       </div>
    </div>
 
 {% for d in donation %}
@@ -66,14 +64,14 @@
             <span class="txt-2"><i class="fa-solid fa-house"></i></span>
             <span class="txt-3">reward ({{post.reward}})</span>
       </a>
-         <a href="#" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
+         <!-- <a href="#" class="text-decoration-none"> -->
+            <!-- <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
             <span class="txt-3">comment</span>
       </a>
          <a href="#" class="text-decoration-none">
             <span class="txt-2"><i class="fa-solid fa-share"></i></span>
             <span class="txt-3">share</span>
-      </a>
+      </a> -->
       </div>
       </div>
 {% endfor %}

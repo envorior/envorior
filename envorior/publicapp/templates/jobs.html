@@ -18,11 +18,11 @@
           <input type="text" placeholder="write here to search something">
        
       </form>
-      <div class="btn" >
-         <a href="{% url 'publicapp:postjob'%}">
-            <button type="submit">POST Job</button>
-         </a>
-       </div>
+      
+      
+            <a href="{% url 'publicapp:postjob'%}"><button type="submit" class="btn btn-primary">Post Job</button></a>
+ 
+   
    </div>
 
 
@@ -59,12 +59,12 @@
           
            
    </div>
-
-      <div class="btn" style="width: 100%;">
-         <a href="/apply_job/{{job.j_id}}" class="text-decoration-none">
-            <span class="txt-3">Apply Now</span>
+      <div class="feed-footer">
+         <a href="/apply_job/{{job.j_id}}">
+            <button type="submit" class="btn btn-primary">Apply Now</button>
         </a>
       </div>
+  
       
  
 </div>

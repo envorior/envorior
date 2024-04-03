@@ -275,7 +275,8 @@ main {
 }
 
 .feed-search form {
-  width: 100%;
+  flex: 1;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   padding: 0rem 1rem 0rem 1rem;
@@ -472,6 +473,11 @@ footer {
 /* form-layout page style */
 #form-layout {
   width: 100%;
+}
+
+#form-layout .txt-1{
+  margin-top: 1rem;
+  text-align: center;
 }
 
 #form-layout .img{
