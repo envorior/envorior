@@ -4,32 +4,27 @@
 {% block title %} Complains {% endblock title %}
 
 {%block content%}
-
 <div class="feed">
    <div class=" feed-search">
-   <div class="user-profile">
-      <a>
-         {% if current_user_details.profile_picture %} 
-              <a href=""><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/> </a>
-         {% else %}
-              <a href=""><img class="profile-img" src="" alt=""/> </a>
-         {% endif %} 
-   </div>       
+      <div class="user-profile">
+         <a>
+            {% if current_user_details.profile_picture %} 
+                 <a href=""><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+                 <a href=""><img class="profile-img" src="" alt=""/> </a>
+            {% endif %} 
+      </div>       
+            
       <form >
          <div class="search">
-            <input type="text" placeholder="write here to search something">
+            <input type="text" placeholder="write here something to Post">
          </div>
           
       </form>
-      <!-- <div class="btn">
-         <a href="{% url 'serventapp:complain'%}">
-         <button type="submit">POST</button>
-      </a>
-       </div> -->
-   </div>
- 
- 
-{% for c in complain %}
+      <a href="#"><button class="btn btn-primary">Enter</button></a>
+      </div>
+    
+   {% for c in complain %}
 <div class="feed-post">
    <div class="feed-header">
       <div class="user-profile">
@@ -45,19 +40,19 @@
           
          </div>     
              </div>
-   </div>
    <div class="feed-content">
       <p class="txt-3">description: {{c.description}}</p>
       <p class="txt-3">location: {{c.complain_location}}</p>
            <div style="object-fit: cover;">
                {% if c.complain_image %} 
-                  <a href=""><img src="{{ c.complain_image.url }}" alt=""/> </a>
+                  <a href=""><img src="{{ c.complain_image.url }}" alt="" height="100%" width="100%"/> </a>
                {% else %}
-                  <a href=""><img  src="" alt=""/> </a>
+                  <a href=""><img  src="" alt="" height="100%" width="100%"/> </a>
                {% endif %}
            </div>
            
    </div>
+
    <div class="feed-footer">
      
       <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none">
@@ -68,10 +63,21 @@
        {% endif %}
      </a>
    </div>
+  
 </div>
 {% endfor %}
 </div>
 
-
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
 

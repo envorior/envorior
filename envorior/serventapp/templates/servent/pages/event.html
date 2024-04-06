@@ -5,42 +5,42 @@
 
 {%block content%}
 
-<div class=" feed-search">
-  <!-- <div class="user-profile">
-     <a>
-        <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
-         </div>        -->
-     <form >
-        <div class="search">
-           <input type="text" placeholder="write here to search something">
-        </div>
-         
-        <div class="btn">
-          <a href="#">
-          <button type="submit">Enter</button>
-       </a>
-        </div>
-     </form>
+<div class="feed">
+   <div class=" feed-search">
+      
+      <form >
+         <div class="search">
+            <input type="text" placeholder="write here something to Post">
+         </div>
+          
+      </form>
+      <a href="#"><button class="btn btn-primary">Enter</button></a>
      
-  </div>
-  <hr>
-     <div>
-        {% for e in event %}
-           <div>
-              <div>
-                  <p>News/Event by: {{e.department.full_name}}</p>
-                  <p>Date: {{e.date}}</p>
-                  <p>description : {{e.description}}</p>
-                  <div>
-                    {% if e.image %}
-                       <img src="{{e.image.url}}" alt="">
-                    {% endif %}   
-                  </div>
-              </div>
+   </div>
+ 
+ 
+   {% for e in event %}
+<div class="feed-post">
+  
+   <div class="feed-content">
+      <p class="txt-3">News/Event by: {{e.department.full_name}}</p>
+      <p class="txt-3">Date: {{e.date}}</p>
+      <p class="txt-3">description : {{e.description}}</p>
+
+   
+           <div style="object-fit: cover;">
+            {% if e.image %}
+            <img src="{{e.image.url}}" alt="" height="100%" width="100%">
+         {% endif %} 
+            <!-- <img src="{{post.postimage.url}}" height="100%" width="100%"> -->
            </div>
-        {% endfor %}
-     </div>
+           
+   </div>
+  
 </div>
+{% endfor %}
+</div>
+
 {% endblock %}
 
 
