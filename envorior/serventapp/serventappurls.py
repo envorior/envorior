@@ -10,7 +10,8 @@ urlpatterns = [
     path('servent/',views.servent,name='servent'),
     
     path('servent-event/',views.event,name='event'),
-    path('servent-notification/',views.notification,name='notification'),
+    path('your_event/',views.your_event,name='your_event'),
+    path('delete_event/<int:id>/',views.delete_event,name='delete_event'),
     path('servent-post/',views.post,name='post'),
     path('servent-serventprofile/',views.serventprofile,name='serventprofile'),
 ]

@@ -44,7 +44,7 @@
               {% if s.profile_picture %} 
                    <a href=""><img class="profile-img" src="{{ s.profile_picture.url }}" alt=""/> </a>
               {% else %}
-                   <a href=""><img class="profile-img" src="" alt=""/> </a>
+                   <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
               {% endif %} 
             </div>
           </td>

@@ -46,7 +46,7 @@
           <div class="user-profile">
             <a href="{%url 'publicapp:profile'%}"><img
                 class="profile-img"
-                src="{% static 'img/user.jpeg' %}"
+                src="{% static 'img/profile.png' %}"
                 alt=""/>
               </a>
           </div>
@@ -75,7 +75,7 @@
               </a>
               {% else %}
               <a href="{%url 'publicapp:profile'%}">
-                <img class="profile-img" src="" alt=""/>
+                <img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/>
               </a>
               {% endif %}
           <div class="profile-txt">
@@ -223,13 +223,13 @@
           </div>
           
       <div class="box-main">
-        {%for top in top_four_envorior%}
+        {%for top in top_envorior%}
             <div class="user-profile">
               <a href="">
                {% if top.profile.profile_picture %} 
                 <img class="profile-img" src="{{top.profile.profile_picture.url}}" alt=""/>
                {% else %} 
-                <img class="profile-img" src="" alt=""/>
+                <img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/>
                {% endif %}
               </a>
               <div class="profile-txt">

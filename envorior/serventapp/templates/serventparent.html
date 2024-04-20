@@ -48,7 +48,7 @@
            {% if current_user_details.profile.profile_picture %} 
             <a href=""><img class="profile-img" src="{{current_user_details.profile.profile_picture.url}}" alt=""/> </a>
            {% else %}
-            <a href=""><img class="profile-img" src="" alt=""/> </a>
+            <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
            {% endif %} 
           </div>
 
@@ -72,7 +72,7 @@
             {% if current_user_details.profile_picture %} 
               <a href=""><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/> </a>
             {% else %}
-              <a href=""><img class="profile-img" src="" alt=""/> </a>
+              <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
             {% endif %} 
           <div class="profile-txt">
             <a href="" class="txt-3"><p>{{current_user_details.full_name}}</p></a>
@@ -122,15 +122,7 @@
             </a>
           </div>
 
-          <div>
-            <a
-              href="{%  url 'serventapp:notification' %}"
-              class="text-decoration-none"
-            >
-              <span class="txt-2"><i class="fa-solid fa-bell"></i></span>
-              <span class="txt-2">Notifications</span>
-            </a>
-          </div>
+          
 
     
 
@@ -164,6 +156,14 @@
                 ><i class="fa-solid fa-comments"></i
               ></span>
               <span class="txt-2">View Event/News</span>
+            </a>
+          </div>
+          <div>
+            <a href="{%url 'serventapp:your_event'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <span class="txt-2">Your event</span>
             </a>
           </div>
         

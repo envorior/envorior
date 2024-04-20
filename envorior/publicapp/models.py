@@ -44,7 +44,8 @@ class Donation(models.Model):
     description = models.TextField(blank=True)
     donated_by=models.ForeignKey(Profile,on_delete=models.CASCADE,blank=True,null=True)
     product_image = models.ImageField(upload_to='donate_products',blank=True)
-    donar_location = models.CharField(max_length=300)  
+    donar_location = models.CharField(max_length=300)
+    rewards = models.ManyToManyField(User,related_name="rewards",blank=True)  
 
 class Complain(models.Model):
     c_id=models.AutoField(primary_key=True)

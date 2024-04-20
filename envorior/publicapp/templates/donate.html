@@ -11,7 +11,7 @@
       {% if current_user_details.profile_picture %}
           <a><img class="profile-img" src="{{current_user_details.profile_picture.url }}" alt=""></a>   
       {% else %}    
-          <a><img class="profile-img" src="" alt=""></a>   
+          <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>   
       {% endif %}
    </div>       
       <form >
@@ -60,10 +60,10 @@
 
          
          <div class="feed-footer">
-         <a href="/like/{{post.pid}}" class="text-decoration-none">
+         <a href="/rewardondonate/{{d.d_id}}" class="text-decoration-none">
             <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-            <span class="txt-3">reward ({{post.reward}})</span>
-      </a>
+            <span class="txt-3">reward ({{d.rewards.count}})</span>
+         </a>
          <!-- <a href="#" class="text-decoration-none"> -->
             <!-- <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
             <span class="txt-3">comment</span>
@@ -72,6 +72,13 @@
             <span class="txt-2"><i class="fa-solid fa-share"></i></span>
             <span class="txt-3">share</span>
       </a> -->
+      </div>
+
+      <!-- get donation -->
+      <div>
+         <a href="/get_donation/{{d.d_id}}">
+             Get Donation
+         </a>
       </div>
       </div>
 {% endfor %}

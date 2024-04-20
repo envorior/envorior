@@ -11,7 +11,7 @@
             {% if current_user_details.profile_picture %} 
                  <a href=""><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""/> </a>
             {% else %}
-                 <a href=""><img class="profile-img" src="" alt=""/> </a>
+                 <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
             {% endif %} 
       </div>       
             
@@ -47,7 +47,7 @@
                {% if c.complain_image %} 
                   <a href=""><img src="{{ c.complain_image.url }}" alt="" height="100%" width="100%"/> </a>
                {% else %}
-                  <a href=""><img  src="" alt="" height="100%" width="100%"/> </a>
+                  <a href=""><img  src="{% static 'img/profile.png' %}" alt="" height="100%" width="100%"/> </a>
                {% endif %}
            </div>
            

@@ -6,30 +6,48 @@
   <div class="upper">
     <div class="items">
       <div class="user-profile">
-        <a href="{%url 'publicapp:profile'%}">
-          <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
-          </a>
+        {% if current_user_details.profile_picture %}
+          <a><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""></a>   
+        {% else %}
+          <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>
+        {% endif %}
       </div>
-      <p class="txt-2">User Name</p>
+      <p class="txt-2">{{current_user_details.full_name}}</p>
     </div>
     <div class="items">
-      <p class="txt-2">15</p>
+      <p class="txt-2">{{current_user_details.followers.count}}</p>
       <p class="txt-2">Follower</p>
     </div>
     <div class="items">
-      <p class="txt-2">16</p>
+      <p class="txt-2">{{current_user_details.followings.count}}</p>
       <p class="txt-2">Following</p>
     </div>
   </div>
+  <!-- change profile pic -->
+  <div class="row">
+    <form action="{% url 'publicapp:changeuserprofile' %}" method='POST' enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="col-sm-8">
+        <input type="file" name="pic" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Change profile pic</button>
+      </div>
+    </form>
+  </div>
+
   <div class="lower">
     <div class="items">
-      <a href="#"><button class="btn btn-secondary">Post</button></a>
+      <a href="{% url 'publicapp:userpost' %}"><button class="btn btn-secondary">Post</button></a>
     </div>
     <div class="items">
-      <a href="#"><button class="btn btn-secondary">Complain</button></a>
+      <a href="{% url 'publicapp:usercomplain' %}"><button class="btn btn-secondary">Complain</button></a>
     </div>
     <div class="items">
-      <a href="#"><button class="btn btn-secondary">Job</button></a>
+      <a href="{% url 'publicapp:userjob' %}"><button class="btn btn-secondary">Job</button></a>
+    </div>
+    <div class="items">
+      <a href="{% url 'publicapp:userdonation' %}"><button class="btn btn-secondary">Donation</button></a>
     </div>
   </div>
 

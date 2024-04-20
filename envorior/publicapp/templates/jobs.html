@@ -11,7 +11,7 @@
       {% if current_user_details.profile_picture %}
       <a><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""></a>   
       {% else %}
-      <a><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""></a>
+      <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>
       {% endif %}
    </div>       
       <form >
@@ -20,7 +20,7 @@
       </form>
       
       
-            <a href="{% url 'publicapp:postjob'%}"><button type="submit" class="btn btn-primary">Post Job</button></a>
+            <a href="{% url 'publicapp:jobform'%}"><button type="submit" class="btn btn-primary">Post Job</button></a>
  
    
    </div>

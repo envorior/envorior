@@ -15,32 +15,35 @@
         {% endif %}
 
         <!-- registration form -->
-        <form action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
+        <form  action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
             {% csrf_token %}
-
+            
+            <!-- validation message -->
+            <p style="color: red;" id="validationresult">{{validation_message}}</p>
+            
             <div class="row mt-3 ">
                 <div class="col-sm-6">
-                    <input type="text" name="email" placeholder="Email address" class="form-control" />
+                    <input type="text" name="email" id="email" placeholder="Email address" class="form-control" />
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" name="contact_no" placeholder="Contact no." class="form-control" />
+                    <input type="text" name="contact_no" id="contact" placeholder="Contact no." class="form-control" />
                 </div>
               </div>
 
           <div class="row mt-2 ">
             <div class="col-sm-12">
-                <input type="text" name="full_name" class="form-control" placeholder="Enter Full Name name">
+                <input type="text" name="full_name" id="name" class="form-control" placeholder="Enter Full Name name">
             </div>
           </div>
           <div class="row mt-2 fs-6">
             <div class="col-sm-12">
-                <input type="date" name="dob" class="form-control" >
+                <input type="date" id="dob" required name="dob" class="form-control" >
             </div>
           </div>
 
           <div class="row mt-2 fs-6">
             <div class="col-sm-12">
-                <select name="state" class="form-control" id="">
+                <select name="state" required id="state" class="form-control" id="">
                     <option selected >---Your State ---</option>
                     <option value="UP">UP</option>
                     <option value="MP">MP</option>
@@ -50,7 +53,7 @@
           </div>
           <div class="row mt-2 fs-6">
             <div class="col-sm-6">
-                <select name="city" class="form-control" id="">
+                <select name="city" required id="city" class="form-control" >
                     <option selected >---Your City ---</option>
                     <option value="Lucknow">Lucknow</option>
                     <option value="Kanpur">Kanpur</option>
@@ -58,22 +61,22 @@
                 </select>
             </div>
             <div class="col-sm-6">
-                <input type="text" name="pin_code" placeholder="Pin Code" class="form-control" />
+                <input type="text" required id="pin" name="pin_code" placeholder="Pin Code" class="form-control" />
             </div>
           </div>
 
           <div class="row mt-2 fs-6">
             <div class="col-sm-6">
-                <input type="password" name="password" placeholder="Password" class="form-control" />
+                <input type="password" required id="password1" name="password" placeholder="Password" class="form-control" />
             </div>
             <div class="col-sm-6">
-                <input type="password" name="confirmpassword" placeholder="Confirm password" class="form-control" />
+                <input type="password" required id="password2" name="confirmpassword" placeholder="Confirm password" class="form-control" />
             </div>
           </div>
 
           <div class="row my-4">
             <div class="col-sm-12" style="text-align: center;">
-                <Button class="btn btn-warning w-80">Create an account</Button>
+                <Button type="submit" class="btn btn-warning w-80" >Create an account</Button>
             </div>
           </div> 
         </form>

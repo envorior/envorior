@@ -48,7 +48,7 @@
             {% if current_user_details.profile_picture %} 
             <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
            {% else %}
-            <a href=""><img class="profile-img" src="" alt=""/> </a>
+            <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
            {% endif %}
           </div>
 
@@ -75,7 +75,7 @@
             {% if current_user_details.profile_picture %} 
               <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
             {% else %}
-              <a href=""><img class="profile-img" src="" alt=""/> </a>
+              <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
             {% endif %}
           </a>
           <div class="profile-txt">
@@ -130,15 +130,7 @@
             </a>
           </div>
 
-          <div>
-            <a
-              href="{%  url 'supervisorapp:notification' %}"
-              class="text-decoration-none"
-            >
-              <span class="txt-2"><i class="fa-solid fa-bell"></i></span>
-              <span class="txt-2">Notifications</span>
-            </a>
-          </div>
+        
 
     
 

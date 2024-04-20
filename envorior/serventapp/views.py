@@ -50,7 +50,10 @@ def rank(request):
 
 
 def servent(request):
-    return render(request,'servent/pages/servent.html')
+    #common to all servent view
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    return render(request,'servent/pages/servent.html',locals())
 
 
 
@@ -59,8 +62,31 @@ def event(request):
     current_user = request.session['email']
     current_user_details = Profile.objects.get(user=current_user)
     #event
-    event = Event.objects.all()
+    event = Event.objects.all().order_by('-date')
     return render(request,'servent/pages/event.html',locals())
+
+def your_event(request):
+    #common to all servent view
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    #event
+    event = Event.objects.filter(department__user=current_user).order_by('-date')
+    return render(request,'servent/pages/your_event.html',locals())
+
+def delete_event(request,id):
+    #common to all servent view
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+
+    #deleteevent code
+    event_for_delete =  Event.objects.filter(e_id=id)
+    event_for_delete.delete()
+    #getting event of user
+    event = Event.objects.filter(department=current_user_details).order_by('-date')
+    return render(request,'servent/pages/your_event.html',locals())
+
+    
+
 
 #view to post an event or news
 def post(request):
@@ -74,11 +100,11 @@ def post(request):
         event = Event(department=current_user_details,image=image,
                       description=description,date=date.today())
         event.save()
-    return render(request,'servent/pages/post.html')
+    return render(request,'servent/pages/post.html',locals())
 
 def serventprofile(request):
-    return render(request,'servent/pages/serventprofile.html')
-
-def notification(request):
-    return render(request,'servent/pages/notification.html')
+    #common to all servent view
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    return render(request,'servent/pages/serventprofile.html',locals())
 

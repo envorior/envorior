@@ -58,9 +58,6 @@ def addservent(request):
 
 
 
-def notification(request):
-    return render(request,'supervisor/pages/notification.html')
-
 # this is for top social person
 def rank(request):
     #common to all servent view
