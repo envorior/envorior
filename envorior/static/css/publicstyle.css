@@ -195,7 +195,7 @@ main {
 }
 .navlefttop {
   margin: 0.5rem;
-  width: 12vw;
+  width: 15vw;
   height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
@@ -208,13 +208,12 @@ main {
 }
 
 .navleftmiddle {
- 
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 12vw;
-  border-radius: var(--border-radius);
-  background-color: var(--white);
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+ width: 15vw;
+ border-radius: var(--border-radius);
+ background-color: var(--white);
 }
 
 .navleftmiddle div {
@@ -230,7 +229,7 @@ main {
 
 .navleftbottom {
   margin: 0.5rem;
-  width: 12vw;
+  width: 15vw;
   height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
