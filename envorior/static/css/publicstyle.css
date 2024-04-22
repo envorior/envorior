@@ -10,7 +10,7 @@
   --darkgray: #3a3a3a;
   --gray: #eee;
   --lightgray: #faf8f8;
-  --green: #0b7b38;
+  --green: #ec4c17;
 
   --border-radius: 0.25rem;
   --border-radius2: 5rem;
@@ -219,7 +219,7 @@ main {
 .navleftmiddle div {
   /* margin: 0rem 0.5rem 0rem 0.5rem; */
   padding: 1rem 0rem;
-  height: 1.5rem;
+  height: 1rem;
   border-bottom: 0.5px solid var(--gray);
 }
 
@@ -240,7 +240,7 @@ main {
 }
 
 .navleftbottom div {
-  margin: 1rem 0rem 0rem 2rem;
+  margin: 1rem 0rem 0rem 1rem;
 }
 
 .navleftbottom div .txt-2 {
@@ -271,10 +271,12 @@ main {
   margin: 1rem 0rem 0rem 0rem;
   width: 99%;
   height: 4rem;
+  box-shadow: 0 4px 8px 0 var(--gray);
 }
 
 .feed-search .btn,.user-profile {
     margin: 0rem 1rem;
+   
 }
 
 .feed-search form {
@@ -288,6 +290,7 @@ main {
 .feed-post {
   width: 99%;
   margin: 1rem 0rem 0rem;
+  box-shadow: 0px 4px 8px 0px var(--gray);
 }
 
 .feed-header {
@@ -361,7 +364,7 @@ main {
   scrollbar-width: none;
 }
 .box .user-profile {
-  min-height: 4rem;
+  min-height: 3.5rem;
   border-bottom: 0.5px solid var(--gray);
 }
 
