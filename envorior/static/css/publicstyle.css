@@ -61,7 +61,7 @@ a {
   background-color: white;
   color: var(--primary-color);
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 5rem;
   box-shadow: 0 2px 4px 0 var(--gray);
@@ -224,6 +224,10 @@ main {
 }
 
 .navleftmiddle div .txt-2 {
+    margin-left: 0.5rem;
+}
+
+.navleftmiddle div a {
     margin-left: 1rem;
 }
 
