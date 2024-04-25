@@ -5,15 +5,9 @@
 
 {% block body %}
 <!-- container -->
-<div class="generalmain">
+<div class="wrapper">
     <!-- left box -->
     <div class="regleftbox">
-        {% if msg %}
-          <h1 >{{msg}}</h1>
-        {% else %}
-          <h1 >Register as Environment warrior</h1>
-        {% endif %}
-
         <!-- registration form -->
         <form  action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
             {% csrf_token %}
@@ -86,10 +80,6 @@
             <a href="{% url 'generalapp:login' %}" style="text-decoration:none;">Already a Environment Warrior/Login.</a>
         </div>
 
-    </div>
-    <!-- right box -->
-    <div class="regrightbox">
-        <img src="{% static 'img/logo.png' %}" alt="">
     </div>
 </div>
 {% endblock body %}
