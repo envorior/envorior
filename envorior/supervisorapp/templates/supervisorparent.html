@@ -31,15 +31,7 @@
       <div class="left">
         <div class="logo">
           <!-- navbar logo -->
-          <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="" />
-          <div class="logo-txt">
-            <a href="#"
-              ><p style="font-family: cursive; color: green; font-size: 1.6rem">
-                ENVORIOR
-              </p></a
-            >
-            <p>Environment Worior</p>
-          </div>
+          <img class="logo-img" src="{% static 'img/slogo.png' %}" alt="" />
         </div>
 
         <!-- this is for responsive -->
@@ -120,7 +112,7 @@
         </div>
         <!-- left middle -->
         <div class="navleftmiddle">
-          <div>
+          <!-- <div>
             <a
               href="{%url 'supervisorapp:supervisordashboard' %}"
               class="text-decoration-none"
@@ -128,12 +120,9 @@
               <span class="txt-2"><i class="fa-solid fa-house"></i></span>
               <span class="txt-2">Home</span>
             </a>
-          </div>
+          </div> -->
 
         
-
-    
-
           <div>
             <a href="{%url 'supervisorapp:complain'%}" class="text-decoration-none">
               <span class="txt-2"
@@ -166,14 +155,7 @@
               <span class="txt-2">View Servent</span>
             </a>
           </div>
-          <div>
-            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
-              <span class="txt-2"
-                ><i class="fa-solid fa-comments"></i
-              ></span>
-              <span class="txt-2">Logout</span>
-            </a>
-          </div>
+        
 
         
 
@@ -181,11 +163,12 @@
         <!-- left bottom -->
         <div class="navleftbottom" onclick="settings()">
           <div>
-           
-              
-              <span class="txt-2"><i class="fa-solid fa-gear"></i></span>
-              <span class="txt-2">Settings</span>
-         
+            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-comments"></i
+              ></span>
+              <span class="txt-2">Logout</span>
+            </a>
           </div>
         </div>
       </div>

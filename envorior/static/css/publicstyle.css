@@ -198,7 +198,7 @@ main {
 }
 .navlefttop {
   margin: 0.5rem;
-  width: 15vw;
+  width: 18vw;
   height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
@@ -214,7 +214,7 @@ main {
  display: flex;
  flex-direction: column;
  flex: 1;
- width: 15vw;
+ width: 18vw;
  border-radius: var(--border-radius);
  background-color: var(--white);
 }
@@ -236,7 +236,7 @@ main {
 
 .navleftbottom {
   margin: 0.5rem;
-  width: 15vw;
+  width: 18vw;
   height: 3rem;
   border-radius: var(--border-radius);
   background-color: var(--white);
@@ -255,7 +255,7 @@ main {
   width: 50vw;
   overflow: auto;
   scrollbar-width: none;
-  background-color: var(--lightgray);
+  /* background-color: var(--lightgray); */
 }
 
 .feed {

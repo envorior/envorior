@@ -59,7 +59,7 @@ def login(request):
                     
             elif user.email==email and raw_password==hashed_password  and user.user_type=='supervisor':
                 request.session['email'] = email
-                return redirect(reverse('supervisorapp:supervisordashboard'))
+                return redirect(reverse('supervisorapp:complain'))
         except:
             msg ='Incorrect Email ID or Password'
             return render(request,'login.html',locals())        
