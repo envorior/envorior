@@ -300,13 +300,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--white);
+  background-color: #ffffffb4;
   border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
   height: 3.5rem;
 }
 
 .feed-content {
-  background-color: var(--white);
+  background-color: #ffffffb4;
   margin: 0.05rem 0rem 0.05rem 0rem;
 }
 
@@ -319,7 +319,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--white);
+  background-color: #ffffffb4;
   height: 3rem;
   border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
 }

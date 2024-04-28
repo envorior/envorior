@@ -18,26 +18,25 @@ function logout() {
   popup(top, left, height, width, html);
 }
 
-// function post() {
-//   let top = "25%";
-//   let left = "25%";
-//   let height = "50vh";
-//   let width = "50vw";
+function post() {
+  let top = "25%";
+  let left = "25%";
+  let height = "50vh";
+  let width = "50vw";
   
-//   let html = `
+  let html = `
   
 
-//   <form >
-//   <div class="txt-box"><textarea type="text" rows="10" placeholder=" Message "></textarea></div>
-
-//    <div class="search"><input type="file" placeholder=" Upload Media (Image) "><div class="btn"><button type="submit">Post</button></div></div>
-   
-   
-// </form>
+  <form action="{% url 'publicapp:uploadpost' %}" method='POST' enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="txt-box"><textarea type="text" name="caption" rows="8" placeholder=" Message "></textarea></div>
+ <div class="search"><input type="file" name="pimg" placeholder=" Upload Media (Image) "></div>
+  <button type="submit" class="btn btn-primary">Post Now</button>
+</form>
   
-//   `;
-//   popup(top, left, height, width, html);
-// }
+  `;
+  popup(top, left, height, width, html);
+}
 
 
 

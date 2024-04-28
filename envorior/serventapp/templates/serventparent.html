@@ -31,16 +31,9 @@
       <div class="left">
         <div class="logo">
           <!-- navbar logo -->
-          <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="" />
-          <div class="logo-txt">
-            <a href="#"
-              ><p style="font-family: cursive; color: green; font-size: 1.6rem">
-                Social
-              </p></a
-            >
-            <p> Worior</p>
-          </div>
+          <img class="logo-img" src="{% static 'img/slogo.png' %}" alt="" />
         </div>
+
 
         <!-- this is for responsive -->
         <div class="right-responsive">
@@ -172,13 +165,16 @@
 
         </div>
         <!-- left bottom -->
-        <div>
-          <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
-            <span class="txt-2"
-              ><i class="fa-solid fa-comments"></i
-            ></span>
-            <span class="txt-2">Logout</span>
-          </a>
+        <div class="navleftbottom">
+         
+          <div>
+            <a href="{%url 'publicapp:logout'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-sign-out"></i
+              ></span>
+              <span class="txt-2">Logout</span>
+            </a>
+          </div>
         </div>
       </div>
 
