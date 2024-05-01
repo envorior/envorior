@@ -326,13 +326,16 @@ environment
 <div id="popup" class="popup">
   <div class="popup-content">
       <span class="close">&times;</span>
-      <p>This is your popup content!</p>
+      <p style="">Create Post</p>
       <!-- HTML form -->
 <form id="myForm" method="post">
-  {% csrf_token %}
-  <label for="inputField">Input Field:</label>
+  
   <input type="text" id="inputField" name="inputField">
-  <button type="submit">Submit</button>
+  <div class="txt-box" style=""><textarea type="text" name="caption" rows="20" placeholder=" Message "></textarea></div>
+ <input id="fileinput"type="file" name="pimg" placeholder=" Upload Media (Image) ">
+  <label for="fileinput" class="plus-icon">+</label>
+   <button type="submit" class="btn btn-primary">Post Now</button>
+
 </form>
   </div>
 </div>
