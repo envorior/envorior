@@ -3,6 +3,20 @@ from generalapp.models import User
 from publicapp.models import Profile,Post,Job,Notification,Donation,Complain,TopEnvorior
 from datetime import date
 from django.views.decorators.cache import cache_control #validate thourgh server instead of browser
+from django.http import JsonResponse
+
+
+def your_view_name(request):
+    if request.method == "POST":
+        try:
+            input_data = request.POST.get("inputField")
+            print(input_data)
+            return JsonResponse({"message": "Form data received successfully"})
+        except Exception as e:
+            return JsonResponse({"error": str(e)})
+    else:
+        return JsonResponse({"error": "Invalid request method"})
+
 
 # Create your views here.
 @cache_control(no_cache=True ,must_revalidate=True,no_store=True)

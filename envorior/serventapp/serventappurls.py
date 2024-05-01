@@ -14,5 +14,7 @@ urlpatterns = [
     path('delete_event/<int:id>/',views.delete_event,name='delete_event'),
     path('servent-post/',views.post,name='post'),
     path('servent-serventprofile/',views.serventprofile,name='serventprofile'),
+
+    
 ]
 

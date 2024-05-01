@@ -556,11 +556,35 @@ footer {
     background-color: #7d9185b3;
    }
 
-  .popup{
+  /* .popup{
    
     background-color: var(--white);
     border-radius: var(--border-radius);
     position: fixed;
     z-index: 10;
     padding: 1rem;
-  }
+  } */
+
+  /* CSS for the popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
