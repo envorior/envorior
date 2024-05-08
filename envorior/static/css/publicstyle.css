@@ -364,6 +364,14 @@ main {
   /* background-color: var(--white); */
   background: linear-gradient(359deg, #ec4c17, #1e4b89);
 }
+
+.box.box-bottom a {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0rem 0.2rem;
+}
+
+.box.box-bottom a {}
 .box .box-header{
   position: absolute;
   top: 1rem;
