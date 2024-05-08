@@ -123,6 +123,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Show the popup initially (you can trigger this based on certain events)
   postButton.addEventListener("click", function(){
-    popup.style.display = "block";
+    popup.style.display = "flex";
+    popup.style.flexDirection = "column";
+    
   });
 });
