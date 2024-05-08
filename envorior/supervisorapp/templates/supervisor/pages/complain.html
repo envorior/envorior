@@ -25,6 +25,7 @@
           
       </form>
       <a href="#"><button class="btn btn-primary">Enter</button></a>
+      
       </div>
     
    {% for c in complain %}
@@ -56,13 +57,15 @@
            
    </div>
 
-   <div class="feed-footer">
+
+   <div class="feed-footer" style="padding: 0;">
      
-      <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none">
+      <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none" style="color: white; width: -webkit-fill-available;">
        {% if c.complain_status == 'solved' %}
-         <span class="txt-1" style="background-color: rgb(58, 214, 19);" >Solved</span>
-       {% else %} 
-         <span class="txt-1" style="background-color: red;" >Unsolved</span> 
+         <button type="button" class="btn " style="background-color: rgb(58, 214, 19); width: -webkit-fill-available;" >Solved</button>
+         {% else %} 
+         <button type="button" class="btn " style="background-color: red; width: -webkit-fill-available;" >Unsolved</button>
+         
        {% endif %}
      </a>
    </div>

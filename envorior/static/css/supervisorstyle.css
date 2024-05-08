@@ -90,6 +90,7 @@ a {
   color: white;
   
 }
+
 header {
   width: 100%;
   position: absolute;
@@ -148,7 +149,7 @@ header {
   display: flex;
   align-items: center;
   border: 1px solid var(--gray);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius2);
   background: transparent;
 }
 
@@ -511,10 +512,10 @@ footer {
 
 
   hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #ccc;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    /* border: 0; */
+    /* border-top: 1px solid #ccc; */
 }
 
 table {
@@ -525,7 +526,7 @@ table {
 
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
