@@ -169,14 +169,14 @@
     .wrapper .btn{
       width: 100%;
       height: 45px;
-      background: #fff;
+      background: linear-gradient(45deg, #f3580adb, #004797);
       border: none;
       outline: none;
       border-radius: 40px;
       box-shadow: 0 0 10px rgba(0, 0, 0, .1);
       cursor: pointer;
       font-size: 16px;
-      color: #333;
+      color: #fff;
       font-weight: 600;
     }
     .wrapper .register-link{
