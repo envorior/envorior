@@ -44,7 +44,5 @@ urlpatterns = [
     
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
-
-    path('form',views.your_view_name,name='form'), 
 ]
 
