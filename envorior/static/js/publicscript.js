@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var formData = new FormData(form); // Get form data
         var xhr = new XMLHttpRequest();
 
-        xhr.open("POST", `${url}/form`, true); // Replace 'your_view_name' with the name of your Django view
+        xhr.open("POST", `${url}/uploadpost`, true); // Replace 'your_view_name' with the name of your Django view
         xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}"); // Set CSRF token
 
         xhr.onreadystatechange = function() {
@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var popup = document.getElementById("popup");
   var closeButton = document.querySelector(".close");
   var postButton = document.querySelector(".postbutton");
+ 
  
   // Close the popup when the close button is clicked
   closeButton.addEventListener("click", function(){

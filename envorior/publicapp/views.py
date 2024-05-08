@@ -6,18 +6,6 @@ from django.views.decorators.cache import cache_control #validate thourgh server
 from django.http import JsonResponse
 
 
-def your_view_name(request):
-    if request.method == "POST":
-        try:
-            caption = request.POST['caption']
-            p_image = request.FILES['pimg']
-            print(caption,p_image)
-            return JsonResponse({"message": "Form data received successfully"})
-        except Exception as e:
-            return JsonResponse({"error": str(e)})
-    else:
-        return JsonResponse({"error": "Invalid request method"})
-
 
 # Create your views here.
 @cache_control(no_cache=True ,must_revalidate=True,no_store=True)
