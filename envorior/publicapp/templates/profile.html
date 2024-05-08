@@ -5,12 +5,25 @@
   
   <div class="upper">
     <div class="items">
-      <div class="user-profile">
+
+      <div class="user-profile"  style="position: relative;">
         {% if current_user_details.profile_picture %}
           <a><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""></a>   
         {% else %}
           <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>
         {% endif %}
+        <form action="{% url 'publicapp:changeuserprofile' %}" method='POST' enctype="multipart/form-data" style="position: absolute;bottom: 0;">
+          {% csrf_token %}
+          <input id="fileinput"type="file" name="pic">
+          <label for="fileinput" class="plus-icon" style="position: absolute;bottom: 25%;left: 50%;">+</label>
+          <button type="submit" class="btn btn-primary">Change profile pic</button>
+          <!-- <div class="col-sm-8">
+            <input type="file" name="pic" class="form-control">
+          </div>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary">Change profile pic</button>
+          </div> -->
+        </form>
       </div>
       <p class="txt-2">{{current_user_details.full_name}}</p>
     </div>
@@ -25,15 +38,7 @@
   </div>
   <!-- change profile pic -->
   <div class="row">
-    <form action="{% url 'publicapp:changeuserprofile' %}" method='POST' enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="col-sm-8">
-        <input type="file" name="pic" class="form-control">
-      </div>
-      <div class="col-sm-4">
-        <button type="submit" class="btn btn-primary">Change profile pic</button>
-      </div>
-    </form>
+  
   </div>
 
   <div class="lower">

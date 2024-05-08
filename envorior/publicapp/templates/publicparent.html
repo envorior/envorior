@@ -329,8 +329,7 @@ environment
       <p style="">Create Post</p>
       <!-- HTML form -->
 <form id="myForm" method="post">
-  
-  <input type="text" id="inputField" name="inputField">
+  {% csrf_token %}
   <div class="txt-box" style=""><textarea type="text" name="caption" rows="20" placeholder=" Message "></textarea></div>
  <input id="fileinput"type="file" name="pimg" placeholder=" Upload Media (Image) ">
   <label for="fileinput" class="plus-icon">+</label>
@@ -343,8 +342,8 @@ environment
   
 
 
-  <svg viewBox="0 0 500 200">
+  <!-- <svg viewBox="0 0 500 200">
     <path d="M 0,100 C 150,200 350,0 500,100 L 500,00 L 0,0" style="fill:#F15F1F;"></path>
-  </svg>
+  </svg> -->
 </html>
 

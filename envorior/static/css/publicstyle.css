@@ -27,10 +27,12 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: var(--gray);
+  /* background-color: var(--gray); */
+  background: linear-gradient(0deg, #1e4b89, #f3580a);
   overflow: hidden;
   margin: 0;
   padding: 0;
+  /* background: linear-gradient(45deg, #1e4b89, #f3580a); */
 }
 
 a {
@@ -42,19 +44,19 @@ a {
 
 
 .txt-1 {
-  color: var(--darkgray);
+  color: var(--white);
   font-size: 1.5rem;
   font-weight: 500;
 }
 
 .txt-2 {
-  color: var(--darkgray);
+  color: var(--white);
   font-size: 1rem;
   font-weight: 400;
 }
 
 .txt-3 {
-  color: var(--darkgray);
+  color: var(--white);
   font-size: 0.8rem;
   font-weight: 300;
 }
@@ -98,7 +100,8 @@ a {
 header {
   width: 100%;
   position: absolute;
-  background-color: var(--white);
+  background: linear-gradient(180deg, #e66c30, #1b4b8b);
+  /* background-color: var(--white); */
 }
 
 .logo
@@ -201,7 +204,8 @@ main {
   width: 18vw;
   height: 3rem;
   border-radius: var(--border-radius);
-  background-color: var(--white);
+  background: linear-gradient(45deg, #184b8d, #df5819);
+  /* background-color: var(--white); */
 }
 .navlefttop .logo-img{
   margin-left: 1rem;
@@ -216,7 +220,8 @@ main {
  flex: 1;
  width: 18vw;
  border-radius: var(--border-radius);
- background-color: var(--white);
+ /* background-color: var(--white); */
+ background: linear-gradient(86deg, #1e4b89, #f15f1f);
 }
 
 .navleftmiddle div {
@@ -239,7 +244,8 @@ main {
   width: 18vw;
   height: 3rem;
   border-radius: var(--border-radius);
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  background: linear-gradient(86deg, #1e4b89, #f15f1f);
 }
 
 .navleftbottom div {
@@ -300,10 +306,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffffb4;
+  background: linear-gradient(45deg, #f3580adb, #004797);
   border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
   height: 3.5rem;
 }
+
+.feed-header .profile-txt a {
+    color: white;
+}
+ 
+
 
 .feed-content {
   background-color: #ffffffb4;
@@ -319,9 +331,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffffb4;
+  background: linear-gradient(45deg, #f3580adb, #004797);
   height: 3rem;
   border-radius: 0rem 0rem var(--border-radius) var(--border-radius);
+}
+
+.feed-footer span {
+    color: white;
 }
 
 .feed-footer .logo-img {
@@ -345,8 +361,8 @@ main {
   flex: 1;
   width: 18vw;
   border-radius: var(--border-radius);
-  background-color: var(--white);
-
+  /* background-color: var(--white); */
+  background: linear-gradient(359deg, #ec4c17, #1e4b89);
 }
 .box .box-header{
   position: absolute;

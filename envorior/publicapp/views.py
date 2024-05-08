@@ -9,8 +9,9 @@ from django.http import JsonResponse
 def your_view_name(request):
     if request.method == "POST":
         try:
-            input_data = request.POST.get("inputField")
-            print(input_data)
+            caption = request.POST['caption']
+            p_image = request.FILES['pimg']
+            print(caption,p_image)
             return JsonResponse({"message": "Form data received successfully"})
         except Exception as e:
             return JsonResponse({"error": str(e)})
