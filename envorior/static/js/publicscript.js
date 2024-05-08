@@ -123,8 +123,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Show the popup initially (you can trigger this based on certain events)
   postButton.addEventListener("click", function(){
-    popup.style.display = "flex";
-    popup.style.flexDirection = "column";
-    
+    popup.style.display = "block";
   });
 });
+
+
+
+// logout
+const myModal = document.getElementById('exampleModalLabel')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})

@@ -323,40 +323,22 @@ environment
     
 </footer> -->
 <!-- HTML for the popup -->
-<div id="popup" class="popup" style="background-color: #5f5b5b;">
-  <div class="popup-header" style="
-    display: flex;
-    height: 4rem;
-    border-bottom: 1px solid #e2cccc;
-    justify-content: center;
-    align-items: center;
-">
-    <span class="close">×</span>
-    <p style="
-    font-size: 1.8rem;
-    color: #b0a6a6;
-">Create Post</p>
-  </div>
+<div id="popup" class="popup">
   <div class="popup-content">
-   
+      <span class="close">&times;</span>
+      <p style="">Create Post</p>
       <!-- HTML form -->
-<form id="myForm" method="post" style="
-    flex-direction: column;
-    display: flex;
-    /* height: -webkit-fill-available; */
-    flex: 1;
-">
+<form id="myForm" method="post">
   
-  <!-- <input type="text" id="inputField" name="inputField"> -->
- <textarea type="text" name="caption" rows="5" placeholder=" Message "></textarea>
- <input id="fileinput" type="file" name="pimg" placeholder=" Upload Media (Image) ">
+  <input type="text" id="inputField" name="inputField">
+  <div class="txt-box" style=""><textarea type="text" name="caption" rows="20" placeholder=" Message "></textarea></div>
+ <input id="fileinput"type="file" name="pimg" placeholder=" Upload Media (Image) ">
   <label for="fileinput" class="plus-icon">+</label>
    <button type="submit" class="btn btn-primary">Post Now</button>
 
 </form>
   </div>
 </div>
-
   </body>
   
 
