@@ -5,30 +5,40 @@
 
 {%block content%}
 
-<div class="feed">
-<div class="dashboard-links">
-<a class="txt-1" href="{%url 'supervisorapp:supervisordashboard'%}">Home</a>
-</div>
-    
-
-    
-<div class="dashboard-links">
-<a class="txt-1" href="{%url 'supervisorapp:complain'%}">Complain</a>
-</div>
-    
-<div class="dashboard-links">
-<a class="txt-1" href="{%url 'supervisorapp:addservent'%}">Add Event</a>
-</div>
-    
-<div class="dashboard-links">
-<a class="txt-1" href="{%url 'supervisorapp:rank'%}">Top Social person</a>
-</div>
-    
-<div class="dashboard-links">
-<a class="txt-1" href="{%url 'supervisorapp:viewservent'%}">Servent</a>
+<!-- welcome code -->
+<div class="row">
+    <h1 class="text-center mt-5 fs-2" style="font-family: lucida Sans;">Welcome to <i>Admin Dashboard</i></h1>
 </div>
 
+<!-- boxes  -->
+<div class="row mt-5">
+    <div class="col-sm-2 mx-auto menubox ">
+        <a class="" href="{%url 'supervisorapp:complain'%}">
+            <div><i class="fa-solid fa-comments"></i></div>
+            <span>Complaints</span>
+        </a>
+    </div>
+    <div class="col-sm-2 mx-auto menubox ">
+        <a class="" href="{%url 'supervisorapp:addservent'%}">
+            <div><i class="fa-solid fa-users"></i></div>
+            <span>Add Servent</span>
+        </a>
+    </div>
+    <div class="col-sm-2 mx-auto menubox ">
+        <a class="" href="{%url 'supervisorapp:rank'%}">
+            <div><i class="fa-solid fa-ranking-star"></i></div>
+            <span>Top Social Person</span>
+        </a>
+    </div>
+    <div class="col-sm-2 mx-auto menubox ">
+        <a class="" href="{%url 'supervisorapp:viewservent'%}">
+            <div><i class="fa-solid fa-users"></i></div>
+            <span>Servent</span>
+        </a>
+    </div>
+    
 </div>
+
 
 
 

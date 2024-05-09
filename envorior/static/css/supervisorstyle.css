@@ -419,8 +419,7 @@ footer {
   width: 50%;
 }
 
-.social-links {
-}
+
 
 
 /* dashboard */
@@ -511,12 +510,7 @@ footer {
 
 
 
-  hr {
-    /* margin-top: 20px; */
-    /* margin-bottom: 20px; */
-    /* border: 0; */
-    /* border-top: 1px solid #ccc; */
-}
+
 
 table {
     margin: auto;
@@ -536,4 +530,42 @@ th {
 
 tbody tr:hover {
     background-color: #f5f5f5;
+}
+
+
+/* dashboard menu boxes */
+
+.menubox{
+  border-bottom: 5px solid;
+  border-color:rgb(32, 98, 240);
+  min-height:100px;
+  text-align: center;
+  box-shadow: inset;
+  background-color: #ec4c17;
+  box-shadow: 5px 5px 2px rgb(155, 155, 231);
+}
+.menubox :hover{
+  border-bottom: 5px solid;
+  border-color:rgb(28, 32, 39);
+  min-height:100px;
+  text-align: center;
+  box-shadow: inset;
+  background-color: #742207;
+  box-shadow: 5px 5px 2px rgb(155, 155, 231);
+}
+
+
+
+.menubox a span{
+  color: #f7f7f7;
+  padding-top:30px;
+  font-size: 20px;
+  margin-top:5%;
+  margin-bottom:5%;
+ 
+}
+.menubox a i{
+  font-size: 50px;
+  margin-top: 10%;
+  color: #3a3a3a;
 }
