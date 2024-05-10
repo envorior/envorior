@@ -423,15 +423,31 @@ main {
 
 } */
 
-.box .box-main{
+.box .box-main {
   height: -webkit-fill-available;
   position: absolute;
   width: 100%;
   top:3rem;
   /* left: 1rem; */
   overflow: auto;
-  scrollbar-width: none;
 }
+
+.box .box-main::-webkit-scrollbar {
+  width: 14px;
+}
+.box .box-main::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+.box .box-main::-webkit-scrollbar-thumb {
+  background: #888;
+  border: 4px solid #ffffff;
+  border-radius: 8px;
+  transition: background 0.2s linear;
+}
+.box .box-main::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6;
+}
+
 .box .user-profile {
   min-height: 3.5rem;
   border-bottom: 0.5px solid var(--gray);

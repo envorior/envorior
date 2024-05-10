@@ -83,7 +83,7 @@
 {% for job in jobs %}
 <div class="feed-post">
    <div class="feed-header" style="padding-right: 1rem;">
-      <div class="user-profile">
+      <div class="user-profile"> 
          {% if job.job_by.profile_picture %}
            <a><img class="profile-img" src="{{ job.job_by.profile_picture.url }}" alt=""></a>
          {% else %}

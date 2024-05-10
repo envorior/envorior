@@ -16,6 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
   <!-- JS FILE -->
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
   <script src="{% static 'js/publicscript.js' %}"></script>
   <!-- CSS FILE  -->
 
@@ -57,7 +58,7 @@
           </div>
         </form> -->
     </div>
-
+ 
     <div class="right">
       <div class="user-profile">
         {% if current_user_details.profile_picture %}
@@ -66,8 +67,9 @@
         <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt="" /> </a>
         {% endif %}
         <div class="profile-txt">
-          <a href="" class="txt-3">
-            <p>{{current_user_details.full_name}}</p>
+          <a href="" class="txt-3"> 
+            <p style="margin-top: 18px;">{{current_user_details.full_name}}</p>
+            <p style="margin-top: -15px;">Department of <cite title="Source Title">{{current_user_details.full_name}}</cite></p>
           </a>
         </div>
       </div>
@@ -92,60 +94,56 @@
 
   <main>
     <!-- left bar -->
+    
 
     <div class="publicleft">
       <!--left top  -->
-      <div class="navlefttop logo">
+      <!-- <div class="navlefttop logo">
         <img class="logo-img" src="{% static 'img/trophy.png' %}" />
 
         <div class="logo-txt">
           <p class="txt-1" style="color: #000000">Reward</p>
           <p class="txt-3">{{total_reward}}</p>
         </div>
-      </div>
+      </div> -->
       <!-- left middle -->
       <div class="navleftmiddle">
 
 
-        <div class="mt-2 mb-2">
-          <a href="{%url 'serventapp:dashboard'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-            <span class="txt-2">Home</span>
-          </a>
-        </div>
-
-
-
-
-
-        <div class="mt-2 mb-2">
+        <div class=" mt-2 navleftmiddles navdiver">
           <a href="{%url 'serventapp:complain'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comments"></i></span>
-            <span class="txt-2">Complain</span>
+            <span class="txt-2"><i class="fa-solid fa-house-user"></i>&nbsp;</span>
+            <span class="txt-2">Dashboard</span>
           </a>
         </div>
-        <div>
+
+
+
+
+
+      
+        <div class=" navleftmiddles navdiver">
           <a href="{%url 'serventapp:post'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comments"></i></span>
+            <span class="txt-2"><i class=" fa-solid fa-circle-plus"></i>&nbsp;</span>
             <span class="txt-2">Add Event/News</span>
           </a>
         </div>
-        <div>
+        <div class=" navleftmiddles navdiver">
           <a href="{%url 'serventapp:rank'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comments"></i></span>
+            <span class="txt-2"><i class="fa-solid fa-users"></i>&nbsp;</span>
             <span class="txt-2">Top Social Person</span>
           </a>
         </div>
-        <div>
+        <div class=" navleftmiddles navdiver">
           <a href="{%url 'serventapp:event'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comments"></i></span>
+            <span class="txt-2"><i class="fa-solid fa-calendar-days"></i>&nbsp;</span>
             <span class="txt-2">View Event/News</span>
           </a>
         </div>
 
-        <div>
+        <div class=" navleftmiddles navdiver">
           <a href="{%url 'serventapp:your_event'%}" class="text-decoration-none">
-            <span class="txt-2"><i class="fa-solid fa-comments"></i></span>
+            <span class="txt-2"><i class="fa-solid fa-chalkboard-user"></i>&nbsp;</span>
             <span class="txt-2">Your event</span>
           </a>
         </div>
@@ -155,36 +153,35 @@
 
       </div>
       <!-- left bottom -->
-      <div class="navleftbottom">
-
-        <!-- logout code -->
-        <a href="#" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="fa-solid fa-sign-out mx-2"></i>Logout
-        </a>
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to logout ?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class=" row mb-3">
-                <div class="col-sm-4">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <div class="navleftbottom navleftmiddles">
+         
+        <div style="margin-top: 13px;">
+          <!-- logout code -->
+          <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <i class="fa-solid fa-sign-out mx-2 "></i>Logout
+          </a>
+          <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to logout ?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-sm-4">
-                  <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
-                    <button type="button" class="btn btn-primary">Yes</button>
-                  </a>
+                <div class=" row mb-3">
+                  <div class="col-sm-4">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                  <div class="col-sm-4">
+                    <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
+                      <button type="button" class="btn btn-primary">Yes</button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
         </div>
-
-
-
-
       </div>
     </div>
 

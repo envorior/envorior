@@ -4,11 +4,47 @@
 {% block title %} Complains {% endblock title %}
 
 {%block content%}
+<div class="new-card">
+   {% for c in complain %}
+   <div class="card-main">
+      <div class="card-top">
+         <div class="card-img">
+            {% if c.complain_by.profile_picture %} 
+               <a href=""><img class="profile-img"  src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+               <a href=""><img class="profile-img"  src="{% static 'img/profile.png' %}" alt=""/> </a>
+            {% endif %} 
+         </div>
+         <div class="card-title">
+            <p><span style="font-weight: bold;">Complaints Type:</span> {{c.complain_type}}</p>
+            <p>{{c.complain_by.full_name}} &middot; {{c.complain_location}}</p>
+            <p style="margin-top:5px; margin-bottom: -5px;"><span style="font-weight: bold;">Description:</span> {{c.description}}</p>
+         </div>
+      </div>
+      <div class="card-img-main">
+         {% if c.complain_image %} 
+            <img src="{{ c.complain_image.url }}" alt="" />
+         {% else %}
+            <img  src="{% static 'img/profile.png' %}" alt="" />
+         {% endif %}
+      </div>
+      <div class="complain-status">
+         <a href="#" class="text-decoration-none w-100">
+          {% if c.complain_status == 'solved' %}
+            <span class="complain-status-true">Solved</span>
+          {% else %} 
+            <span class="complain-status-false">Unsolved</span> 
+          {% endif %}
+        </a>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}
 
 
-
-<div class="feed">
-   <div class=" feed-search">
+<!-- <div class="feed"> -->
+   <!-- <div class=" feed-search">
       <div class="user-profile">
          <a>
             {% if current_user_details.profile_picture %} 
@@ -26,53 +62,6 @@
       </form>
       <a href="#"><button class="btn btn-primary">Enter</button></a>
       
-      </div>
-    
-   {% for c in complain %}
-<div class="feed-post">
-   <div class="feed-header">
-      <div class="user-profile">
-         {% if c.complain_by.profile_picture %} 
-              <a href=""><img class="profile-img" src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
-         {% else %}
-              <a href=""><img class="profile-img" src="" alt=""/> </a>
-         {% endif %} 
-     </div>
-         <div class="profile-txt">
-          <a href="" class="txt-2"><p>complaints type : {{c.complain_type}}</p></a>
-          <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a>
-          
-         </div>     
-             </div>
-   <div class="feed-content">
-      <p class="txt-3">description: {{c.description}}</p>
-      <p class="txt-3">location: {{c.complain_location}}</p>
-           <div style="object-fit: cover;">
-               {% if c.complain_image %} 
-                  <a href=""><img src="{{ c.complain_image.url }}" alt="" height="100%" width="100%"/> </a>
-               {% else %}
-                  <a href=""><img  src="{% static 'img/profile.png' %}" alt="" height="100%" width="100%"/> </a>
-               {% endif %}
-           </div>
-           
-   </div>
-
-
-   <div class="feed-footer" style="padding: 0;">
-     
-      <a  class="text-decoration-none" style="color: white; width: -webkit-fill-available;">
-       {% if c.complain_status == 'solved' %}
-         <button type="button" class="btn " style="background-color: rgb(58, 214, 19); width: -webkit-fill-available;" >Solved</button>
-         {% else %} 
-         <button type="button" class="btn " style="background-color: red; width: -webkit-fill-available;" >Unsolved</button>
-         
-       {% endif %}
-     </a>
-   </div>
+      </div> -->
   
-</div>
-{% endfor %}
-</div>
-
-{% endblock %}
 

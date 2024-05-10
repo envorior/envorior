@@ -5,46 +5,24 @@
 
 {%block content%}
 
-<div class="feed">
-   <div class=" feed-search">
-      
-      <form >
-         <div class="search">
-            <input type="text" placeholder="write here something to Post">
-         </div>
-          
-      </form>
-      <a href="#"><button class="btn btn-primary">Enter</button></a>
-     
-   </div>
- 
- 
+<div class="new-card">
    {% for e in event %}
-<div class="feed-post">
-  
-   <div class="feed-content">
-      <p class="txt-3">News/Event by: {{e.department.full_name}}</p>
-      <p class="txt-3">Date: {{e.date}}</p>
-      <p class="txt-3">description : {{e.description}}</p>
-
-   
-           <div style="object-fit: cover;">
-            {% if e.image %}
-            <img src="{{e.image.url}}" alt="" height="100%" width="100%">
-         {% endif %} 
-            <!-- <img src="{{post.postimage.url}}" height="100%" width="100%"> -->
-           </div>
-           
+   <div class="card-main">
+      <div class="card-top">
+         <div class="card-title">
+            <p><span style="font-weight: bold;">News/Event by:</span> {{e.department.full_name}}</p>
+            <p>Date : {{e.date}}</p>
+            <p>Description : {{e.description}}</p>
+         </div>
+      </div>
+      <div class="card-img-main">
+         {% if e.image %}
+            <img src="{{e.image.url}}" alt="" />
+         {% else %}
+            <img  src="{% static 'img/post.jpg' %}" alt="" />
+         {% endif %}
+      </div>
    </div>
-  
+   {% endfor %}
 </div>
-{% endfor %}
-</div>
-
 {% endblock %}
-
-
-
-
-
-

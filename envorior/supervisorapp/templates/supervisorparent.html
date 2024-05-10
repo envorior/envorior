@@ -21,7 +21,7 @@
     <!-- JS FILE -->
     <script src="{% static 'js/publicscript.js' %}"></script>
     <!-- CSS FILE  -->
-    
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/supervisorstyle.css' %}" />
   </head>
 
@@ -72,13 +72,14 @@
             {% endif %}
           </a>
           <div class="profile-txt">
-            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{current_user_details.full_name}}</p></a>
+            <p style="margin-top: 17px; font-size: 14px;">{{current_user_details.full_name}}</p>
+            <p style="margin-top: -16px; font-size: 14px;"><span style="font-weight: bold;">Welcome to </span> <cite title="Source Title">Admin Dashboard</cite></p>
           </div>
         </div>
 
-        <div class="other-settings" onclick="other_settings()">
+        <!-- <div class="other-settings" onclick="other_settings()">
           <img class="" src="{% static 'img/grid.png' %}" alt="" />
-        </div>
+        </div> -->
       </div>
       <!-- my profile-->
 
@@ -103,54 +104,53 @@
 
       <div class="publicleft">
         <!--left top  -->
-        <div class="navlefttop logo">
+        <!-- <div class="navlefttop logo">
           <img class="logo-img" src="{% static 'img/trophy.png' %}" />
 
           <div class="logo-txt">
             <p class="txt-1" style="color: #000000">Reward</p>
             <p class="txt-3">{{total_reward}}</p>
           </div>
-        </div>
+        </div> -->
         <!-- left middle -->
         <div class="navleftmiddle">
-          <div>
+          <div class="navleftmiddles navdiver mt-2">
             <a
               href="{%url 'supervisorapp:supervisordashboard' %}"
               class="text-decoration-none"
             >
-              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2"><i class="fa-solid fa-house-user"></i>&nbsp;</span>
               <span class="txt-2">Home</span>
             </a>
           </div>
 
         
-          <div>
+          <div class="navleftmiddles navdiver">
             <a href="{%url 'supervisorapp:complain'%}" class="text-decoration-none">
               <span class="txt-2"
-                ><i class="fa-solid fa-comments"></i></span>
+                ><i class="fa-solid fa-envelope-open-text"></i>&nbsp;</span>
               <span class="txt-2">Complain</span>
             </a>
           </div>
-          <div>
+          <div class="navleftmiddles navdiver">
             <a href="{%url 'supervisorapp:addservent'%}" class="text-decoration-none">
               <span class="txt-2"
-                ><i class="fa-solid fa-users"></i
-              ></span>
+                ><i class="fa-solid fa-user-plus"></i>&nbsp;</span>
               <span class="txt-2">Add Servent</span>
             </a>
           </div>
-          <div>
+          <div class="navleftmiddles navdiver">
             <a href="{%url 'supervisorapp:rank'%}" class="text-decoration-none">
               <span class="txt-2">
-              <i class="fa-solid fa-ranking-star"></i></span>
+              <i class="fa-solid fa-ranking-star"></i>&nbsp;</span>
               <span class="txt-2">Top Social Person</span>
             </a>
           </div>
-          <div>
+          <div class="navleftmiddles navdiver">
             <a href="{%url 'supervisorapp:viewservent'%}" class="text-decoration-none">
               <span class="txt-2"
                 ><i class="fa-solid fa-users"></i
-              ></span>
+              >&nbsp;</span>
               <span class="txt-2">View Servent</span>
             </a>
           </div>
@@ -160,11 +160,12 @@
 
         </div>
         <!-- left bottom -->
-        <div class="navleftbottom" onclick="settings()">
-          <div>
+        <div class="navleftbottom navleftmiddles">
+         
+          <div style="margin-top: 13px;">
             <!-- logout code -->
-            <a href="#" class="" data-bs-toggle="modal" data-bs-target="#logoutModal">
-              <i class="fa-solid fa-sign-out mx-2"></i>Logout
+            <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+              <i class="fa-solid fa-sign-out mx-2 "></i>Logout
             </a>
             <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
               <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
@@ -186,6 +187,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

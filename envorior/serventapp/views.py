@@ -13,7 +13,7 @@ def dashboard(request):
             #common to all servent view
             current_user = request.session['email']
             current_user_details = Profile.objects.get(user=current_user)
-            return render(request,'servent/pages/dashboard.html',locals())
+            return redirect('serventapp:complain')    
     except KeyError:
         return redirect('generalapp:login')     
 
