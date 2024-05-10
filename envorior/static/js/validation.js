@@ -57,3 +57,23 @@ function registration(){
     document.getElementById("validationresult").innerHTML = text;
     
 }
+
+function login(){
+    let email = document.getElementById("email");
+    let contact = document.getElementById('password');
+    if (email.value==null || email.value==""){
+            text="Email is Required";
+            document.getElementById("validationresult").innerHTML = text;
+        } 
+    else if (contact.value==null || contact.value==""){
+            text="Password is Required";
+            document.getElementById("validationresult").innerHTML = text;
+        }
+    else
+        {
+          document.getElementById('loginform').submit();
+        }        
+    
+
+
+}

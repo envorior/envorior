@@ -23,6 +23,7 @@
     <script src="{% static 'js/publicscript.js' %}"></script>
     <!-- CSS FILE  -->
     <link rel="stylesheet" href="{% static 'css/publicstyle.css' %}" />
+  
   </head>
   <body class="body">
     <!-- header -->
@@ -124,23 +125,23 @@
           <img class="logo-img" src="{% static 'img/trophy.png' %}" />
 
           <div class="logo-txt">
-            <p class="txt-1" style="color: #000000">Reward</p>
-            <p class="txt-3" style="color: green">{{total_reward}}</p>
+            <p class="txt-1" style="color: #000000;">Reward</p>
+            <p class="txt-3" style="color: green; margin-top: -5px;">{{total_reward}}</p>
           </div>
         </div>
         <!-- left middle -->
         <div class="navleftmiddle">
-          <div>
+          <div class="navleftmiddles">
             <a
               href="{%url 'publicapp:publichome'%}"
               class="text-decoration-none"
             >
-              <span class="txt-2"><i class="fa-solid fa-house"></i></span>
-              <span class="txt-2">Home</span>
+              <span class="txt-2 "><i class="fa-solid fa-house"></i></span>
+              <span class="txt-2 ">Home</span>
             </a>
           </div>
 
-          <div>
+          <div class="navleftmiddles">
             <a
               href="{%  url 'publicapp:notifications' %}"
               class="text-decoration-none"
@@ -151,14 +152,14 @@
           </div>
 
           
-          <div>
+          <div class="navleftmiddles">
             <a href="{%url 'publicapp:jobs'%}" class="text-decoration-none">
               <span class="txt-2"><i class="fa-solid fa-briefcase"></i></span>
               <span class="txt-2">Jobs</span>
             </a>
           </div>
 
-          <div>
+          <div class="navleftmiddles">
             <a href="{%url 'publicapp:donation'%}" class="text-decoration-none">
               <span class="txt-2"
                 ><i class="fa-solid fa-hand-holding-dollar"></i
@@ -167,7 +168,7 @@
             </a>
           </div>
 
-          <div>
+          <div class="navleftmiddles">
             <a href="{%url 'publicapp:complain'%}" class="text-decoration-none">
               <span class="txt-2"
                 ><i class="fa-solid fa-comments"></i
@@ -177,7 +178,7 @@
           </div>
           
 
-          <div>
+          <div class="navleftmiddles">
             <a
               href="{%url 'publicapp:profile'%}"
               class="text-decoration-none"
@@ -192,9 +193,9 @@
 
         </div>
         <!-- left bottom -->
-        <div class="navleftbottom">
+        <div class="navleftbottom navleftmiddles">
          
-          <div>
+          <div style="margin-top: 13px;">
             <!-- logout code -->
             <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i class="fa-solid fa-sign-out mx-2 "></i>Logout
@@ -230,16 +231,18 @@
       <!-- message and Top Social worior section -->
 
       <div class="publicright">
-        <div class="box">
-          <div class="box-header">
-            <p class="txt-1">Top  worior</p>
+        <div class="box" >
+          <div class="box-header" >
+            <p class="txt-1" >Top  worior</p>
           </div>
           
+          
       <div class="box-main">
+        <div style="border-bottom: 1px solid black; opacity: 8%; margin-bottom: 2px;  margin-left: 18px; margin-right: 18px;"></div>
         
-        <marquee behavior="" direction="up">
+      
           {%for top in top_envorior%}
-          <div class="user-profile">
+          <div class="user-profile navrightmiddles">
             <a href="">
              {% if top.profile.profile_picture %} 
               <img class="profile-img" src="{{top.profile.profile_picture.url}}" alt=""/>
@@ -253,8 +256,8 @@
             </div>
           </div>
           {%endfor%}
-        </marquee>
-            
+       
+          <div style="border-bottom: 1px solid black; opacity: 8%; margin-bottom: 2px;  margin-left: 18px; margin-right: 18px;"></div>
         
       </div>
           

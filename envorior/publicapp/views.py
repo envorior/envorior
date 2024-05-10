@@ -21,7 +21,7 @@ def publichome(request):
             top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
 
             #code for publichome
-            post = Post.objects.all().order_by('-posteddate')
+            post = Post.objects.all().order_by('-pid')
             return render(request,'publichome.html',locals())
         
     except KeyError:
@@ -204,7 +204,9 @@ def postdonation(request):
                           product_image=product_image,
                           donar_location=donar_location,donated_by=current_user_details)
         donate.save()
-    return render(request,'postdonate.html',locals())
+        #get all donation  
+        donation = Donation.objects.all() 
+    return render(request,'donate.html',locals())
 
 def reward_donate(request,id):
     current_user = request.session['email']
