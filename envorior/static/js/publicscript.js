@@ -79,6 +79,44 @@ let url = "http://127.0.0.1:8000"; // Base URL of the Django app
 //   popup.style.left = left;
 // }
 
+// javascript for handling profile page
+
+document.addEventListener("DOMContentLoaded",function(){
+let postbtn=document.querySelector(".profile-post-btn");
+let post=document.querySelector(".profile-post");
+let jobbtn=document.querySelector(".profile-job-btn");
+let job=document.querySelector(".profile-job");
+let donationbtn=document.querySelector(".profile-donation-btn");
+let donation=document.querySelector(".profile-donation");
+let complainbtn=document.querySelector(".profile-complain-btn");
+let complain=document.querySelector(".profile-complain");
+
+postbtn.addEventListener("click",function(){
+job.style.display="none";
+donation.style.display="none";
+complain.style.display="none";});
+
+
+jobbtn.addEventListener("click",function(){
+post.style.display="none";
+donation.style.display="none";
+complain.style.display="none";});
+
+
+donationbtn.addEventListener("click",function(){
+job.style.display="none";
+post.style.display="none";
+complain.style.display="none";});
+
+
+complainbtn.addEventListener("click",function(){
+job.style.display="none";
+donation.style.display="none";
+post.style.display="none";});
+
+
+});
+
 
 // JavaScript to handle form submission
 document.addEventListener("DOMContentLoaded", function() {

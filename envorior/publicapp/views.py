@@ -327,6 +327,11 @@ def profile(request):
     total_reward = top.reward
     #top  envorior
     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
+
+    post = Post.objects.filter(postby=current_user_details).order_by('-posteddate')
+    complain = Complain.objects.filter(complain_by=current_user_details)
+    donation = Donation.objects.filter(donated_by=current_user_details)
+    jobs = Job.objects.filter(job_by=current_user_details)
     return render(request,'profile.html',locals())
 
 def changeuserprofile(request):
@@ -343,7 +348,8 @@ def changeuserprofile(request):
         profile_image=request.FILES['pic']
         current_user_details.profile_picture=profile_image
         current_user_details.save()
-    return render(request,'profile.html',locals())
+    return redirect('publicapp:profile')
+    # return render(request,'profile.html',locals())
 
 def show_user_post(request):
     #common code for user details

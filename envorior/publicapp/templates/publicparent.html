@@ -286,73 +286,7 @@
 
     </main>
 
-    <!-- <footer>
-   <div class="footer-left">
-    <div class="footer-logo">   
-        <div class="logo ">
-       
-          <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="">
-          
-           </div>
-           <div class="logo-txt">
-              <p style="font-family: cursive; color: green; font-size:1.6rem;">ENVORIOR</p>
-              <p>Environment Worior</p>
-           </div>
-          </div> 
-          <div class="txt-3">
-            <p>
-<pre>Engaging in activism, advocating for 
-environmental policies, and taking 
-direct action to protect the 
-environment
-</pre>
-                  </p>
-        </div>
-   </div>
-      
 
-   <div class="footer-middle">
-   
-        <div>
-        <p class="txt-1">Useful links</p>
-        <a href="{%url 'publicapp:about'%}" ><p class="txt-2">About us</p></a>
-        <a href="{%url 'publicapp:contact'%}" ><p class="txt-2">Contact us</p></a>
-        <a href="{%url 'publicapp:terms'%}" ><p class="txt-2">Terms & Conditions</p></a>
-        <a href="{%url 'publicapp:policy'%}" ><p class="txt-2">Privacy Policy</p></a>
-        </div>
-
-        <div>
-            <p class="txt-1">Other links</p>
-            <a href="{%url 'publicapp:scam'%}" ><p class="txt-2">Reporting Scams</p></a>
-            <a href="{%url 'publicapp:donation'%}" ><p class="txt-2">Donations</p></a>
-            <a href="{%url 'publicapp:jobs'%}" ><p class="txt-2">Jobs</p></a>
-            
-        </div>
-
-   </div>
-
-       
-   <div class="footer-right">
-    <div class="social-links"></div>  
-   </div>
-    
-</footer> -->
-<!-- HTML for the popup -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-      <span class="close">&times;</span>
-      <p style="">Create Post</p>
-      <!-- HTML form -->
-<form action="{% url 'publicapp:uploadpost' %}" id="myForm" method="post">
-  {% csrf_token %}
-  <div class="txt-box" style=""><textarea type="text" name="caption" rows="20" placeholder=" Message "></textarea></div>
- <input id="fileinput"type="file" name="pimg" placeholder=" Upload Media (Image) ">
-  <label for="fileinput" class="plus-icon">+</label>
-   <button type="submit" class="btn btn-primary">Post Now</button>
-
-</form>
-  </div>
-</div>
   </body>
   
 
