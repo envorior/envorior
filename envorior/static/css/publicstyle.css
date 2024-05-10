@@ -569,6 +569,16 @@ header .left {
     align-items: center;
     /* justify-content: center; */
    }
+
+.profile .lower {
+    /* justify-content: space-around; */
+    padding: 2rem 0rem;
+}
+
+.lower .fa-solid {
+    font-size: 1.5rem;
+    color: #f3580a;
+}
    .profile .upper .items,.profile .lower .items{
     width: 100%;
     /* margin: auto; */
@@ -577,13 +587,20 @@ header .left {
     justify-content: center;
     align-items: center;
    }
+
+.lower .items:hover {
+    height: 3rem;
+    background: #e9ecef;
+}
    .profile-data {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    background: #ffffff;
 }
 
    .profile-data .feed-post {
-    width: 15rem;
+    width: 30%;
     margin: 1%;
 }
 
@@ -599,12 +616,25 @@ header .left {
 }
 
 .plus-icon {
+  border-radius: var(--border-radius2);
+  background: #0d6efd;
+  height: 1.5rem;
+  width: 1.5rem;
   justify-content: center;
+  align-items: center;
   display: flex;
   cursor: pointer;
-  font-size: 2rem;
-  color: #f3580a;
+  font-size: 1.5rem;
+  color: #ffffff;
   position: absolute;
-  bottom: 15%;
-  right: 23%;
+  bottom: 22%;
+  right: 25%;
+}
+
+#imagePreview{
+  text-align: center;
+  border-radius:var(--border-radius2) ;
+  height: 10rem;
+  width: 10rem;
+  display: none;
 }

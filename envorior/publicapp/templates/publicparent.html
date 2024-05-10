@@ -201,26 +201,7 @@
             <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i class="fa-solid fa-sign-out mx-2 "></i>Logout
             </a>
-            <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-              <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to logout ?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class=" row mb-3">
-                    <div class="col-sm-4">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                    <div class="col-sm-4">
-                      <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
-                        <button type="button" class="btn btn-primary">Yes</button>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
             
           </div>
         </div>
@@ -285,6 +266,27 @@
 
 
     </main>
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
+        <div class="modal-content" style=" height: 15rem;width: 20rem;transform: translateX(50rem);">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to logout ?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class=" row mb-3">
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="position:absolute;bottom:3rem;left:3rem; width:5rem;">Close</button>
+            </div>
+            <div class="col-sm-4">
+              <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
+                <button type="button" class="btn btn-primary"style="position:absolute;bottom:3rem;right:3rem; width:5rem;">Yes</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </body>

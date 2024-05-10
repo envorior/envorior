@@ -5,13 +5,15 @@
 
 {% block content %}
 {% for i in notifications %}
-<div  class="user-profile" style="margin:0rem; padding: 0.5rem;
-background-color: white;
-border-bottom: 1px solid gray;">
-    <div class="profile-txt" >
-      <div><span>Notification</span></div>
-      <div><span>Message : </span>{{i.n_msg}}</div>
+
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Message :</div>
+      {{i.n_msg}}
     </div>
-</div>
+    <span class="badge text-bg-primary rounded-pill">14</span>
+  </li>
+</ol>
 {% endfor %}
 {% endblock %}

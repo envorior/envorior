@@ -4,6 +4,8 @@ let url = "http://127.0.0.1:8000"; // Base URL of the Django app
 
 document.addEventListener("DOMContentLoaded",function(){
  
+let allbtn=document.querySelector(".profile-all-btn");
+
 let postbtn=document.querySelector(".profile-post-btn");
 let posts=document.querySelectorAll(".profile-post");
 let jobbtn=document.querySelector(".profile-job-btn");
@@ -13,6 +15,23 @@ let donations=document.querySelectorAll(".profile-donation");
 let complainbtn=document.querySelector(".profile-complain-btn");
 let complains=document.querySelectorAll(".profile-complain");
 
+
+allbtn.addEventListener("click",function(){
+  
+  posts.forEach(function(post){
+    post.style.display="block";
+  });
+  jobs.forEach(function(job){
+    job.style.display="block";
+  });
+  donations.forEach(function(donation){
+    donation.style.display="block";
+  });
+  complains.forEach(function(complain){
+    complain.style.display="block";
+  });
+
+});
 
 postbtn.addEventListener("click",function(){
   
@@ -84,6 +103,26 @@ complainbtn.addEventListener("click",function(){
 
 });
 
+// function for image preview
+
+document.addEventListener("DOMContentLoaded",()=>{
+  const uploadInput=document.getElementById("uploadInput");
+  const imagePreview=document.getElementById("imagePreview");
+
+  uploadInput.addEventListener('change',(e)=>{
+    const file=e.target.files[0];
+
+    if (file){
+      const reader=new FileReader();
+      reader.addEventListener('load',()=>{
+      imagePreview.src=reader.result;
+      imagePreview.style.display="block";
+      });
+      reader.readAsDataURL(file);  //convert file to base string
+    }
+  });
+
+});
 
 // // JavaScript to handle form submission
 // document.addEventListener("DOMContentLoaded", function() {
