@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,reverse
 from .models import User
+from django.contrib import messages
 from publicapp.models import Profile,TopEnvorior
 from django.contrib.auth.hashers import make_password , check_password
 
@@ -20,7 +21,7 @@ def registration(request):
             check_email = User.objects.get(email=email)
             if check_email:
                 print('Already registered')
-                msg='Email already registered'
+                messages.success(request,'Email Already Registered')
                 return render(request,'registration.html',locals())
         except: 
                 user=User(email=email,password=password)
@@ -59,9 +60,9 @@ def login(request):
                     
             elif user.email==email and raw_password==hashed_password  and user.user_type=='supervisor':
                 request.session['email'] = email
-                return redirect(reverse('supervisorapp:complain'))
+                return redirect(reverse('supervisorapp:supervisordashboard'))
         except:
-            msg ='Incorrect Email ID or Password'
+            messages.error(request,'Incorrect Email ID or Password')
             return render(request,'login.html',locals())        
     return render(request, 'login.html')
 

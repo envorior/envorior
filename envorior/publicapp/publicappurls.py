@@ -4,7 +4,7 @@ from .import views
 urlpatterns = [
     path('publichome/',views.publichome,name='publichome'),
     path('postform/',views.postform,name='postform'),
-    path('uploadpost/',views.uploadpost,name='uploadpost'),
+    path('uploadpost',views.uploadpost,name='uploadpost'),
     path('like/<int:id>/',views.like_post,name='like'), 
     path('jobs/',views.jobs,name='jobs'),  
     path('jobform/',views.jobform,name='jobform'),
@@ -44,7 +44,5 @@ urlpatterns = [
     
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
-
-    path('form',views.your_view_name,name='form'), 
 ]
 
