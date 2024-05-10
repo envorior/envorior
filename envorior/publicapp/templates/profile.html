@@ -41,26 +41,26 @@
   
     <div class="lower">
       <div class="items">
-        <button class="btn btn-secondary profile-post-btn">Post</button>
+        <!-- <button class="btn btn-secondary profile-post-btn">Post</button> -->
+        <span class="txt-2"><i class="fa-solid fa-th profile-all-btn"></i></span>
       </div>
       <div class="items">
-        <button class="btn btn-secondary profile-complain-btn">complain</button>
+        <!-- <button class="btn btn-secondary profile-post-btn">Post</button> -->
+        <span class="txt-2"><i class="fa-solid fa-file-alt profile-post-btn"></i></span>
       </div>
       <div class="items">
-        <button class="btn btn-secondary profile-job-btn">Job</button>
+        <!-- <button class="btn btn-secondary profile-complain-btn">complain</button> -->
+        <span class="txt-2"><i class="fa-solid fa-comments profile-complain-btn"></i></span>
       </div>
       <div class="items">
-        <button class="btn btn-secondary profile-donation-btn">Donation</button>
-      </div>
-      <!-- <div class="items">
-        <a href="{% url 'publicapp:usercomplain' %}"><button class="btn btn-secondary">Complain</button></a>
+        <!-- <button class="btn btn-secondary profile-job-btn">Job</button> -->
+        <span class="txt-2"><i class="fa-solid fa-briefcase profile-job-btn"></i></span>
       </div>
       <div class="items">
-        <a href="{% url 'publicapp:userjob' %}"><button class="btn btn-secondary">Job</button></a>
+        <!-- <button class="btn btn-secondary profile-donation-btn">Donation</button> -->
+        <span class="txt-2"><i class="fa-solid fa-hand-holding-dollar profile-donation-btn"></i></span>
       </div>
-      <div class="items">
-        <a href="{% url 'publicapp:userdonation' %}"><button class="btn btn-secondary">Donation</button></a>
-      </div> -->
+
     </div>
 
   </div>
@@ -73,7 +73,7 @@
 <!-- #showing user complain -->
 {% for c in complain %}
 <div class="feed-post profile-complain">
-  <div class="feed-header">
+  <!-- <div class="feed-header">
      <div class="user-profile">
         {% if c.complain_by.profile_picture %} 
              <a href=""><img class="profile-img" src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
@@ -86,7 +86,7 @@
          <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a>
          
         </div>     
-            </div>
+            </div> -->
   <div class="feed-content">
      <p class="txt-3">description: {{c.description}}</p>
      <p class="txt-3">location: {{c.complain_location}}</p>
@@ -100,7 +100,7 @@
           
   </div>
 
-  <div class="feed-footer">
+  <!-- <div class="feed-footer">
     
      <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none">
       {% if c.complain_status == 'solved' %}
@@ -115,7 +115,7 @@
        <span class="txt-1">Delete complain</span>
    </a>
  </div>
-  </div>
+  </div> -->
  
 </div>
 {% endfor %}
@@ -123,7 +123,7 @@
    <!-- #showing user donation -->
    {% for d in donation %}
    <div class="feed-post profile-donation">
-      <div class="feed-header" style="padding-right: 1rem;">
+      <!-- <div class="feed-header" style="padding-right: 1rem;">
          <div class="user-profile">
             {% if d.donated_by.profile_picture %}
                <a><img class="profile-img" src="{{d.donated_by.profile_picture.url}}" alt=""></a>
@@ -135,7 +135,7 @@
             <a href="" class="txt-3"><p></p></a>
          </div>    
          </div>  
-      </div>
+      </div> -->
       <div class="feed-content">
          <p class="txt-2">Donation Type</p>
          <p class="txt-3">{{d.donation_type}}</p>
@@ -157,20 +157,20 @@
       </div>
 
       
-      <div class="feed-footer">
+      <!-- <div class="feed-footer">
          <a href="/deletedonation/{{d.d_id}}" class="text-decoration-none">
           
            <span class="txt-1">Delete Donation</span>
        </a>
-     </div>
+     </div> -->
    </div>
 {% endfor %}
     <!-- this is post data -->
   {% for post in post %}
   <div class="feed-post profile-post">
-     <div class="feed-header">
+     <!-- <div class="feed-header">
         <div class="user-profile">
-           <!-- get profile picture of postby -->
+         
                  {% if post.postby.profile_picture %}
                  <a href="{%url 'publicapp:profile'%}">
                  <img class="profile-img" src="{{ post.postby.profile_picture.url }}" alt=""/>
@@ -186,7 +186,7 @@
             
          </div>     
                </div>
-     </div>
+     </div> -->
      <div class="feed-content">
         <p class="txt-3">{{post.postcaption}}</p>
              <div style="object-fit: cover;">
@@ -194,18 +194,18 @@
              </div>
              
      </div>
-     <div class="feed-footer">
+     <!-- <div class="feed-footer">
          <a href="/deletepost/{{post.pid}}" class="text-decoration-none">
           
            <span class="txt-1">Delete Post</span>
        </a>
-     </div>
+     </div> -->
   </div>
   {% endfor %}
   <!-- this is job data -->
   {% for job in jobs %}
   <div class="feed-post profile-job">
-     <div class="feed-header" style="padding-right: 1rem;">
+     <!-- <div class="feed-header" style="padding-right: 1rem;">
         <div class="user-profile">
            {% if job.job_by.profile_picture %}
              <a><img class="profile-img" src="{{ job.job_by.profile_picture.url }}" alt=""></a>
@@ -217,7 +217,7 @@
             <a href="" class="txt-3"><p>{{job.job_post_date}}</p></a>
          </div>    
          </div>  
-     </div>
+     </div> -->
      <div class="feed-content">
         <p class="txt-2">Job Type</p>
         <p class="txt-3">{{job.job_type}}</p>
@@ -235,11 +235,11 @@
         <p class="txt-3">{{job.job_location}}</p>
               
      </div>
-        <div class="feed-footer">
+        <!-- <div class="feed-footer">
            <a href="/deletejob/{{job.j_id}}">
               <button type="submit" class="btn btn-primary">Delete Job</button>
           </a>
-        </div>
+        </div> -->
   </div>
   {% endfor %}
 </div>
