@@ -3,6 +3,10 @@ from .models import User
 from django.contrib import messages
 from publicapp.models import Profile,TopEnvorior
 from django.contrib.auth.hashers import make_password , check_password
+import random
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 
 # Create your views here.
@@ -67,4 +71,53 @@ def login(request):
     return render(request, 'login.html')
 
 
+def forget_password(request):
+    return render(request,'forgetpassword.html')
 
+def get_otp(request):
+    if request.method=='POST':
+        email=request.POST['email']
+        print(email)
+        #get user details
+        try:
+            user=User.objects.get(email=email)
+            user_profile = Profile.objects.get(user=user)
+            random_number = random.randint(1111,9999)
+            request.session['otp'] = random_number
+            request.session['email'] = email
+            subject='Forget Your password'
+            msg=f'Hello, {user_profile.full_name} your OTP for Forget Password is  {random_number}.'
+            email_from=settings.EMAIL_HOST_USER
+            send_mail(subject, msg, email_from, [email])
+            return render(request,'fill_otp.html')
+        except:
+            messages.error(request,'Incorrect Email ID or Email Id not registered')
+            return render(request,'forgetpassword.html',locals())
+    return render(request,'fill_otp.html')
+
+def verify_otp(request):
+    if request.method=='POST':
+        user_otp=request.POST['otp']
+        if int(user_otp) == request.session['otp']:
+            return render(request,'change_password.html')
+        else :
+            messages.error(request,'Incorrect OTP')
+            return render(request,'fill_otp.html',locals())
+
+    return render(request,'forgetpassword.html')
+
+def change_password(request):
+    if request.method=='POST':
+        pass1=request.POST['pass1']
+        pass2=request.POST['pass2']
+        if pass1 == pass2 :
+            current_user = request.session['email']
+            User.objects.filter(email = current_user).update(password=pass2)
+            #password encryption
+            user = User.objects.get(email=current_user)
+            encrypted_password = make_password(user.password)
+            print(encrypted_password)
+            User.objects.filter(email=current_user).update(password = encrypted_password)
+            return render(request,'login.html')
+
+    return render(request,'forgetpassword.html')

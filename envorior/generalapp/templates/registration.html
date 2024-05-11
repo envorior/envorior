@@ -9,7 +9,7 @@
     <!-- left box -->
     <div class="regleftbox">
         <!-- registration form -->
-        <form  action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
+        <form id="registrationform" onsubmit="event.preventDefault(); registration();" action="{% url 'generalapp:registration' %}" method="POST" class="form w-75 mx-auto">
             {% csrf_token %}
             
             <!-- validation message -->
