@@ -7,6 +7,7 @@ urlpatterns = [
     path('like/<int:id>/',views.like_post,name='like'), 
     path('jobs/',views.jobs,name='jobs'),  
     path('uploadjob/',views.uploadjob,name='uploadjob'),
+    path('jobform/',views.jobform,name='jobform'),
     path('apply_job/<int:id>/',views.apply_job,name='apply_job'),
     path('notifications/',views.notifications,name='notifications'),   
     path('donation/',views.donation,name='donation'),

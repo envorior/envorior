@@ -116,6 +116,16 @@ def uploadjob(request):
         new_job.save()
         return redirect("publicapp:jobs")
 
+def jobform(request):
+    #common code for user details
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    top = TopEnvorior.objects.get(profile=current_user_details)
+    total_reward = top.reward
+    #top  envorior
+    top_envorior = TopEnvorior.objects.order_by('-reward')[:8] 
+    return render(request,'postjob.html',locals())
+
 def apply_job(request,id):
     #common code for user details
     current_user = request.session['email']
