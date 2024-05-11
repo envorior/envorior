@@ -1,10 +1,5 @@
-{% extends 'publicparent.html' %}
-{% load static %}
-
-{% block title %} Dashboard {% endblock title %}
-
+{% extends 'publicparent.html' %}{% load static %}{% block title %} Dashboard {% endblock title %}
 {%block content%}
-
 <div class="feed">
    <div class=" feed-search">
    <div class="user-profile">
@@ -22,7 +17,6 @@
          <div class="search" >
             <input style="cursor: pointer;" data-bs-toggle="modal" required readonly data-bs-target="#postModal" type="text" placeholder="Click here to post something...">
          </div>
-
       <!-- post pop-up -->
       <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
@@ -51,15 +45,11 @@
             </div>
          </div>
       </div>
-
-      
    </div>
- 
- 
 {% for post in post %}
 <div class="feed-post">
    <div class="feed-header">
-      <div class="user-profile">
+      <div class="user-profile" style=" position: relative; width: 100%;">
          <!-- get profile picture of postby -->
                {% if post.postby.profile_picture %}
                <a href="{%url 'publicapp:profile'%}">
@@ -73,39 +63,23 @@
          <div class="profile-txt">
           <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a>
           <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
-          
-       </div>     
-             </div>
+       </div>    
+       <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#v-dotModal">
+         <i class="fa-solid fa-ellipsis-vertical"style="position: absolute;color: #fff;right: 1rem; top:0.6rem;font-size: 1.5rem;"></i>
+       </a>
+     
+   </div>
    </div>
    <div class="feed-content">
       <p class="txt-3" style="margin-top: 2px;">{{post.postcaption}}</p>
-           <div >
-            <img style="object-fit: cover; height: 350px;" src="{{post.postimage.url}}" height="100%" width="100%">
-           </div>
-           
+      <div ><img style="object-fit: cover; height: 350px;" src="{{post.postimage.url}}" height="100%" width="100%"></div>       
    </div>
    <div class="feed-footer">
-       <a href="/like/{{post.pid}}" class="text-decoration-none">
-         <img class="logo-img" src="{% static 'img/trophy.png' %}" />
-        
-     </a>
-       <a href="/like/{{post.pid}}" class="text-decoration-none">
-        
-         <span class="txt-2">Reward {{post.likes.count}}</span>
-     </a>
-      <!-- <a href="#" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-comment"></i></span>
-         <span class="txt-3">comment</span>
-     </a>
-      <a href="#" class="text-decoration-none">
-         <span class="txt-2"><i class="fa-solid fa-share"></i></span>
-         <span class="txt-3">share</span>
-     </a> -->
+       <a href="/like/{{post.pid}}" class="text-decoration-none"><img class="logo-img" src="{% static 'img/trophy.png' %}" /></a>
+       <a href="/like/{{post.pid}}" class="text-decoration-none"><span class="txt-2">Reward {{post.likes.count}}</span></a>
    </div>
 </div>
 {% endfor %}
 </div>
-
-
 {% endblock %}
 

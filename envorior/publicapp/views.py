@@ -50,16 +50,6 @@ def uploadpost(request):
         return redirect('generalapp:login')
     
 
-def postform(request):
-    #common code for user details
-    current_user = request.session['email']
-    current_user_details = Profile.objects.get(user=current_user)
-    top = TopEnvorior.objects.get(profile=current_user_details)
-    total_reward = top.reward
-    #top  envorior
-    top_envorior = TopEnvorior.objects.order_by('-reward')[:8] 
-    return render(request,'post.html',locals())
-
 def like_post(request,id):
     current_user = request.session['email']
     current_user_details = Profile.objects.get(user=current_user)
@@ -100,16 +90,6 @@ def jobs(request):
     #top  envorior
     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]   
     return render(request,'jobs.html',locals())
-
-def jobform(request):
-    #common code for user details
-    current_user = request.session['email']
-    current_user_details = Profile.objects.get(user=current_user)
-    top = TopEnvorior.objects.get(profile=current_user_details)
-    total_reward = top.reward
-    #top  envorior
-    top_envorior = TopEnvorior.objects.order_by('-reward')[:8] 
-    return render(request,'postjob.html',locals())
 
 def uploadjob(request):
     #common code for user details
@@ -349,21 +329,7 @@ def changeuserprofile(request):
         current_user_details.profile_picture=profile_image
         current_user_details.save()
     return redirect('publicapp:profile')
-    # return render(request,'profile.html',locals())
-
-# def show_user_post(request):
-#     #common code for user details
-#     current_user = request.session['email']
-#     current_user_details = Profile.objects.get(user=current_user)
-#     top = TopEnvorior.objects.get(profile=current_user_details)
-#     total_reward = top.reward
-#     #top  envorior
-#     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
-
-#     #getting post of user
-#     post = Post.objects.filter(postby=current_user_details).order_by('-posteddate')
-
-#     return render(request,'user_post.html',locals())
+   
 
 def deletepost(request,id):
     #common code for user details
@@ -382,20 +348,6 @@ def deletepost(request,id):
     return render(request,'user_post.html',locals())
 
 
-
-# def show_user_complain(request):
-#     #common code for user details
-#     current_user = request.session['email']
-#     current_user_details = Profile.objects.get(user=current_user)
-#     top = TopEnvorior.objects.get(profile=current_user_details)
-#     total_reward = top.reward
-#     #top  envorior
-#     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
-
-#     #getting complain of user
-#     complain = Complain.objects.filter(complain_by=current_user_details)
-#     return render(request,'user_complain.html',locals())
-
 def deletecomplain(request,id):
     #common code for user details
     current_user = request.session['email']
@@ -413,18 +365,6 @@ def deletecomplain(request,id):
     complain = Complain.objects.filter(complain_by=current_user_details)
     return render(request,'user_complain.html',locals())
 
-# def show_user_job(request):
-#     #common code for user details
-#     current_user = request.session['email']
-#     current_user_details = Profile.objects.get(user=current_user)
-#     top = TopEnvorior.objects.get(profile=current_user_details)
-#     total_reward = top.reward
-#     #top  envorior
-#     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
-
-#     #getting job of user
-#     jobs = Job.objects.filter(job_by=current_user_details)
-#     return render(request,'user_job.html',locals())
 
 def deletejob(request,id):
     #common code for user details
@@ -442,19 +382,6 @@ def deletejob(request,id):
     #getting job of user
     jobs = Job.objects.filter(job_by=current_user_details)
     return render(request,'user_job.html',locals())
-
-# def show_user_donation(request):
-#     #common code for user details
-#     current_user = request.session['email']
-#     current_user_details = Profile.objects.get(user=current_user)
-#     top = TopEnvorior.objects.get(profile=current_user_details)
-#     total_reward = top.reward
-#     #top  envorior
-#     top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
-
-#     #getting donation of user
-#     donation = Donation.objects.filter(donated_by=current_user_details)
-#     return render(request,'user_donation.html',locals())
 
 def deletedonation(request,id):
     #common code for user details

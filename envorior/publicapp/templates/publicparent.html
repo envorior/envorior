@@ -267,11 +267,11 @@
 
     </main>
 
-    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal fade " id="v-dotModal" tabindex="-1" aria-labelledby="v-dotModalLabel" aria-hidden="true">
       <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
         <div class="modal-content" style=" height: 15rem;width: 20rem;transform: translateX(50rem);">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to logout ?</h1>
+            <h1 class="modal-title fs-5" id="v-dotModallLabel">Are you sure to v-dot ?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class=" row mb-3">
@@ -287,6 +287,28 @@
         </div>
       </div>
     </div>
+    <div class="modal fade " id="v-dotModal" tabindex="-1" aria-labelledby="v-dotModalLabel" aria-hidden="true">
+      <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
+        <div class="modal-content" style=" height: 15rem;width: 20rem;transform: translateX(50rem);">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="v-dotModallLabel">Are you sure to v-dot ?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class=" row mb-3">
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="position:absolute;bottom:3rem;left:3rem; width:5rem;">Close</button>
+            </div>
+            <div class="col-sm-4">
+              <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
+                <button type="button" class="btn btn-primary"style="position:absolute;bottom:3rem;right:3rem; width:5rem;">Yes</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
 
 
   </body>
