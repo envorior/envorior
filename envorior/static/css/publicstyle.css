@@ -638,3 +638,18 @@ header .left {
   width: 10rem;
   display: none;
 }
+
+.follower {
+    background: #fff;
+    min-height: 100vh;
+    /* overflow: auto; */
+}
+
+.follower .profile-txt {
+    width: 100%;
+    border-bottom: 0.1rem solid #f4f2ee;
+}
+
+.follower .user-profile {
+    min-height: 4rem;
+}

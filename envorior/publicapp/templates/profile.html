@@ -23,11 +23,12 @@
       </div>
       <div class="items">
         <p class="txt-2">{{current_user_details.followers.count}}</p>
-        <p class="txt-2">Follower</p>
+        <a href="{%url 'publicapp:followers'%}"><p class="txt-2">Follower</p></a>
       </div>
       <div class="items">
         <p class="txt-2">{{current_user_details.followings.count}}</p>
-        <p class="txt-2">Following</p>
+        <a href="{%url 'publicapp:followings'%}"><p class="txt-2">Following</p></a>
+       
       </div>
     </div>
     <div class="row">

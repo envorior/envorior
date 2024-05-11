@@ -4,15 +4,23 @@
 {% block title %} Followers {% endblock title %}
 
 {% block content %}
-{% for i in "12345" %}
+<div class="follower">
+  <p class="txt-3" style="margin-left: 3rem;"><i>400+ peoples are followings you</i></p>
+  {% for i in "12345" %}
 <div class="user-profile">
     <a href="{% url 'publicapp:profile' %}">
       <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
     </a>
-    <div class="profile-txt">
-      <a href="{% url 'publicapp:profile' %}" class="txt-2"><p>User Profile</p></a>
-      <a href="{% url 'publicapp:profile' %}" class="txt-3"><p>@user</p></a>
+    <div class="profile-txt" style="position: relative; padding-bottom: 0.5rem;">
+      <p class="txt-2">Name of a person</p>
+      <p class="txt-3">shoet bio of a person</p>
+      <span class="btn btn-primary" style="float: right; position: absolute;top: 0.3rem;right: 1rem; padding: 0.3rem 1rem;">Follow</span>
     </div>
+
+    
 </div>
+
 {% endfor %}
+</div>
+
 {% endblock %}
