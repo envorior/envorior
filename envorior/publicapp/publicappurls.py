@@ -29,5 +29,7 @@ urlpatterns = [
     path('deletedonation/<int:id>/',views.deletedonation,name='deletedonation'), 
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
+
+    path('follow/<id>/',views.follow,name='follow'),
 ]
 

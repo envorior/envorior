@@ -302,9 +302,66 @@ def contact(request):
 
 
 def followers(request):
-    return render(request,'followers.html')
+    user = request.session['email']
+    current_user = User.objects.get(email=user)
+    current_user_details = Profile.objects.get(user=user)
+    #followers
+    current_user_followers = current_user_details.followers.all()
+    followers_emails = [(followers.email) for followers in current_user_followers]
+    followers_details =[]
+    for i in followers_emails:
+        profile = Profile.objects.get(user=i)
+        followers_details.append({'full_name':profile.full_name,'pic':profile.profile_picture,'followings':profile.followings.count})
+    
+    return render(request,'followers.html',locals())
+
 def followings(request):
-    return render(request,'followings.html')
+    user = request.session['email']
+    current_user = User.objects.get(email=user)
+    current_user_details = Profile.objects.get(user=user)
+    # followings
+    current_user_followings = current_user_details.followings.all()
+    following_emails = [(following.email) for following in current_user_followings]
+    following_details =[]
+    for i in following_emails:
+        profile = Profile.objects.get(user=i)
+        following_details.append({'full_name':profile.full_name,'pic':profile.profile_picture,'followers':profile.followers.count})
+    #followers
+    current_user_followers = current_user_details.followers.all()
+    followers_emails = [(followers.email) for followers in current_user_followers]
+    followers_details =[]
+    for i in followers_emails:
+        profile = Profile.objects.get(user=i)
+        followers_details.append({'full_name':profile.full_name,'pic':profile.profile_picture,'followings':profile.followings.count})
+
+    return render(request,'followings.html',locals())
+
+def follow(request,id):
+    user = request.session['email']
+    current_user = User.objects.get(email=user)
+    current_user_profile = Profile.objects.get(user=user)
+    #details of following(user,the current user wants to follow)
+    following_user = User.objects.get(email=id)
+    following_user_profile = Profile.objects.get(user=following_user)
+    if current_user in following_user_profile.followers.all():
+        following_user_profile.followers.remove(current_user)
+        current_user_profile.followings.remove(following_user)
+    else:
+        following_user_profile.followers.add(current_user)
+        current_user_profile.followings.add(following_user) 
+
+    # followings
+    current_user_details = Profile.objects.get(user=user)
+    current_user_followings = current_user_details.followings.all()
+    following_emails = [(following.email) for following in current_user_followings]
+    following_details =[]
+    for i in following_emails:
+        profile = Profile.objects.get(user=i)
+        following_details.append({'full_name':profile.full_name,'pic':profile.profile_picture,'followers':profile.followers.count})    
+
+    return render(request,'followings.html',locals())
+
+
 def policy(request):
     return render(request,'policy.html')
 

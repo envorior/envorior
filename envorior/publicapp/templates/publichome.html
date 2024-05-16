@@ -63,7 +63,10 @@
          <div class="profile-txt">
           <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a>
           <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
-       </div>    
+       </div>   
+       <div>
+         <a href="/follow/{{post.postby.user.email}}">Follow/Followings</a>
+       </div>   
        <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#v-dotModal">
          <i class="fa-solid fa-ellipsis-vertical"style="position: absolute;color: #fff;right: 1rem; top:0.6rem;font-size: 1.5rem;"></i>
        </a>
