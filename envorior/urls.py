@@ -27,7 +27,10 @@ urlpatterns = [
     path('',include(('supervisorapp.supervisorappurls','supervisorapp'),namespace='supervisorapp')),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+<<<<<<< HEAD
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)
+=======
+>>>>>>> 6426d7809eb4ed9b6e4a5d6a4f16143cb6347dc0
 

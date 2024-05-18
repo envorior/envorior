@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-zekgy$m$m9i=#5ld_9tdb(4+x9%_zn$#*3+((w(vh0xk*ux0-w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['65.1.131.53', 'socialwarrior.oneinsights.us']
+=======
+ALLOWED_HOSTS = ['3.108.218.199', 'socialwarrior.oneinsights.us']
+>>>>>>> 6426d7809eb4ed9b6e4a5d6a4f16143cb6347dc0
 
 
 # Application definition

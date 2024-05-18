@@ -1,0 +1,14 @@
+[0;1;31m×[0m nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (]8;;file://ip-172-31-39-130/usr/lib/systemd/system/nginx.service/usr/lib/systemd/system/nginx.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Thu 2024-05-16 09:49:43 UTC; 1min 32s ago
+   Duration: 1h 1min 12.830s
+       Docs: ]8;;man:nginx(8)man:nginx(8)]8;;
+    Process: 7487 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; [0;1;31m(code=exited, status=1/FAILURE)[0m
+        CPU: 4ms
+
+May 16 09:49:43 ip-172-31-39-130 systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+May 16 09:49:43 ip-172-31-39-130 nginx[7487]: 2024/05/16 09:49:43 [emerg] 7487#7487: a duplicate default server for 0.0.0.0:80 in /etc/nginx/sites-enabled/default:22
+May 16 09:49:43 ip-172-31-39-130 nginx[7487]: nginx: configuration file /etc/nginx/nginx.conf test failed
+May 16 09:49:43 ip-172-31-39-130 systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+May 16 09:49:43 ip-172-31-39-130 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mnginx.service: Failed with result 'exit-code'.[0m
+May 16 09:49:43 ip-172-31-39-130 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start nginx.service - A high performance web server and a reverse proxy server.[0m
