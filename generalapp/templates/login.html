@@ -1,0 +1,38 @@
+{% extends 'generalparent.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+
+{% block body %}
+<div class="wrapper">
+    <form id="loginform" onsubmit="event.preventDefault(); login();" action="{% url 'generalapp:login' %}" method="POST">
+        {% csrf_token %}
+      <h1>Login</h1>
+      <!-- validation messsage -->
+      <h5 style="color: red;" id="validationresult"></h5>
+      <div class="input-box">
+        <input type="text" placeholder="Email id" id="email" name="email" >
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" id="password" name="password" >
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="{% url 'generalapp:forgetpassword' %}">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Dont have an account? <a href="{% url 'generalapp:registration' %}">Register</a></p>
+      </div>
+      {%if messages %}
+       {%for m in messages %}
+           <h5 style="color: red; text-align: center;">{{m}}</h5>
+       {% endfor %}
+      {% endif %}
+    </form>
+  </div>
+   
+{% endblock body %}

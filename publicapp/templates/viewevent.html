@@ -1,0 +1,39 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Events {% endblock title %}
+
+{%block content%}
+
+<div class="new-card">
+  <div class="row">
+    <h3 class="text-center mt-4 mb-3"><b>News/Event Organized by Authorized NGO's</b></h3>
+    {% for e in event %}
+
+    <div class=" col border mx-3 mt-2 mb-2 px-3 py-3">
+      <div class="card-main">
+        <div class="card-top">
+           <div class="card-title">
+              <p><span style="font-weight: bold;">News/Event by:</span> {{e.department.full_name}} Servent</p>
+              <p><b>Date : </b>{{e.date}}</p>
+              <p><b>Description : </b>{{e.description}}</p>
+           </div>
+        </div>
+        <div class="card-img-main">
+           {% if e.image %}
+              <img src="{{e.image.url}}" alt="" />
+           {% else %}
+              <img  src="{% static 'img/post.jpg' %}" alt="" />
+           {% endif %}
+        </div>
+     </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+  
+</div> 
+
+
+{% endblock %}
+

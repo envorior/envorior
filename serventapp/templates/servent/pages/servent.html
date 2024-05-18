@@ -1,0 +1,50 @@
+{% extends 'serventparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<div class="card" style="width:100%;">
+    <div class="card-body">
+        <div>
+            <input  type="search" placeholder="Search Here"/>
+            <button class="btn btn-primary" style="float:right;">Add Servent</button>
+        </div>
+        <hr>
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Muskan</td>
+                <td>xyz@gmail.com</td>
+                <td>1234567890</td>
+                <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Muskan</td>
+                <td>xyz@gmail.com</td>
+                <td>1234567890</td>
+                <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Muskan</td>
+                <td>xyz@gmail.com</td>
+                <td>1234567890</td>
+                <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+{% endblock %}

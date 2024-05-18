@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>{% block title %} My Title {% endblock %}</title>
+    <!-- FONT AWESOME CDN -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- JS FILE -->
+    <script src="{% static 'js/publicscript.js' %}"></script>
+    <!-- CSS FILE  -->
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/supervisorstyle.css' %}" />
+  </head>
+
+  <body class="body">
+    <!-- header -->
+    <header>
+      <!--logo and search-->
+      <div class="left">
+        <div class="logo">
+          <!-- navbar logo -->
+          <img class="logo-img" src="{% static 'img/slogo.png' %}" alt="" />
+        </div>
+
+        <!-- this is for responsive -->
+        <div class="right-responsive">
+          <div class="user-profile">
+            {% if current_user_details.profile_picture %} 
+            <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
+           {% else %}
+            <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
+           {% endif %}
+          </div>
+
+          <div class="other-settings" onclick="other_settings()">
+            <img class="" src="{% static 'img/grid.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- navbar search -->
+      <div class="middle">
+        <!-- <form>
+          <div class="search nav-search">
+            <i class="fa fa-search" style="font-size: 18px; margin-left: 1rem">
+            </i>
+            <input type="text" placeholder=" Search " />
+          </div>
+        </form> -->
+      </div>
+
+      <div class="right">
+        <div class="user-profile">
+          <a href="">
+            {% if current_user_details.profile_picture %} 
+              <a href=""><img class="profile-img" src="{{current_user_details.profile_picture.url}}" alt=""/> </a>
+            {% else %}
+              <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
+            {% endif %}
+          </a>
+          <div class="profile-txt">
+            <p style="margin-top: 17px; font-size: 14px;">{{current_user_details.full_name}}</p>
+            <p style="margin-top: -16px; font-size: 14px;"><span style="font-weight: bold;">Welcome to </span> <cite title="Source Title">Admin Dashboard</cite></p>
+          </div>
+        </div>
+
+        <!-- <div class="other-settings" onclick="other_settings()">
+          <img class="" src="{% static 'img/grid.png' %}" alt="" />
+        </div> -->
+      </div>
+      <!-- my profile-->
+
+      <div class="nav-responsive">
+        <div>
+          <a href="{%url 'publicapp:publichome'%}" class="text-decoration-none">
+            <span class="txt-2"><i class="fa-solid fa-house"></i></span>
+          </a>
+        </div>
+
+        <div>
+          <a href="#" class="text-decoration-none">
+            <span class="txt-2"><i class="fa-solid fa-headset"></i></span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- left bar -->
+
+      <div class="publicleft">
+        <!--left top  -->
+        <!-- <div class="navlefttop logo">
+          <img class="logo-img" src="{% static 'img/trophy.png' %}" />
+
+          <div class="logo-txt">
+            <p class="txt-1" style="color: #000000">Reward</p>
+            <p class="txt-3">{{total_reward}}</p>
+          </div>
+        </div> -->
+        <!-- left middle -->
+        <div class="navleftmiddle">
+          <div class="navleftmiddles navdiver mt-2">
+            <a
+              href="{%url 'supervisorapp:supervisordashboard' %}"
+              class="text-decoration-none"
+            >
+              <span class="txt-2"><i class="fa-solid fa-house-user"></i>&nbsp;</span>
+              <span class="txt-2">Home</span>
+            </a>
+          </div>
+
+        
+          <div class="navleftmiddles navdiver">
+            <a href="{%url 'supervisorapp:complain'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-envelope-open-text"></i>&nbsp;</span>
+              <span class="txt-2">Complain</span>
+            </a>
+          </div>
+          <div class="navleftmiddles navdiver">
+            <a href="{%url 'supervisorapp:addservent'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-user-plus"></i>&nbsp;</span>
+              <span class="txt-2">Add Servent</span>
+            </a>
+          </div>
+          <div class="navleftmiddles navdiver">
+            <a href="{%url 'supervisorapp:rank'%}" class="text-decoration-none">
+              <span class="txt-2">
+              <i class="fa-solid fa-ranking-star"></i>&nbsp;</span>
+              <span class="txt-2">Top Social Person</span>
+            </a>
+          </div>
+          <div class="navleftmiddles navdiver">
+            <a href="{%url 'supervisorapp:viewservent'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-users"></i
+              >&nbsp;</span>
+              <span class="txt-2">View Servent</span>
+            </a>
+          </div>
+        
+
+        
+
+        </div>
+        <!-- left bottom -->
+        <div class="navleftbottom navleftmiddles">
+         
+          <div style="margin-top: 13px;">
+            <!-- logout code -->
+            <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+              <i class="fa-solid fa-sign-out mx-2 "></i>Logout
+            </a>
+            <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+              <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to logout ?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class=" row mb-3">
+                    <div class="col-sm-4">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
+                        <button type="button" class="btn btn-primary">Yes</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="publicmiddle">{% block content %} {% endblock%}</div>
+
+      <!-- message and Top Envorior section -->
+<!-- 
+      <div class="publicright">
+        <div class="box">
+          <div class="box-header">
+            <p class="txt-1">Top envorior</p>
+          </div>
+          
+      <div class="box-main">
+        {%for i in "12345899897799"%}
+        <div class="user-profile">
+          <a href="{%url 'publicapp:profile'%}"><img
+              class="profile-img"
+              src="{% static 'img/user.jpeg' %}"
+              alt=""/>
+            </a>
+          <div class="profile-txt">
+            <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>User Profile</p></a>
+            <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>@user</p></a>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+          
+        </div>
+        <div class="box">
+          <a href="{%url 'publicapp:about'%}"><p class="txt-2">About us</p></a>
+          <a href="{%url 'publicapp:contact'%}"
+            ><p class="txt-2">Contact us</p></a
+          >
+          <a href="{%url 'publicapp:terms'%}"
+            ><p class="txt-2">Terms & Conditions</p></a
+          >
+          <a href="{%url 'publicapp:policy'%}"
+            ><p class="txt-2">Privacy Policy</p></a
+          >
+          <a href="{%url 'publicapp:scam'%}"
+            ><p class="txt-2">Reporting Scams</p></a
+          >
+          <a href="{%url 'publicapp:donation'%}"
+            ><p class="txt-2">Donations</p></a
+          >
+          <a href="{%url 'publicapp:jobs'%}"><p class="txt-2">Jobs</p></a>
+
+          <div>
+            <a href="#" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-headset"></i></span>
+              <span class="txt-2">Help</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{%url 'publicapp:about'%}" class="text-decoration-none">
+              <span class="txt-2"><i class="fa-solid fa-circle-info"></i></span>
+              <span class="txt-2">About</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+
+    </main>
+
+    <!-- <footer>
+   <div class="footer-left">
+    <div class="footer-logo">   
+        <div class="logo ">
+       
+          <img class="logo-img" src="{% static 'img/logoimage.png' %}" alt="">
+          
+           </div>
+           <div class="logo-txt">
+              <p style="font-family: cursive; color: green; font-size:1.6rem;">ENVORIOR</p>
+              <p>Environment Worior</p>
+           </div>
+          </div> 
+          <div class="txt-3">
+            <p>
+<pre>Engaging in activism, advocating for 
+environmental policies, and taking 
+direct action to protect the 
+environment
+</pre>
+                  </p>
+        </div>
+   </div>
+      
+
+   <div class="footer-middle">
+   
+        <div>
+        <p class="txt-1">Useful links</p>
+        <a href="{%url 'publicapp:about'%}" ><p class="txt-2">About us</p></a>
+        <a href="{%url 'publicapp:contact'%}" ><p class="txt-2">Contact us</p></a>
+        <a href="{%url 'publicapp:terms'%}" ><p class="txt-2">Terms & Conditions</p></a>
+        <a href="{%url 'publicapp:policy'%}" ><p class="txt-2">Privacy Policy</p></a>
+        </div>
+
+        <div>
+            <p class="txt-1">Other links</p>
+            <a href="{%url 'publicapp:scam'%}" ><p class="txt-2">Reporting Scams</p></a>
+            <a href="{%url 'publicapp:donation'%}" ><p class="txt-2">Donations</p></a>
+            <a href="{%url 'publicapp:jobs'%}" ><p class="txt-2">Jobs</p></a>
+            
+        </div>
+
+   </div>
+
+       
+   <div class="footer-right">
+    <div class="social-links"></div>  
+   </div>
+    
+</footer> -->
+  </body>
+</html>
+

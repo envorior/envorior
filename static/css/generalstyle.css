@@ -1,0 +1,195 @@
+         /* ############################# General Zone CSS   ###################33 */
+    
+     /* container for login */
+     /* .generalmain{
+        background-color:lightgray;
+        width:80%;
+        height:500px;
+        margin-top:70px;
+        border-radius:30px;
+        box-shadow: 2px ;
+        margin-left:10%;
+    }
+     /* login page css */
+    /* .loginleftbox{
+        height:100%;
+        width:50%;
+        border-radius:30px 0px 0px 30px;
+        float:left;
+    }
+    .loginleftbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
+    }
+    .loginrightbox{
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
+        background-color: white;
+    }
+    .loginrightbox img{
+        width:50%;
+        height:10%;
+        margin-top:7%;
+        margin-left:25%;
+    }
+    .loginrightbox h1{
+        margin-top:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size: 25px;
+    }
+    /* regostration page css */
+    /* .regleftbox{
+        height:100%;
+        width:50%;
+        background-color: rgb(89, 240, 124);
+        border-radius:30px 0px 0px 30px;
+        float:left;
+    }
+    .regrightbox{
+        height:100%;
+        width:50%;
+        float:right;
+        border-radius:0px 30px 30px 0px;
+    }
+    .regrightbox img{
+        width:80%;
+        margin-left:10%;
+        height:80%;
+        margin-top:5%;
+    }
+    .regleftbox h1{
+        margin-top:30px;
+        margin-bottom:25px;
+        font-family: cursive;
+        text-align: center;
+        font-size:30px;
+    } */
+    
+    /* make registration page responsive for tablet*/
+    /* @media (min-width:401px) and (max-width:1169px) {
+        .regrightbox{
+            display: none;
+            height: auto;
+            
+        }
+        .regleftbox{
+            width:100%;
+            border-radius:30px;
+            height: auto;
+        }
+        .generalmain{
+            height: auto;
+        } 
+    }   */
+    
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("/static/img/log.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .wrapper{
+      width: 420px;
+      background: transparent;
+      /* border: 2px solid rgb(253 143 35 / 90%); */
+      backdrop-filter: blur(15px);
+      color: #fff;
+      border-radius: 12px;
+      padding: 50px 30px;
+      box-shadow: -2px 2px 8px 0px;
+    }
+    .wrapper h1{
+      font-size: 36px;
+      text-align: center;
+    }
+    .wrapper .input-box{
+      position: relative;
+      width: 100%;
+      height: 50px;
+      
+      margin: 30px 0;
+    }
+    .input-box input{
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      border: 2px solid rgba(255, 255, 255, .8);
+      border-radius: 40px;
+      font-size: 16px;
+      color: #fff;
+      padding: 20px 45px 20px 20px;
+    }
+    .input-box input::placeholder{
+      color: #fff;
+    }
+    .input-box i{
+      position: absolute;
+      right: 20px;
+      top: 30%;
+      transform: translate(-50%);
+      font-size: 20px;
+    
+    }
+    .wrapper .remember-forgot{
+      display: flex;
+      justify-content: space-between;
+      font-size: 14.5px;
+      margin: -15px 0 15px;
+    }
+    .remember-forgot label input{
+      accent-color: #fff;
+      margin-right: 3px;
+    
+    }
+    .remember-forgot a{
+      color: #fff;
+      text-decoration: none;
+    
+    }
+    .remember-forgot a:hover{
+      text-decoration: underline;
+    }
+    .wrapper .btn{
+      width: 100%;
+      height: 45px;
+      background: linear-gradient(45deg, #f3580adb, #004797);
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      cursor: pointer;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .wrapper .register-link{
+      font-size: 14.5px;
+      text-align: center;
+      margin: 20px 0 15px;
+    
+    }
+    .register-link p a{
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .register-link p a:hover{
+      text-decoration: underline;
+    }

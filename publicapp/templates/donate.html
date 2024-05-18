@@ -1,0 +1,152 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Donations {% endblock title %}
+
+{%block content%}
+
+<div class="feed">
+   <div class="search feed-search">
+   <div class="user-profile">
+      {% if current_user_details.profile_picture %}
+          <a><img class="profile-img" src="{{current_user_details.profile_picture.url }}" alt=""></a>   
+      {% else %}    
+          <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>   
+      {% endif %}
+   </div>       
+   <div class="search" >
+      <input style="cursor: pointer;" data-bs-toggle="modal" required readonly data-bs-target="#postModal" type="text" placeholder="post new donation here...">
+   </div>
+   </div>
+
+
+   <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="postModalLabel">Post a New Donation</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-data">
+               <!-- form for add DONATE -->
+               <div class ="img" style="text-align: center;">
+                  <img src="{% static 'img/donation.png' %}" height="40%" width="40%" />
+                </div>
+                <form action="{% url 'publicapp:postdonation' %}" method='POST'  enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="container">
+                      <div class="row mt-3">
+                          <div class="col">
+                           <select class="form-select" style="color: #000000b7;" name="donation_type" id="" >
+                              <option selected >Select Donation Type</option>
+                              <option value="Clothing">Clothing</option>
+                              <option value="Hygiene Kit">Hygiene Kit</option>
+                              <option value="books">Books</option>
+                              <option value="Kitchen Supplies">Kitchen Supplies</option>
+                              <option value="Sports Equipements">Sports Equipements</option>
+                              <option value="Blankets">Blankets</option>
+                              <option value="Shoes and Footwear">Shoes and Footwear</option>
+                              <option value="Food">Food</option>
+                              <option value="Other">Other</option>
+                           </select>
+                          </div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col">
+                           <input id="uploadInput" class="form-control w-100" type="file" name="p_image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
+                          </div>
+                      </div>
+                      
+                      <div class="row mt-3">
+                        <div class="" style="display: flex; justify-content: center;"><img id="imagePreview" src="#"></div>
+                     </div>
+
+                      <div class="row mt-3">
+                          <div class="col">
+                              <textarea class="form-control" type="text" name="description" rows="3" placeholder=" Donation descripton "></textarea>
+                          </div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col">
+                              <input style="border: 1px solid #e2e6e9 !important; " class="form-control" type="text" name="location" placeholder="Donar location">
+                          </div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col" >
+                              <button type="submit" class="btn btn-primary mb-4" style="width: 100%; margin-left: 1px;">Donate Now</button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+              
+            </div>
+         </div>
+      </div>
+   </div>
+
+{% for d in donation %}
+      <div class="feed-post">
+         <div class="feed-header" style="padding-right: 1rem;">
+            <div class="user-profile">
+               {% if d.donated_by.profile_picture %}
+                  <a><img class="profile-img" src="{{d.donated_by.profile_picture.url}}" alt=""></a>
+               {% else %}
+                  <a><img class="profile-img" src="" alt=""></a>
+               {% endif %}   
+               <div class="profile-txt">
+               <a href="" class="txt-2"><p>{{d.donated_by.full_name}}</p></a>
+               <a href="" class="txt-3"><p>Location: {{d.donar_location}}</p></a>
+            </div>    
+            </div>  
+         </div>
+         <div class="feed-content">
+            <div>
+               <table class="table" style="font-size: 12px;">
+                  <tbody>
+                    <tr>
+                      <th>Donation Type</th>
+                      <td>{{d.donation_type}}</td>
+                    </tr>
+                  </tbody>
+                   <tbody>
+                     <tr>
+                       <td colspan="2">{{d.description}}</td>
+                     </tr>
+                   </tbody>
+                </table>
+            </div>
+          
+               
+
+            <div >
+               {% if d.product_image %}
+                 <img style="object-fit: cover; height: 350px; margin-top: -20px;" src="{{d.product_image.url}}" height="100%" width="100%">
+               {% endif %}  
+            </div>
+               
+               
+         </div>
+
+         
+         <div class="feed-footer" style="justify-content: space-between;
+         padding: 0rem 2rem;">
+         <a href="/rewardondonate/{{d.d_id}}" class="text-decoration-none">
+            <!-- <span class="txt-2"><i class="fa-solid fa-house"></i></span> -->
+            <img class="logo-img" src="{% static 'img/trophy.png' %}" />
+            <span class="txt-2">reward ({{d.rewards.count}})</span>
+         </a>
+         <a href="/get_donation/{{d.d_id}}" class="txt-2" style="color: #ffffff;">
+            Get Donation
+        </a>
+     
+      </div>
+
+      
+      </div>
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
+

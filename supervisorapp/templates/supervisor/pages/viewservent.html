@@ -1,0 +1,65 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Event {% endblock title %}
+
+{%block content%}
+
+<div class=" feed-search">
+  <!-- <div class="user-profile">
+     <a>
+        <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
+         </div>        -->
+     <form >
+        <div class="search" style="margin-right: 10px;">
+           <input type="text" placeholder="write here to search something">
+        </div>
+        
+        <a href="#">
+          <button class=" btn btn-primary" type="submit">Search</button>
+      </a>
+     </form>
+     
+  </div>
+  <hr>
+  <table>
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Profile</th>
+          <th>Department</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>Pin</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in servent %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>
+            <div class="user-profile">
+              {% if s.profile_picture %} 
+                   <a href=""><img class="profile-img" src="{{ s.profile_picture.url }}" alt=""/> </a>
+              {% else %}
+                   <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
+              {% endif %} 
+            </div>
+          </td>
+          <td>{{s.full_name}}</td>
+          <td>{{s.contact_no}}</td>
+          <td>{{s.city}}</td>
+          <td>{{s.pin_code}}</td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+
+
+
+
