@@ -7,7 +7,7 @@ urlpatterns = [
     path('like/<int:id>/',views.like_post,name='like'), 
     path('jobs/',views.jobs,name='jobs'),  
     path('uploadjob/',views.uploadjob,name='uploadjob'),
-    path('jobform/',views.jobform,name='jobform'),
+    # path('jobform/',views.jobform,name='jobform'),
     path('apply_job/<int:id>/',views.apply_job,name='apply_job'),
     path('notifications/',views.notifications,name='notifications'),   
     path('donation/',views.donation,name='donation'),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('deletedonation/<int:id>/',views.deletedonation,name='deletedonation'), 
     path('scam/',views.scam,name='scam'),
     path('terms/',views.terms,name='terms'),
+    path('viewevent/',views.viewevents,name='viewevent'),
 
     path('follow/<id>/',views.follow,name='follow'),
 ]

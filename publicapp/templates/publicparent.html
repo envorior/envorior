@@ -177,6 +177,13 @@
               <span class="txt-2">Complain</span>
             </a>
           </div>
+          <div class="navleftmiddles">
+            <a href="{%url 'publicapp:viewevent'%}" class="text-decoration-none">
+              <span class="txt-2"
+                ><i class="fa-solid fa-calendar-days"></i></span>
+              <span class="txt-2">View Event/News</span>
+            </a>
+          </div>
           
 
           <div class="navleftmiddles">
@@ -198,7 +205,7 @@
          
           <div style="margin-top: 13px;">
             <!-- logout code -->
-            <a href="#" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <a href="{%url 'publicapp:logout'%}" class="txt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i class="fa-solid fa-sign-out mx-2 "></i>Logout
             </a>
            
@@ -233,8 +240,8 @@
              {% endif %}
             </a>
             <div class="profile-txt">
-              <a href="{%url 'publicapp:profile'%}" class="txt-2"><p>{{top.profile.full_name}}</p></a>
-              <a href="{%url 'publicapp:profile'%}" class="txt-3"><p>{{top.reward}}</p></a>
+              <a href="" class="txt-2"><p>{{top.profile.full_name}}</p></a>
+              <a href="" class="txt-3"><p>{{top.reward}}</p></a>
             </div>
           </div>
           {%endfor%}
@@ -252,14 +259,10 @@
         padding: 2rem 0rem;
     ">
               <a href="/about/"class="txt-3">About us</a>
-              <a href="/contact/"class="txt-3">Contact us</a>
               <a href="/terms/"class="txt-3">Terms &amp; Conditions</a>
               <a href="/policy/"class="txt-3">Privacy Policy</a>
-              <a href="/scam/"class="txt-3">Reporting Scams</a>
               <a href="/donation/"class="txt-3">Donations</a>
               <a href="/jobs/"class="txt-3">Jobs</a>
-              <a href=""class="txt-3">help</a>
-              <a href="/about/"class="txt-3">About</a>
   
             </div>
       </div>
@@ -267,11 +270,11 @@
 
     </main>
 
-    <div class="modal fade " id="v-dotModal" tabindex="-1" aria-labelledby="v-dotModalLabel" aria-hidden="true">
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
       <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
         <div class="modal-content" style=" height: 15rem;width: 20rem;transform: translateX(50rem);">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="v-dotModallLabel">Are you sure to v-dot ?</h1>
+            <h1 class="modal-title fs-5" id="logoutModallLabel">Are you sure to Logout ?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class=" row mb-3">
@@ -287,26 +290,7 @@
         </div>
       </div>
     </div>
-    <div class="modal fade " id="v-dotModal" tabindex="-1" aria-labelledby="v-dotModalLabel" aria-hidden="true">
-      <div class=" modal-dialog modal-xl position-absolute bottom-50 ">
-        <div class="modal-content" style=" height: 15rem;width: 20rem;transform: translateX(50rem);">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="v-dotModallLabel">Are you sure to v-dot ?</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class=" row mb-3">
-            <div class="col-sm-4">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="position:absolute;bottom:3rem;left:3rem; width:5rem;">Close</button>
-            </div>
-            <div class="col-sm-4">
-              <a href="{%url 'publicapp:logout'%}" style="text-decoration: none;">
-                <button type="button" class="btn btn-primary"style="position:absolute;bottom:3rem;right:3rem; width:5rem;">Yes</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
   
 

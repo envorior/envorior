@@ -2,9 +2,10 @@ from django.shortcuts import render,redirect
 from generalapp.models import User
 from publicapp.models import Profile,Post,Job,Notification,Donation,Complain,TopEnvorior
 from datetime import date
+from django.utils import timezone
 from django.views.decorators.cache import cache_control #validate thourgh server instead of browser
 from django.http import JsonResponse
-
+from serventapp.models import Event
 
 
 # Create your views here.
@@ -21,7 +22,7 @@ def publichome(request):
             top_envorior = TopEnvorior.objects.order_by('-reward')[:8]
 
             #code for publichome
-            post = Post.objects.all().order_by('-pid')
+            post = Post.objects.all().order_by('-posteddate')
             return render(request,'publichome.html',locals())
         
     except KeyError:
@@ -43,8 +44,8 @@ def uploadpost(request):
             if request.method=='POST':
                 caption = request.POST['caption']
                 p_image = request.FILES['pimg']
-                Post.objects.create(postcaption=caption,postimage=p_image,postby=current_user_details,
-                            posteddate = date.today())
+                Post.objects.create(postcaption=caption,postimage=p_image,
+                                    postby=current_user_details)
                 return redirect('publicapp:publichome')
     except KeyError:
         return redirect('generalapp:login')
@@ -116,15 +117,15 @@ def uploadjob(request):
         new_job.save()
         return redirect("publicapp:jobs")
 
-def jobform(request):
-    #common code for user details
-    current_user = request.session['email']
-    current_user_details = Profile.objects.get(user=current_user)
-    top = TopEnvorior.objects.get(profile=current_user_details)
-    total_reward = top.reward
-    #top  envorior
-    top_envorior = TopEnvorior.objects.order_by('-reward')[:8] 
-    return render(request,'postjob.html',locals())
+# def jobform(request):
+#     #common code for user details
+#     current_user = request.session['email']
+#     current_user_details = Profile.objects.get(user=current_user)
+#     top = TopEnvorior.objects.get(profile=current_user_details)
+#     total_reward = top.reward
+#     #top  envorior
+#     top_envorior = TopEnvorior.objects.order_by('-reward')[:8] 
+#     return render(request,'jobs.html',locals())
 
 def apply_job(request,id):
     #common code for user details
@@ -295,7 +296,14 @@ def logout(request):
 
 
 def about(request):
-    return render(request,'about.html')
+    #common code for user details
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    top = TopEnvorior.objects.get(profile=current_user_details)
+    total_reward = top.reward
+    #top  envorior
+    top_envorior = TopEnvorior.objects.order_by('-reward')
+    return render(request,'about.html',locals())
 
 def contact(request):
     return render(request,'contact.html')
@@ -363,7 +371,14 @@ def follow(request,id):
 
 
 def policy(request):
-    return render(request,'policy.html')
+    #common code for user details
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    top = TopEnvorior.objects.get(profile=current_user_details)
+    total_reward = top.reward
+    #top  envorior
+    top_envorior = TopEnvorior.objects.order_by('-reward')
+    return render(request,'policy.html',locals())
 
 
 def profile(request):
@@ -470,4 +485,23 @@ def deletedonation(request,id):
 def scam(request):
     return render(request,'scam.html')
 def terms(request):
-    return render(request,'terms.html')
+    #common code for user details
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    top = TopEnvorior.objects.get(profile=current_user_details)
+    total_reward = top.reward
+    #top  envorior
+    top_envorior = TopEnvorior.objects.order_by('-reward')
+    return render(request,'terms.html',locals())
+
+def viewevents(request):
+    #common code for user details
+    current_user = request.session['email']
+    current_user_details = Profile.objects.get(user=current_user)
+    top = TopEnvorior.objects.get(profile=current_user_details)
+    total_reward = top.reward
+    #top  envorior
+    top_envorior = TopEnvorior.objects.order_by('-reward')
+    #event
+    event = Event.objects.all().order_by('-date')
+    return render(request,'viewevent.html',locals())

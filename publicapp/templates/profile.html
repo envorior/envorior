@@ -63,49 +63,49 @@
 <!-- #showing user complain -->
 {% for c in complain %}
 <div class="feed-post profile-complain">
-  <!-- <div class="feed-header">
-     <div class="user-profile">
+  <div class="feed-header">
+     <!-- <div class="user-profile">
         {% if c.complain_by.profile_picture %} 
              <a href=""><img class="profile-img" src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
         {% else %}
              <a href=""><img class="profile-img" src="" alt=""/> </a>
         {% endif %} 
-    </div>
+    </div> -->
         <div class="profile-txt">
-         <a href="" class="txt-2"><p>complaints type : {{c.complain_type}}</p></a>
-         <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a>
+         <a href="" class="txt-2"><p><b>Complaints type : </b>{{c.complain_type}}</p></a>
+         <!-- <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a> -->
          
         </div>     
-            </div> -->
+            </div>
   <div class="feed-content">
-     <p class="txt-3">description: {{c.description}}</p>
-     <p class="txt-3">location: {{c.complain_location}}</p>
+     <p class="txt-3"><b>Description: </b>{{c.description}}</p>
+     <p class="txt-3"><b>Location: </b>{{c.complain_location}}</p>
           <div style="object-fit: cover;">
               {% if c.complain_image %} 
-                 <a href=""><img src="{{ c.complain_image.url }}" alt="" height="" width="100%"/> </a>
+                 <a href=""><img src="{{ c.complain_image.url }}" alt="" height="150px" width="100%"/> </a>
               {% else %}
-                 <a href=""><img  src="{% static 'img/profile.png' %}" alt="" height="" width="100%"/> </a>
+                 <a href=""><img  src="{% static 'img/profile.png' %}" alt="" height="150px" width="100%"/> </a>
               {% endif %}
           </div>
           
   </div>
 
-  <!-- <div class="feed-footer">
+  <div class="feed-footer ">
     
-     <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none">
+     <a href="" class="text-decoration-none w-100 mx-2">
       {% if c.complain_status == 'solved' %}
         <span class="txt-1" style="background-color: rgb(58, 214, 19);" >Solved</span>
       {% else %} 
         <span class="txt-1" style="background-color: red;" >Unsolved</span> 
       {% endif %}
     </a>
-    <div class="feed-footer">
-     <a href="/deletecomplain/{{c.c_id}}" class="text-decoration-none">
+    <div class="">
+     <a href="/deletecomplain/{{c.c_id}}" class="text-decoration-none bg-danger">
       
-       <span class="txt-1">Delete complain</span>
+       <span class="txt-1 mx-2">Delete</span>
    </a>
  </div>
-  </div> -->
+  </div>
  
 </div>
 {% endfor %}
@@ -113,22 +113,23 @@
    <!-- #showing user donation -->
    {% for d in donation %}
    <div class="feed-post profile-donation">
-      <!-- <div class="feed-header" style="padding-right: 1rem;">
-         <div class="user-profile">
+      <div class="feed-header" style="padding-right: 1rem;">
+         <!-- <div class="user-profile">
             {% if d.donated_by.profile_picture %}
                <a><img class="profile-img" src="{{d.donated_by.profile_picture.url}}" alt=""></a>
             {% else %}
                <a><img class="profile-img" src="" alt=""></a>
             {% endif %}   
             <div class="profile-txt">
-            <a href="" class="txt-2"><p>{{d.donated_by.full_name}}</p></a>
-            <a href="" class="txt-3"><p></p></a>
+            <a href="" class="txt-2"><p>{{d.donated_by.full_name}}</p></a> -->
+            <!-- <a href="" class="txt-3"><p></p></a>
          </div>    
-         </div>  
-      </div> -->
+         </div>   -->
+         <p class="w-100 text-light"><b>Donation Type</b></p>
+         <p class="text-light">{{d.donation_type}}</p>
+      </div>
       <div class="feed-content">
-         <p class="txt-2">Donation Type</p>
-         <p class="txt-3">{{d.donation_type}}</p>
+         
          
             
          <p class="txt-2">Description</p>
@@ -139,42 +140,34 @@
 
          <div style="height: 10rem; object-fit: cover;">
             {% if d.product_image %}
-              <img src="{{d.product_image.url}}" height="" width="100%">
+              <img src="{{d.product_image.url}}" height="150px" width="100%">
             {% endif %}  
          </div>
       </div>
 
       
-      <!-- <div class="feed-footer">
+      <div class="feed-footer">
          <a href="/deletedonation/{{d.d_id}}" class="text-decoration-none">
           
            <span class="txt-1">Delete Donation</span>
        </a>
-     </div> -->
+     </div>
    </div>
 {% endfor %}
     <!-- this is post data -->
   {% for post in post %}
   <div class="feed-post profile-post">
-     <!-- <div class="feed-header">
+     <div class="feed-header">
         <div class="user-profile">
          
-                 {% if post.postby.profile_picture %}
-                 <a href="{%url 'publicapp:profile'%}">
-                 <img class="profile-img" src="{{ post.postby.profile_picture.url }}" alt=""/>
-                 </a>
-                 {% else %}
-                 <a href="{%url 'publicapp:profile'%}">
-                 <img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/>
-                 </a>
-                 {% endif %}
+                 
            <div class="profile-txt">
-            <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a>
+            <!-- <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a> -->
             <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
             
          </div>     
                </div>
-     </div> -->
+     </div>
      <div class="feed-content">
         <p class="txt-3">{{post.postcaption}}</p>
              <div style="height: 10rem; object-fit: cover;">
@@ -182,18 +175,18 @@
              </div>
              
      </div>
-     <!-- <div class="feed-footer">
+     <div class="feed-footer">
          <a href="/deletepost/{{post.pid}}" class="text-decoration-none">
           
            <span class="txt-1">Delete Post</span>
        </a>
-     </div> -->
+     </div>
   </div>
   {% endfor %}
   <!-- this is job data -->
   {% for job in jobs %}
   <div class="feed-post profile-job">
-     <!-- <div class="feed-header" style="padding-right: 1rem;">
+     <div class="feed-header" style="padding-right: 1rem;">
         <div class="user-profile">
            {% if job.job_by.profile_picture %}
              <a><img class="profile-img" src="{{ job.job_by.profile_picture.url }}" alt=""></a>
@@ -201,11 +194,11 @@
              <a><img class="profile-img" src="" alt=""></a>
            {% endif %}  
            <div class="profile-txt">
-            <a href="" class="txt-2"><p>{{job.job_by.full_name}}</p></a>
+            <!-- <a href="" class="txt-2"><p>{{job.job_by.full_name}}</p></a> -->
             <a href="" class="txt-3"><p>{{job.job_post_date}}</p></a>
          </div>    
          </div>  
-     </div> -->
+     </div>
      <div class="feed-content">
         <p class="txt-2">Job Type:{{job.job_type}}</p>   
         <p class="txt-2">Required Skills:{{job.skill_required}}</p>  
@@ -213,11 +206,11 @@
         <p class="txt-2">Job Description:{{job.job_description}}</p> 
         <p class="txt-2">Job Location:{{job.job_location}}</p>     
      </div>
-        <!-- <div class="feed-footer">
+        <div class="feed-footer">
            <a href="/deletejob/{{job.j_id}}">
               <button type="submit" class="btn btn-primary">Delete Job</button>
           </a>
-        </div> -->
+        </div>
   </div>
   {% endfor %}
 </div>
@@ -233,7 +226,7 @@
            <h1 class="modal-title fs-5" id="profileModalLabel">Create profile</h1>
            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="">
+        <div class="modal-data">
            <!-- form for add profile -->
            <form action="{% url 'publicapp:changeuserprofile' %}" method='POST' enctype="multipart/form-data">
               {% csrf_token %}
@@ -245,7 +238,10 @@
                  </div>
                  <div class="row mt-3">
        
-                    <div class="" style="display: flex; justify-content: center;"><img id="imagePreview" src="#"></div>
+                    <div class="" style="display: flex; justify-content: center; 
+                    border-radius: var(--border-radius2);
+                    height: 10rem;
+                    width: 10rem;"><img id="imagePreview" src="#"></div>
                  </div>
                  <div class="row" style="width: 100%;margin-left: 0rem;">
                     <button type="submit" class="mt-3 mb-3 btn btn-primary profilebutton">Change Pic</button>

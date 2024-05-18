@@ -633,9 +633,9 @@ header .left {
 
 #imagePreview{
   text-align: center;
-  border-radius:var(--border-radius2) ;
-  height: 10rem;
-  width: 10rem;
+  /* border-radius:var(--border-radius2) ; */
+  height: 22.5rem;
+  /* width: 10rem; */
   display: none;
 }
 
@@ -652,4 +652,10 @@ header .left {
 
 .follower .user-profile {
     min-height: 4rem;
+}
+
+
+.modal-data{
+  overflow: auto;
+  scrollbar-width: none;
 }

@@ -18,8 +18,6 @@
       <input style="cursor: pointer;" data-bs-toggle="modal" required readonly data-bs-target="#postModal" type="text" placeholder="post new jobs here...">
    </div>
       
-      
-            <!-- <a href="{% url 'publicapp:jobform'%}"><button type="submit" class="btn btn-primary">Post Job</button></a> -->
              <!-- post pop-up -->
       <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
@@ -30,7 +28,7 @@
                </div>
                <div class="">
                   <!-- form for add post -->
-                  <form action="{% url 'publicapp:jobform'%}" method='POST' >
+                  <form action="{% url 'publicapp:uploadjob'%}" method='POST' >
                      {% csrf_token %}
                      <div class="container">
                          <div class="row mt-3">
@@ -40,6 +38,13 @@
                                      <option value="Security Guard">Security Guard</option>
                                      <option value="Sweeper">Sweeper</option>
                                      <option value="Cook">Cook</option>
+                                     <option value="Carpenter">Carpenter</option>
+                                     <option value="Electrician">Electrician</option>
+                                     <option value="Delivery Driver">Delivery Driver</option>
+                                     <option value="Tailor">Tailor</option>
+                                     <option value="Babysitter">Babysitter</option>
+                                     <option value="Mechnaic">Mechnaic</option>
+                                     <option value="Other">Other</option>
                                  </select>
                              </div>
                          </div>

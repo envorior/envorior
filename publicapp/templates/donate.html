@@ -27,7 +27,7 @@
                <h1 class="modal-title fs-5" id="postModalLabel">Post a New Donation</h1>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="">
+            <div class="modal-data">
                <!-- form for add DONATE -->
                <div class ="img" style="text-align: center;">
                   <img src="{% static 'img/donation.png' %}" height="40%" width="40%" />
@@ -39,17 +39,28 @@
                           <div class="col">
                            <select class="form-select" style="color: #000000b7;" name="donation_type" id="" >
                               <option selected >Select Donation Type</option>
+                              <option value="Clothing">Clothing</option>
+                              <option value="Hygiene Kit">Hygiene Kit</option>
                               <option value="books">Books</option>
-                              <option value="cloths">Cloths</option>
-                              <option value="food">Food</option>
+                              <option value="Kitchen Supplies">Kitchen Supplies</option>
+                              <option value="Sports Equipements">Sports Equipements</option>
+                              <option value="Blankets">Blankets</option>
+                              <option value="Shoes and Footwear">Shoes and Footwear</option>
+                              <option value="Food">Food</option>
+                              <option value="Other">Other</option>
                            </select>
                           </div>
                       </div>
                       <div class="row mt-3">
                           <div class="col">
-                           <input class="form-control w-100" type="file" name="p_image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
+                           <input id="uploadInput" class="form-control w-100" type="file" name="p_image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
                           </div>
                       </div>
+                      
+                      <div class="row mt-3">
+                        <div class="" style="display: flex; justify-content: center;"><img id="imagePreview" src="#"></div>
+                     </div>
+
                       <div class="row mt-3">
                           <div class="col">
                               <textarea class="form-control" type="text" name="description" rows="3" placeholder=" Donation descripton "></textarea>

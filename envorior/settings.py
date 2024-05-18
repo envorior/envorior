@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-zekgy$m$m9i=#5ld_9tdb(4+x9%_zn$#*3+((w(vh0xk*ux0-w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.108.218.199', 'socialwarrior.oneinsights.us']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'publicapp',
     'generalapp',
     'serventapp',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,6 +132,7 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media'
 
 STATIC_URL = 'static/'
+
 
 
 

@@ -19,7 +19,7 @@ class Post(models.Model):
     postcaption=models.TextField()
     postimage=models.ImageField(upload_to='posts',blank=True)
     postby=models.ForeignKey(Profile,on_delete=models.CASCADE)
-    posteddate=models.CharField(max_length=30)
+    posteddate=models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User,related_name="likes",blank=True)   
 
 class Job(models.Model):

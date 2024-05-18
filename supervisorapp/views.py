@@ -36,8 +36,7 @@ def addservent(request):
         state=request.POST['state']
         city=request.POST['city']
         pin_code=request.POST['pin_code']
-        print(pin_code)
-        p_img = request.FILES['pimg']
+        p_img = request.FILES['image']
         try:
             check_email = User.objects.get(email=email)
             if check_email:
