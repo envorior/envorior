@@ -1,0 +1,37 @@
+{% extends 'publicparent.html' %} {% load static %} {% block title %} Dashboard
+{% endblock title %} {%block content%}
+<div id="form-layout" style="background-color: #ffffff; border-radius: 5px;">
+  <p class="txt-1 pt-4"></p>
+  <div class ="img">
+    <img src="{% static 'img/complain.png' %}" height="100%" width="100%" />
+  </div>
+ 
+
+ 
+<form action="#" method='POST' enctype="multipart/form-data">
+  {% csrf_token %}
+ 
+  <select class="form-select" style="border: 1px solid #e2e6e9 !important; " name="complain_type" id=""  >
+      <option selected disabled>Select Complain Type</option>
+      <option value="Water Problem">Water</option>
+      <option value="Cleaning">Cleaning</option>
+      <option value="Garbage">Garbage</option>
+      <option value="Improper Garbage Disposal">Improper Garbage Disposal</option>
+      <option value="Damage Bins">Damage Bins</option>
+      <option value="Illegal Dumping">Illegal Dumping</option>
+      <option value="Water Leakages">Water Leakages</option>
+      <option value="Poor Sanitation">Poor Sanitation</option>
+      <option value="Other">Other</option>
+  </select>
+  <input id="uploadInput" class="form-control w-100 mt-3" type="file" name="complain_image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
+  <div class="row mt-3">
+       
+    <div class="" style="display: flex; justify-content: center;"><img id="imagePreview" src="#"></div>
+ </div>
+  <textarea class="form-control mt-3" type="text" name="description" rows="3" placeholder="Your Message"></textarea>
+  <input style="border: 1px solid #e2e6e9 !important; " class="form-control mt-3" type="text" name="location" placeholder="Location">
+  <button type="submit" class="btn btn-primary mt-3 w-100">complain</button>
+</form>
+</div>
+{% endblock %}
+

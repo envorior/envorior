@@ -1,0 +1,256 @@
+{% extends 'publicparent.html' %} {% load static %} 
+{% block title %} Profile{% endblock title %} 
+{%block content%}
+<div class="profile" style="background: #ffffff;">
+  
+  <div class="upper">
+    <div class="items">
+
+      <div class="user-profile"  style="position: relative;">
+        {% if current_user_details.profile_picture %}
+          <a><img class="profile-img" src="{{ current_user_details.profile_picture.url }}" alt=""></a>   
+        {% else %}
+          <a><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""></a>
+        {% endif %}
+    
+        <span  class="plus-icon" data-bs-toggle="modal" data-bs-target="#profileModal">+</span>
+      </div> 
+      <p class="txt-2">{{current_user_details.full_name}}</p>
+      </div>
+      <div class="items">
+        <p class="txt-2">{{post.count}}</p>
+        <p class="txt-2">No of post</p>
+      </div>
+      <div class="items">
+        <p class="txt-2">{{current_user_details.followers.count}}</p>
+        <a href="{%url 'publicapp:followers'%}"><p class="txt-2">Follower</p></a>
+      </div>
+      <div class="items">
+        <p class="txt-2">{{current_user_details.followings.count}}</p>
+        <a href="{%url 'publicapp:followings'%}"><p class="txt-2">Following</p></a>
+       
+      </div>
+    </div>
+    <div class="row">
+  
+    </div>
+    <div class="lower">
+      <div class="items">
+        <!-- <button class="btn btn-secondary profile-post-btn">Post</button> -->
+        <span class="txt-2"><i class="fa-solid fa-th profile-all-btn"></i></span>
+      </div>
+      <div class="items">
+        <!-- <button class="btn btn-secondary profile-post-btn">Post</button> -->
+        <span class="txt-2"><i class="fa-solid fa-file-alt profile-post-btn"></i></span>
+      </div>
+      <div class="items">
+        <!-- <button class="btn btn-secondary profile-complain-btn">complain</button> -->
+        <span class="txt-2"><i class="fa-solid fa-comments profile-complain-btn"></i></span>
+      </div>
+      <div class="items">
+        <!-- <button class="btn btn-secondary profile-job-btn">Job</button> -->
+        <span class="txt-2"><i class="fa-solid fa-briefcase profile-job-btn"></i></span>
+      </div>
+      <div class="items">
+        <!-- <button class="btn btn-secondary profile-donation-btn">Donation</button> -->
+        <span class="txt-2"><i class="fa-solid fa-hand-holding-dollar profile-donation-btn"></i></span>
+      </div>
+    </div>
+  </div>
+  <!--  profile data -->
+  <div class="profile-data">
+    
+<!-- #showing user complain -->
+{% for c in complain %}
+<div class="feed-post profile-complain">
+  <div class="feed-header">
+     <!-- <div class="user-profile">
+        {% if c.complain_by.profile_picture %} 
+             <a href=""><img class="profile-img" src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
+        {% else %}
+             <a href=""><img class="profile-img" src="" alt=""/> </a>
+        {% endif %} 
+    </div> -->
+        <div class="profile-txt">
+         <a href="" class="txt-2"><p><b>Complaints type : </b>{{c.complain_type}}</p></a>
+         <!-- <a href="" class="txt-3"><p>complaints by : {{c.complain_by.full_name}}</p></a> -->
+         
+        </div>     
+            </div>
+  <div class="feed-content">
+     <p class="txt-3"><b>Description: </b>{{c.description}}</p>
+     <p class="txt-3"><b>Location: </b>{{c.complain_location}}</p>
+          <div style="object-fit: cover;">
+              {% if c.complain_image %} 
+                 <a href=""><img src="{{ c.complain_image.url }}" alt="" height="150px" width="100%"/> </a>
+              {% else %}
+                 <a href=""><img  src="{% static 'img/profile.png' %}" alt="" height="150px" width="100%"/> </a>
+              {% endif %}
+          </div>
+          
+  </div>
+
+  <div class="feed-footer ">
+    
+     <a href="" class="text-decoration-none w-100 mx-2">
+      {% if c.complain_status == 'solved' %}
+        <span class="txt-1" style="background-color: rgb(58, 214, 19);" >Solved</span>
+      {% else %} 
+        <span class="txt-1" style="background-color: red;" >Unsolved</span> 
+      {% endif %}
+    </a>
+    <div class="">
+     <a href="/deletecomplain/{{c.c_id}}" class="text-decoration-none bg-danger">
+      
+       <span class="txt-1 mx-2">Delete</span>
+   </a>
+ </div>
+  </div>
+ 
+</div>
+{% endfor %}
+    
+   <!-- #showing user donation -->
+   {% for d in donation %}
+   <div class="feed-post profile-donation">
+      <div class="feed-header" style="padding-right: 1rem;">
+         <!-- <div class="user-profile">
+            {% if d.donated_by.profile_picture %}
+               <a><img class="profile-img" src="{{d.donated_by.profile_picture.url}}" alt=""></a>
+            {% else %}
+               <a><img class="profile-img" src="" alt=""></a>
+            {% endif %}   
+            <div class="profile-txt">
+            <a href="" class="txt-2"><p>{{d.donated_by.full_name}}</p></a> -->
+            <!-- <a href="" class="txt-3"><p></p></a>
+         </div>    
+         </div>   -->
+         <p class="w-100 text-light"><b>Donation Type</b></p>
+         <p class="text-light">{{d.donation_type}}</p>
+      </div>
+      <div class="feed-content">
+         
+         
+            
+         <p class="txt-2">Description</p>
+         <p class="txt-3">{{d.description}}</p>
+            
+         <p class="txt-2">Donar locations</p>
+         <p class="txt-3">{{d.donar_location}}</p>
+
+         <div style="height: 10rem; object-fit: cover;">
+            {% if d.product_image %}
+              <img src="{{d.product_image.url}}" height="150px" width="100%">
+            {% endif %}  
+         </div>
+      </div>
+
+      
+      <div class="feed-footer">
+         <a href="/deletedonation/{{d.d_id}}" class="text-decoration-none">
+          
+           <span class="txt-1">Delete Donation</span>
+       </a>
+     </div>
+   </div>
+{% endfor %}
+    <!-- this is post data -->
+  {% for post in post %}
+  <div class="feed-post profile-post">
+     <div class="feed-header">
+        <div class="user-profile">
+         
+                 
+           <div class="profile-txt">
+            <!-- <a href="" class="txt-2"><p>{{post.postby.full_name}}</p></a> -->
+            <a href="" class="txt-3"><p>{{post.posteddate}}</p></a>
+            
+         </div>     
+               </div>
+     </div>
+     <div class="feed-content">
+        <p class="txt-3">{{post.postcaption}}</p>
+             <div style="height: 10rem; object-fit: cover;">
+              <img src="{{post.postimage.url}}" height="100%" width="100%">
+             </div>
+             
+     </div>
+     <div class="feed-footer">
+         <a href="/deletepost/{{post.pid}}" class="text-decoration-none">
+          
+           <span class="txt-1">Delete Post</span>
+       </a>
+     </div>
+  </div>
+  {% endfor %}
+  <!-- this is job data -->
+  {% for job in jobs %}
+  <div class="feed-post profile-job">
+     <div class="feed-header" style="padding-right: 1rem;">
+        <div class="user-profile">
+           {% if job.job_by.profile_picture %}
+             <a><img class="profile-img" src="{{ job.job_by.profile_picture.url }}" alt=""></a>
+           {% else %}
+             <a><img class="profile-img" src="" alt=""></a>
+           {% endif %}  
+           <div class="profile-txt">
+            <!-- <a href="" class="txt-2"><p>{{job.job_by.full_name}}</p></a> -->
+            <a href="" class="txt-3"><p>{{job.job_post_date}}</p></a>
+         </div>    
+         </div>  
+     </div>
+     <div class="feed-content">
+        <p class="txt-2">Job Type:{{job.job_type}}</p>   
+        <p class="txt-2">Required Skills:{{job.skill_required}}</p>  
+        <p class="txt-2">Salary:{{job.salary}}</p>  
+        <p class="txt-2">Job Description:{{job.job_description}}</p> 
+        <p class="txt-2">Job Location:{{job.job_location}}</p>     
+     </div>
+        <div class="feed-footer">
+           <a href="/deletejob/{{job.j_id}}">
+              <button type="submit" class="btn btn-primary">Delete Job</button>
+          </a>
+        </div>
+  </div>
+  {% endfor %}
+</div>
+ 
+</div>
+
+
+ <!-- profile pop-up -->
+ <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+     <div class="modal-content">
+        <div class="modal-header">
+           <h1 class="modal-title fs-5" id="profileModalLabel">Create profile</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-data">
+           <!-- form for add profile -->
+           <form action="{% url 'publicapp:changeuserprofile' %}" method='POST' enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="container" >
+              
+                 <div class="row mt-3">
+                    <div class=""><input id="uploadInput" class="form-control w-100" type="file" name="pic" accept=".png,.jpg" placeholder=" Upload Media (Image) "></div>
+
+                 </div>
+                 <div class="row mt-3">
+       
+                    <div class="" style="display: flex; justify-content: center; 
+                    border-radius: var(--border-radius2);
+                    height: 10rem;
+                    width: 10rem;"><img id="imagePreview" src="#"></div>
+                 </div>
+                 <div class="row" style="width: 100%;margin-left: 0rem;">
+                    <button type="submit" class="mt-3 mb-3 btn btn-primary profilebutton">Change Pic</button>
+                 </div>
+              </div>
+          </form>
+        </div>
+     </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+
+<!-- welcome code -->
+<div class="row">
+    <h1 class="text-center mt-5 fs-2" style="font-family: lucida Sans;">Welcome to <i>Admin Dashboard</i></h1>
+</div>
+
+<!-- boxes  -->
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <div class="menubox">
+                <a class="" href="{% url 'supervisorapp:complain' %}">
+                    <div><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <span>Complaints</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="menubox">
+                <a class="" href="{% url 'supervisorapp:addservent' %}">
+                    <div><i class="fa-solid fa-user-plus"></i></div>
+                    <span>Add Servant</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="menubox">
+                <a class="" href="{% url 'supervisorapp:rank' %}">
+                    <div><i class="fa-solid fa-ranking-star"></i></div>
+                    <span>Top Social Person</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="menubox">
+                <a class="" href="{% url 'supervisorapp:viewservent' %}">
+                    <div><i class="fa-solid fa-users"></i></div>
+                    <span>Servant</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+

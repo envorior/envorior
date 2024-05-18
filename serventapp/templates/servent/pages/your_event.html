@@ -1,0 +1,37 @@
+{% extends 'serventparent.html' %}
+{% load static %}
+
+{% block title %} Your Event {% endblock title %}
+
+{%block content%}
+<div class="new-card">
+   {% for e in event %}
+   <div class="card-main">
+      <div class="card-top">
+         <div class="card-title">
+            <p><span style="font-weight: bold;">News/Event by:</span> {{e.department.full_name}}</p>
+            <p>Date : {{e.date}}</p>
+            <p>Description : {{e.description}}</p>
+         </div>
+      </div>
+      <div class="card-img-main">
+         {% if e.image %}
+            <img src="{{e.image.url}}" alt="" />
+         {% else %}
+            <img  src="{% static 'img/post.jpg' %}" alt="" />
+         {% endif %}
+      </div>
+      <div class="complain-status">
+         <a href="/delete_event/{{e.e_id}}" class="text-decoration-none w-100">
+            <span class="complain-status-false">Delete</span> 
+        </a>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+

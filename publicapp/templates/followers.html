@@ -1,0 +1,32 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Followers {% endblock title %}
+
+{% block content %}
+<div class="follower">
+  <p class="txt-3" style="margin-left: 3rem;"><i>400+ peoples are followings you</i></p>
+  {% for i in followers_details %}
+<div class="user-profile">
+  {% if pic %}
+   <a href="">
+    <img class="profile-img" src="{{i.pic.url}}" alt=""/>
+   </a>
+  {% else %}
+    <a href="">
+      <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""/>
+    </a>
+  {% endif %}  
+    <div class="profile-txt" style="position: relative; padding-bottom: 0.5rem;">
+      <p class="txt-2">{{i.full_name}}</p>
+      <p class="txt-3">No.of Followings :  {{i.followings}}</p>
+      <span class=" " style="float: right; position: absolute;top: 0.3rem;right: 1rem; padding: 0.3rem 1rem;">Follow</span>
+    </div>
+
+    
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

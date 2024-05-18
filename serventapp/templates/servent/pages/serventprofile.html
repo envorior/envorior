@@ -1,0 +1,27 @@
+{% extends 'dashboardparent.html' %} 
+{% load static %} 
+{% block title %} Dashboard{% endblock title %} 
+{%block content%}
+<div id="donation" class="profile">
+  <p class="txt-1">Profile</p>
+  <div class="user-profile">
+    <a href="{%url 'publicapp:profile'%}">
+      <img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/>
+      </a>
+  </div>
+
+
+  <form>
+    <div class="search"><input type="text" placeholder=" Profile Picture " />  <div class="btn"><button type="submit">Change</button></div></div>
+    <div class="search"><input type="text" placeholder=" Raj " />  <div class="btn"><button type="submit">Edit</button></div></div>
+    <div class="search"><input type="text" placeholder=" raj@gmail.com " />  <div class="btn"><button type="submit">Edit</button></div></div>
+    <div class="search"><input type="text" placeholder=" 11/04/2003 " />  <div class="btn"><button type="submit">Edit</button></div></div>
+    <div class="search"><input type="text" placeholder=" Male " />  <div class="btn"><button type="submit">Edit</button></div></div>
+    <div class="search"><input type="text" placeholder="+91 9555321540 " />  <div class="btn"><button type="submit">Edit</button></div></div>
+    <div class="search"><input type="text" placeholder=" Password " />  <div class="btn"><button type="submit">Change</button></div></div>
+ 
+   
+  </form>
+</div>
+
+{% endblock %}

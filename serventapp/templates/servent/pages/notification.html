@@ -1,0 +1,59 @@
+{% extends 'serventparent.html' %}
+{% load static %}
+
+{% block title %} Notifications {% endblock title %}
+
+{%block content%}
+
+<div class=" feed-search">
+  <!-- <div class="user-profile">
+     <a>
+        <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
+         </div>        -->
+     <form >
+        <div class="search">
+           <input type="text" placeholder="write here to search something">
+        </div>
+         
+        <div class="btn">
+          <a href="#">
+          <button type="submit">Enter</button>
+       </a>
+        </div>
+     </form>
+     
+  </div>
+  <hr>
+  <table>
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in "12234566778"%}
+        <tr>
+          <td>1</td>
+          <td>News</td>
+          <td>Lorem Ipsum</td>
+          <td>xyz@gmail.com</td>
+          <td>12/03/2001</td>
+          <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-trash-can"></i></td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+
+
+
+

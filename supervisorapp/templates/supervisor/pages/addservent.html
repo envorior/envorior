@@ -1,0 +1,90 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Add event {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   
+    <p class=" text-center" style="font-size: 25px; margin-top: 30px;">Add Servent </p> 
+   <!-- <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div> -->
+{% if msg %}
+<div class="alert alert-success" role="alert">
+   <span style="color: green;">{{msg}}</span></div>
+{% endif %}   
+
+<form action="#" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <input style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-control" type="text" name="email" placeholder=" Email ">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <input style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-control" type="password" name="password" placeholder=" Enter password">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <input style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-control" type="number" name="number" placeholder=" Enter number">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <select style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-select" name="department_type" id="">
+                    <option selected disabled>Select Department Type</option>
+                    <option value="Water">Water</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Education">Education</option>
+                    <option value="Leagal">Leagal</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <select style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-select" name="city" id="">
+                    <option selected disabled>Select City</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Pune">Pune</option>
+                </select>  
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <select style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-select" name="state" id="">
+                    <option selected disabled>Select state</option>
+                    <option value="UP">U.P.</option>
+                    <option value="MP">M.P.</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Punjab">Punjab</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <input style="border: 1px solid #e2e6e9 !important; background-color: #ffffff;" class="form-control" type="text" name="pin_code" placeholder=" Enter pincode">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <input class="form-control w-100" type="file" name="image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col" >
+                <button type="submit" class="btn btn-primary mb-4" style="width: 100%; ">Add Servent</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+</div>
+
+{% endblock %}
+

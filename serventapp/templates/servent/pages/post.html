@@ -1,0 +1,37 @@
+{% extends 'serventparent.html' %}
+{% load static %}
+
+{% block title %} Add event {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   <p class=" text-center" style="font-size: 25px; margin-top: 40px;">Add Event</p> 
+   <!-- <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div> -->
+
+ 
+<form action="#" method='POST' enctype="multipart/form-data"> 
+    {% csrf_token %}
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <textarea style="border: 1px solid #e2e6e9 !important; " class="form-control" type="text" name="description" rows="8" placeholder=" Message "></textarea>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <input class="form-control w-100" type="file" name="image" accept=".png,.jpg" placeholder=" Upload Media (Image) ">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col" >
+                <button type="submit" class="btn btn-danger mb-4" style="width: 100%; ">Create Event</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock %}
+

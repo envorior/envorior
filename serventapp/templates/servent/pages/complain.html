@@ -1,0 +1,42 @@
+{% extends 'serventparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<div class="new-card">
+   {% for c in complain %}
+   <div class="card-main">
+      <div class="card-top">
+         <div class="card-img">
+            {% if c.complain_by.profile_picture %} 
+               <a href=""><img class="profile-img"  src="{{ c.complain_by.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+               <a href=""><img class="profile-img"  src="{% static 'img/profile.png' %}" alt=""/> </a>
+            {% endif %} 
+         </div>
+         <div class="card-title">
+            <p><span style="font-weight: bold;">Complaints Type:</span> {{c.complain_type}}</p>
+            <p>{{c.complain_by.full_name}} &middot; {{c.complain_location}}</p>
+         </div>
+      </div>
+      <div class="card-img-main">
+         {% if c.complain_image %} 
+            <img src="{{ c.complain_image.url }}" alt="" />
+         {% else %}
+            <img  src="{% static 'img/profile.png' %}" alt="" />
+         {% endif %}
+      </div>
+      <div class="complain-status">
+         <a href="/solvecomplain/{{c.c_id}}" class="text-decoration-none w-100">
+          {% if c.complain_status == 'solved' %}
+            <span class="complain-status-true">Solved</span>
+          {% else %} 
+            <span class="complain-status-false">Unsolved</span> 
+          {% endif %}
+        </a>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}

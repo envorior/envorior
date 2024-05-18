@@ -1,0 +1,23 @@
+{% extends 'publicparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<div id="form-layout">
+   <p class="txt-1">Reporting Scam</p> 
+   <div class ="img">
+       <img src="{% static 'img/scam.png' %}" height="100%" width="100%">
+      </div>
+
+<form >
+   <div class="search"><input type="text" placeholder=" Upload Media (Image/Video) "></div>
+   <div class="txt-box"><textarea type="text" rows="8" placeholder=" Message "></textarea></div>
+  <button type="submit" class="btn btn-primary">Reporting Now</button>
+  
+</form>
+ 
+</div>
+
+{% endblock %}
+

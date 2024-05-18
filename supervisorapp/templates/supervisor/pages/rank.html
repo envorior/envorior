@@ -1,0 +1,66 @@
+{% extends 'supervisorparent.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{%block content%}
+<p class=" text-center" style="font-size: 25px; margin-top: 20px; margin-bottom: 20px;">Top Social Person</p> 
+<!-- <div class=" feed-search"> -->
+  <!-- <div class="user-profile">
+     <a>
+        <img class="profile-img" src="{% static 'img/user.jpeg' %}" alt=""></a>   
+         </div>        -->
+     <!-- <form >
+        <div class="search">
+           <input type="text" placeholder="write here to search something">
+        </div>
+          <a href="{% url 'supervisorapp:rank'%}">
+              <button class="btn btn-primary" type="submit">Enter</button>
+          </a>
+        
+     </form>
+     
+  </div> -->
+  <!-- <hr> -->
+  <table>
+    <thead>
+      <tr>
+        <th>Serial No.</th>
+        <th>Profile Image</th>
+        <th>Name</th>
+        <th>Contact number</th>
+        <th>City</th>
+        <th>Reward</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in top_envorior %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>
+          <div class="user-profile">
+            {% if t.profile.profile_picture %} 
+                 <a href=""><img class="profile-img" src="{{ t.profile.profile_picture.url }}" alt=""/> </a>
+            {% else %}
+                 <a href=""><img class="profile-img" src="{% static 'img/profile.png' %}" alt=""/> </a>
+            {% endif %} 
+          </div>
+        </td>
+        <td>{{t.profile.full_name}}</td>
+        <td>{{t.profile.contact_no}}</td>
+        <td>{{t.profile.city}}</td>
+        <td>{{t.reward}}</td>
+        
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+
+
+
+
+
